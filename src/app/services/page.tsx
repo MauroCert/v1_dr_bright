@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { Tooth, Sparkles, Wrench, AlertTriangle, Wind, Crown, Scissors, Zap } from 'lucide-react';
+import { Activity, Sparkles, Wrench, AlertTriangle, Wind, Crown, Scissors, Zap } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
       title: 'General Dentistry',
       description: 'Comprehensive dental care including cleanings, exams, and preventive treatments.',
-      icon: Tooth,
+      icon: Activity,
       href: '/services/general-dentistry',
       features: ['Regular Cleanings', 'Dental Exams', 'X-Rays', 'Preventive Care']
     },

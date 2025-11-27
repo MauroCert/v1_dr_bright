@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Phone, MessageCircle, Menu, X } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, Clock } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,20 +20,24 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm border-b border-gray-100">
       {/* Top bar with contact info */}
-      <div className="bg-blue-50 py-2">
+      <div className="bg-blue-50 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <a href="tel:(303) 377-7744" className="flex items-center text-gray-700 hover:text-blue-600">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-2 md:space-y-0">
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+              <a href="tel:(303) 377-7744" className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
                 <Phone className="h-4 w-4 mr-2" />
                 (303) 377-7744
               </a>
-              <a href="sms:(720) 864-1333" className="flex items-center text-gray-700 hover:text-blue-600">
+              <a href="sms:(720) 864-1333" className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
                 <MessageCircle className="h-4 w-4 mr-2" />
                 (720) 864-1333
               </a>
+              <div className="flex items-center text-gray-600">
+                <Clock className="h-4 w-4 mr-2" />
+                Mon-Thu: 7AM-5PM | Fri-Sun: Closed
+              </div>
             </div>
-            <div className="text-gray-600">
+            <div className="text-gray-600 font-medium">
               5055 E Kentucky Ave, Denver, CO 80246
             </div>
           </div>

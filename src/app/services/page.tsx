@@ -7,7 +7,7 @@ const signatureStacks = [
     title: 'Dental Exams & Cleanings',
     description:
       'A focus on preventive dentistry helps you maintain the highest standard of oral health while limiting dental expenditures.',
-      href: '/services/general-dentistry',
+    href: '/services/general-dentistry',
     badge: 'Preventive',
     image: '/images/drbright-patient.jpg',
     checklist: ['Longer hygiene visits', 'Oral cancer screenings', 'Home care coaching'],
@@ -15,17 +15,17 @@ const signatureStacks = [
   {
     title: 'Emergency Dentistry',
     description:
-      'Same-day relief for tooth pain, broken teeth, or infections with the calm bedside manner shown on drbrightsmiles.com.',
+      'Same-day relief for tooth pain, broken teeth, or infections with Dr. Bright’s calm bedside manner.',
     href: '/services/emergency-dentistry',
     badge: 'Same-Day',
     image: '/images/drbright-lobby.jpg',
     checklist: ['Rapid diagnostics', 'Temporary restorations', 'Medication coordination'],
-    },
-    {
-      title: 'Cosmetic Dentistry',
+  },
+  {
+    title: 'Cosmetic Dentistry',
     description:
       'Volumes of research confirm the influential role smiles play in confidence, relationships, and first impressions.',
-      href: '/services/cosmetic-dentistry',
+    href: '/services/cosmetic-dentistry',
     badge: 'Cosmetic',
     image: '/images/drbright-patient.jpg',
     checklist: ['Porcelain veneers', 'Whitening plans', 'Facial aesthetics'],
@@ -43,27 +43,27 @@ const signatureStacks = [
   {
     title: 'Dental Implants',
     description:
-      'From single implants to All-on-4 style solutions, restorative planning mirrors Miyamoto’s thoughtful approach.',
+      'From single implants to All-on-4 style solutions, restorative planning is tailored to your smile goals.',
     href: '/services/restorative-dentistry',
     badge: 'Implants',
     image: '/images/drbright-patient.jpg',
     checklist: ['Guided surgery partners', 'Immediate temporaries', 'Maintenance visits'],
-    },
-    {
-      title: 'Sedation Dentistry',
+  },
+  {
+    title: 'Sedation Dentistry',
     description:
       'Laughing gas and other comfort options keep anxious patients relaxed during any procedure.',
-      href: '/services/sedation-dentistry',
+    href: '/services/sedation-dentistry',
     badge: 'Comfort',
     image: '/images/drbright-covid-badge.png',
     imageType: 'logo',
     checklist: ['Nitrous oxide', 'Comfort amenities', 'Longer appointment buffers'],
-    },
-    {
-      title: 'Extractions',
+  },
+  {
+    title: 'Extractions',
     description:
       'Simple or surgical extractions performed with extended appointment times and gentle technique.',
-      href: '/services/extractions',
+    href: '/services/extractions',
     badge: 'Surgical',
     image: '/images/drbright-lobby.jpg',
     checklist: ['Wisdom teeth coordination', 'Bone preservation', 'Aftercare check-ins'],
@@ -72,33 +72,32 @@ const signatureStacks = [
 
 export default function Services() {
   return (
-    <div className="bg-white text-slate-900">
+    <div className="bg-[var(--background)] text-[var(--navy)]">
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/drbright-lobby.jpg')" }}
         />
-        <div className="absolute inset-0 bg-slate-900/75" />
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 text-white">
+        <div className="absolute inset-0 bg-[var(--navy)]/85" />
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 text-[#f4fbf2]">
           <div className="space-y-6 text-center lg:text-left">
-            <p className="text-xs uppercase tracking-[0.3em] text-blue-100">Services inspired by Miyamoto Family Dental</p>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-              Comprehensive dental services with Miyamoto-level warmth.
+            <p className="text-xs uppercase tracking-[0.3em] text-[#c5e2c7]">Comprehensive dental services</p>
+            <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+              Comprehensive dental services with concierge-level warmth.
             </h1>
-            <p className="text-lg text-blue-100">
-              We studied the Miyamoto Family Dental service experience and blended it with our Cherry Creek South approach:
-              preventive focus, honest education, joyful atmosphere, and concierge-level time.
+            <p className="text-lg text-[#eadfcf]">
+              Our Cherry Creek South Dental approach blends preventive focus, honest education, a joyful atmosphere, and concierge-level time.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Link
                 href="/services/general-dentistry"
-                className="inline-flex items-center rounded-full bg-blue-500 px-8 py-3 font-semibold text-white transition hover:bg-blue-400"
+                className="inline-flex items-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
               >
                 Explore General Dentistry
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-[#eadfcf]">
                 <span className="inline-flex items-center gap-2">
                   <Phone className="h-4 w-4" />
                   (303) 377-7744
@@ -114,19 +113,17 @@ export default function Services() {
       </section>
 
       {/* SIGNATURE STACKS */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-[var(--background)] py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-12 text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">Signature services</p>
-            <h2 className="mt-3 text-3xl font-semibold">
-              Inspired by Miyamoto’s service pillars, delivered in Denver.
-            </h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Signature services</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[var(--navy)]">Guided by Cherry Creek South Dental service pillars.</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {signatureStacks.map((service) => (
               <div
                 key={service.title}
-                className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group overflow-hidden rounded-3xl border border-[#eadfce] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative h-56 w-full overflow-hidden">
                   <Image
@@ -141,22 +138,22 @@ export default function Services() {
                     sizes="(min-width: 1024px) 360px, 100vw"
                     priority={service.title === 'Dental Exams & Cleanings'}
                   />
-                  <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">
+                  <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--navy)]">
                     {service.badge}
                   </span>
                 </div>
                 <div className="space-y-4 p-8">
-                  <h3 className="text-2xl font-semibold">{service.title}</h3>
-                  <p className="text-slate-600">{service.description}</p>
-                  <ul className="space-y-2 text-sm text-slate-600">
+                  <h3 className="text-2xl font-semibold text-[var(--navy)]">{service.title}</h3>
+                  <p className="text-[var(--stone)]">{service.description}</p>
+                  <ul className="space-y-2 text-sm text-[var(--stone)]">
                     {service.checklist.map((item) => (
                       <li key={item} className="flex items-center gap-2">
-                        <span className="text-blue-500">•</span>
+                        <span className="text-[var(--gold)]">•</span>
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <Link href={service.href} className="inline-flex items-center font-semibold text-blue-600">
+                  <Link href={service.href} className="inline-flex items-center font-semibold text-[var(--gold)]">
                     Learn more
                     <ArrowRight className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
                   </Link>
@@ -168,16 +165,16 @@ export default function Services() {
       </section>
 
       {/* CONTACT CTA */}
-      <section className="bg-blue-600 py-20 text-white">
+      <section className="bg-[var(--navy)] py-20 text-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
-          <h2 className="text-3xl font-semibold">Ready for Miyamoto-level hospitality in Denver?</h2>
-          <p className="mt-4 text-blue-100">
+          <h2 className="text-3xl font-semibold">Ready for concierge-level hospitality in Denver?</h2>
+          <p className="mt-4 text-[#c5e2c7]">
             Call or text to reserve a longer appointment block tailored to your smile goals.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
             >
               Call (303) 377-7744
             </a>

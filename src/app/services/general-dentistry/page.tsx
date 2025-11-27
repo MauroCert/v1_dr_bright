@@ -6,7 +6,7 @@ const preventivePillars = [
   {
     title: 'Longer Hygiene Visits',
     copy:
-      'Modeled after Miyamoto Family Dental’s preventive philosophy, we schedule generous time for cleanings, exams, and questions.',
+      'We schedule generous time for cleanings, exams, and questions so preventive visits never feel rushed.',
     points: ['Ultrasonic + hand scaling combo', 'Gum health charting each visit', 'Personalized home-care coaching'],
   },
   {
@@ -16,12 +16,12 @@ const preventivePillars = [
   },
   {
     title: 'Home Care Partners',
-    copy: 'We mirror Miyamoto’s educational approach by pairing each patient with tailored product and technique recommendations.',
+    copy: 'We pair each patient with tailored product and technique recommendations.',
     points: ['Electric brush guidance', 'Floss & water flosser demos', 'Follow-up check-ins by text'],
   },
   {
     title: 'Periodontal Therapy',
-    copy: 'For gums that need extra support we stage therapy visits with the same joyful, plant-filled energy you see on drbrightsmiles.com.',
+    copy: 'For gums that need extra support we stage therapy visits with the same joyful, plant-filled energy you feel in our atrium.',
     points: ['Localized irrigation', 'Comfort-focused anesthesia options', 'Ongoing maintenance plans'],
   },
 ];
@@ -37,7 +37,7 @@ const visitTimeline = [
   },
   {
     title: 'Co-Planning',
-    description: 'Dr. Bright reviews findings chairside, similar to the collaborative tone on MiyamotoFamilyDental.com.',
+    description: 'Dr. Bright reviews findings chairside, encouraging collaborative co-planning.',
   },
   {
     title: 'Comfort Menu',
@@ -53,26 +53,26 @@ const membershipHighlights = [
 
 export default function GeneralDentistry() {
   return (
-    <div className="bg-white text-slate-900">
+    <div className="bg-[var(--background)] text-[var(--navy)]">
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/drbright-patient.jpg')" }}
         />
-        <div className="absolute inset-0 bg-slate-900/70" />
-        <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 py-24 text-white">
-          <p className="text-xs uppercase tracking-[0.3em] text-blue-100">General Dentistry</p>
-          <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            Preventive care inspired by Miyamoto, delivered with Dr. Bright’s calm touch.
+        <div className="absolute inset-0 bg-[var(--navy)]/80" />
+        <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 py-24 text-[#f4fbf2]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#c5e2c7]">General Dentistry</p>
+          <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            Preventive care delivered with Dr. Bright’s calm touch.
           </h1>
-          <p className="text-lg text-blue-100">
-            Longer appointments, joyful surroundings, and honest education—exactly what you see on drbrightsmiles.com and what we admired on MiyamotoFamilyDental.com.
+          <p className="text-lg text-[#eadfcf]">
+            Longer appointments, joyful surroundings, and honest education are the hallmarks of Cherry Creek South Dental.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-blue-500 px-8 py-3 font-semibold text-white transition hover:bg-blue-400"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
             >
               Reserve a preventive visit
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -88,21 +88,21 @@ export default function GeneralDentistry() {
       </section>
 
       {/* PREVENTIVE PILLARS */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-[var(--background)] py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-12 text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">Cleanings & Prevention</p>
-            <h2 className="mt-3 text-3xl font-semibold">Everything you loved on Miyamoto’s page—now localized for Denver.</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Cleanings & Prevention</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[var(--navy)]">Everything you expect from a thorough preventive visit—tailored for Denver.</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {preventivePillars.map((pillar) => (
-              <div key={pillar.title} className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-slate-900">{pillar.title}</h3>
-                <p className="mt-3 text-slate-600">{pillar.copy}</p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
+              <div key={pillar.title} className="rounded-3xl border border-[#eadfce] bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-[var(--navy)]">{pillar.title}</h3>
+                <p className="mt-3 text-[var(--stone)]">{pillar.copy}</p>
+                <ul className="mt-4 space-y-2 text-sm text-[var(--stone)]">
                   {pillar.points.map((point) => (
                     <li key={point} className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-blue-500" />
+                      <CheckCircle2 className="h-4 w-4 text-[var(--gold)]" />
                       {point}
                     </li>
                   ))}
@@ -124,20 +124,20 @@ export default function GeneralDentistry() {
               className="object-cover"
               sizes="(min-width: 1024px) 520px, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/0" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/85 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8 space-y-2 text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-blue-200">As seen on drbrightsmiles.com</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-[#f1dcb8]">Inside Cherry Creek South Dental</p>
               <p className="text-2xl font-semibold">Atrium calm + concierge-level time</p>
             </div>
           </div>
           <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">First visit flow</p>
-            <h2 className="text-3xl font-semibold">What your general dentistry visit feels like</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">First visit flow</p>
+            <h2 className="text-3xl font-semibold text-[var(--navy)]">What your general dentistry visit feels like</h2>
             <div className="space-y-4">
               {visitTimeline.map((step) => (
-                <div key={step.title} className="rounded-2xl border border-slate-100 p-5 shadow-sm">
-                  <p className="text-sm uppercase tracking-[0.2em] text-blue-500">{step.title}</p>
-                  <p className="mt-2 text-slate-700">{step.description}</p>
+                <div key={step.title} className="rounded-2xl border border-[#eadfce] bg-white p-5 shadow-sm">
+                  <p className="text-sm uppercase tracking-[0.2em] text-[var(--gold)]">{step.title}</p>
+                  <p className="mt-2 text-[var(--stone)]">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -146,14 +146,14 @@ export default function GeneralDentistry() {
       </section>
 
       {/* MEMBERSHIP + CTA */}
-      <section className="bg-[#0d1b2a] py-20 text-white">
+      <section className="bg-[var(--navy)] py-20 text-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-blue-200">Cherry Creek South Dental Membership</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Cherry Creek South Dental Membership</p>
           <h2 className="mt-3 text-3xl font-semibold">Keep cleanings on track, unlock cosmetic + tech perks</h2>
-          <ul className="mx-auto mt-8 max-w-3xl space-y-3 text-left text-sm text-blue-100">
+          <ul className="mx-auto mt-8 max-w-3xl space-y-3 text-left text-sm text-[#c5e2c7]">
             {membershipHighlights.map((perk) => (
               <li key={perk} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-1 h-4 w-4 text-blue-400" />
+                <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)]" />
                 <span>{perk}</span>
               </li>
             ))}
@@ -161,7 +161,7 @@ export default function GeneralDentistry() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
               href="sms:(720) 864-1333"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
             >
               Text (720) 864-1333
             </a>

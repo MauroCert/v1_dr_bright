@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cherry Creek South Dental | Dr. Bright - Family Dentistry in Denver",
-  description: "Experience exceptional family dentistry at Cherry Creek South Dental. Dr. Bright and our team provide comprehensive dental care including cosmetic dentistry, Invisalign, and emergency services in a welcoming, anxiety-free environment.",
+  description:
+    "Experience exceptional family dentistry at Cherry Creek South Dental. Dr. Bright and our team provide comprehensive dental care including cosmetic dentistry, Invisalign, and emergency services in a welcoming, anxiety-free environment.",
 };
 
 export default function RootLayout({
@@ -25,14 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
-        <main className="min-h-screen">
-        {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

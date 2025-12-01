@@ -9,6 +9,8 @@
   --stone: #314138;
   --foreground: #142119;
   --muted: #b7c8b7;
+  --mint: #e8f5e3;
+  --cream: #fafdf8;
 }
 
 @theme inline {
@@ -21,7 +23,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-geist-sans), 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -29,7 +31,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-geist-sans), 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-geist-sans), 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 a {
@@ -40,4 +42,47 @@ a {
 a:hover {
   color: inherit;
   opacity: 0.85;
+}
+
+/* Decorative geometric elements */
+.geo-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.geo-blob {
+  position: absolute;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  pointer-events: none;
+}
+
+/* Gradient backgrounds */
+.gradient-mint {
+  background: linear-gradient(135deg, var(--mint) 0%, var(--background) 100%);
+}
+
+.gradient-navy {
+  background: linear-gradient(160deg, var(--navy) 0%, #0a3d1f 50%, #052a16 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--background) 100%);
+}
+
+/* Smooth section transitions */
+.section-wave::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
 }

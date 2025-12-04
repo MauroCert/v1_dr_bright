@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const signatureStacks = [
   {
@@ -82,7 +82,6 @@ export default function Services() {
         <div className="absolute inset-0 bg-[var(--navy)]/85" />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 text-[#f4fbf2]">
           <div className="space-y-6 text-center lg:text-left">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#c5e2c7]">Comprehensive dental services</p>
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Comprehensive dental services with concierge-level warmth.
             </h1>
@@ -90,23 +89,13 @@ export default function Services() {
               Our Cherry Creek South Dental approach blends preventive focus, honest education, a joyful atmosphere, and concierge-level time.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <Link
-                href="/services/general-dentistry"
+              <a
+                href="tel:(303) 377-7744"
                 className="inline-flex items-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
               >
-                Explore General Dentistry
+                Schedule Your Appointment
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-[#eadfcf]">
-                <span className="inline-flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  (303) 377-7744
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <MessageCircle className="h-4 w-4" />
-                  Text (720) 864-1333
-                </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

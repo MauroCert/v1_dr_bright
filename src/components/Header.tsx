@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Phone, MessageCircle, Menu, X, Clock } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, Clock, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,9 +12,8 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Patient Info', href: '/patient-info' },
-    { name: 'Membership', href: '/membership' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Info for Patients', href: '/patient-info' },
+    { name: 'Blogs', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -22,28 +21,39 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
       {/* Top bar with gradient */}
       <div className="bg-gradient-to-r from-[var(--navy)] via-[var(--denim)] to-[var(--navy)] text-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 py-2.5 text-sm sm:flex-row sm:justify-between">
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <a
-              href="tel:(303) 377-7744"
-              className="flex items-center gap-2 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
-            >
-              <Phone className="h-3.5 w-3.5" />
-              (303) 377-7744
-            </a>
-            <a
-              href="sms:(720) 864-1333"
-              className="flex items-center gap-2 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
-            >
-              <MessageCircle className="h-3.5 w-3.5" />
-              (720) 864-1333
-            </a>
-            <span className="flex items-center gap-2 text-white/70">
+        <div className="mx-auto max-w-6xl px-4 py-2.5">
+          <div className="flex flex-col items-center gap-2 text-sm md:flex-row md:justify-between">
+            {/* Address */}
+            <div className="flex items-center gap-2 text-white/90">
+              <MapPin className="h-3.5 w-3.5" />
+              <span>5055 E Kentucky Ave, Denver, CO 80246</span>
+            </div>
+            
+            {/* Phone Numbers */}
+            <div className="flex items-center gap-4">
+              <a
+                href="tel:(303) 377-7744"
+                className="flex items-center gap-1.5 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
+              >
+                <Phone className="h-3.5 w-3.5" />
+                Call: (303) 377-7744
+              </a>
+              <span className="text-white/50">|</span>
+              <a
+                href="sms:(720) 864-1333"
+                className="flex items-center gap-1.5 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
+              >
+                <MessageCircle className="h-3.5 w-3.5" />
+                Text: (720) 864-1333
+              </a>
+            </div>
+            
+            {/* Hours */}
+            <div className="flex items-center gap-2 text-white/70">
               <Clock className="h-3.5 w-3.5" />
-              Mon–Thu 7a-5p
-            </span>
+              <span>Mon 8–5 • Tue 8–4 • Wed 8–4 • Thurs 7–1</span>
+            </div>
           </div>
-          <p className="text-white/70 text-xs sm:text-sm">5055 E Kentucky Ave, Denver</p>
         </div>
       </div>
 
@@ -74,7 +84,7 @@ export default function Header() {
             href="tel:(303) 377-7744"
             className="ml-2 rounded-full bg-[var(--gold)] px-5 py-2.5 text-white font-semibold transition hover:bg-[var(--navy)]"
           >
-            Book Now
+            Schedule Your Appointment
           </a>
         </nav>
         
@@ -105,7 +115,7 @@ export default function Header() {
               href="tel:(303) 377-7744"
               className="mt-2 rounded-full bg-[var(--gold)] px-4 py-3 text-center font-semibold text-white hover:bg-[var(--navy)] transition-colors"
             >
-              Book Now
+              Schedule Your Appointment
             </a>
           </nav>
         </div>

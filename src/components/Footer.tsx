@@ -27,14 +27,7 @@ export default function Footer() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--denim)]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
       
-      {/* Top wave */}
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 0L60 5C120 10 240 20 360 25C480 30 600 30 720 25C840 20 960 10 1080 8C1200 6 1320 12 1380 15L1440 18V60H0V0Z" fill="var(--background)"/>
-        </svg>
-      </div>
-      
-      <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-12">
+      <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           {/* Brand & Contact */}
@@ -84,7 +77,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+                <div>
             <h4 className="text-[var(--gold)] font-semibold mb-6">Contact</h4>
             <div className="space-y-4 text-sm">
               <a 
@@ -110,25 +103,25 @@ export default function Footer() {
                   <MapPin className="h-4 w-4 text-[var(--gold)]" />
                 </div>
                 <span>5055 E Kentucky Ave<br />Denver, CO 80246</span>
+                </div>
               </div>
             </div>
-          </div>
 
           {/* Hours */}
-          <div>
+            <div>
             <h4 className="text-[var(--gold)] font-semibold mb-6 flex items-center gap-2">
               <Clock className="h-4 w-4" />
-              Office Hours
-            </h4>
-            <div className="space-y-2 text-sm">
-              {hours.map((schedule) => (
+                Office Hours
+              </h4>
+              <div className="space-y-2 text-sm">
+                {hours.map((schedule) => (
                 <div key={schedule.day} className="flex justify-between text-white/70">
-                  <span>{schedule.day}</span>
+                    <span>{schedule.day}</span>
                   <span className={schedule.hours === 'Closed' ? 'text-white/50' : ''}>
                     {schedule.hours}
                   </span>
-                </div>
-              ))}
+                  </div>
+                ))}
             </div>
             <a
               href="https://maps.app.goo.gl/Ye2gTCTUwE17Wm8G8"
@@ -158,16 +151,16 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-center mt-4 text-xs text-white/40">
-            Powered by{' '}
-            <a
-              href="https://dentalmarketingfromdayone.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              Powered by{' '}
+              <a
+                href="https://dentalmarketingfromdayone.com/"
+                target="_blank"
+                rel="noopener noreferrer"
               className="text-[var(--gold)]/70 hover:text-[var(--gold)] transition-colors"
-            >
-              Dental Marketing from Day One
-            </a>
-          </p>
+              >
+                Dental Marketing from Day One
+              </a>
+            </p>
         </div>
       </div>
     </footer>

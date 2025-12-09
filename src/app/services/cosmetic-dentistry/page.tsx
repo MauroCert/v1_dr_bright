@@ -42,22 +42,22 @@ const cosmeticServices = [
   },
 ];
 
-const transformationProcess = [
+const consultationProcess = [
   {
-    title: 'Smile Consultation',
-    description: 'We discuss your goals, concerns, and vision for your ideal smile in a relaxed, no-pressure environment.',
+    title: 'Personalized Discussion',
+    description: 'We start by understanding your goals, concerns, and ideal outcomes. Dr. Bright takes time to learn what you love and what you want to change about your smile.',
   },
   {
-    title: 'Digital Smile Design',
-    description: 'Using advanced imaging, we create a preview of your potential results before any treatment begins.',
+    title: 'Comprehensive Evaluation',
+    description: 'We use advanced technology, including AI-enhanced X-rays and digital scans, to evaluate teeth, gums, and bite structure.',
   },
   {
-    title: 'Customized Treatment Plan',
-    description: 'Dr. Bright develops a personalized plan that fits your timeline, budget, and aesthetic goals.',
+    title: 'Customized Recommendations',
+    description: 'Dr. Bright presents conservative, personalized options—and explains the benefits, timelines, and costs so you can make informed decisions.',
   },
   {
-    title: 'Artful Execution',
-    description: 'Each procedure is performed with meticulous attention to detail for natural, beautiful results.',
+    title: 'Your Treatment Plan',
+    description: 'Together, we create a treatment plan that fits your lifestyle, budget, and smile goals.',
   },
 ];
 
@@ -230,9 +230,9 @@ export default function CosmeticDentistry() {
           </div>
           <div className="space-y-6">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">The Process</p>
-            <h2 className="text-3xl font-semibold text-[var(--navy)]">Your path to a stunning smile</h2>
+            <h2 className="text-3xl font-semibold text-[var(--navy)]">What to Expect During Your Cosmetic Consultation</h2>
             <div className="space-y-4">
-              {transformationProcess.map((step, index) => (
+              {consultationProcess.map((step, index) => (
                 <div key={step.title} className="rounded-2xl border border-[#eadfce] bg-white p-5 shadow-sm">
                   <div className="flex items-center gap-3">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)] text-sm font-bold text-[var(--navy)]">

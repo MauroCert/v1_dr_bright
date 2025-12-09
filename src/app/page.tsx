@@ -324,8 +324,8 @@ export default function Home() {
               <div className="absolute inset-4 bg-[var(--gold)]/20 rounded-[2.5rem] -rotate-6" />
               <div className="relative overflow-hidden rounded-[2.5rem] shadow-xl">
             <Image
-              src="/images/drbright-patient.jpg"
-              alt="Dr. Bright consulting with a patient"
+              src="/images/Digital Assets/Dr. Bright and family.png"
+              alt="Dr. Bright and family"
                   width={500}
                   height={600}
                   className="w-full h-[500px] object-cover"

@@ -105,7 +105,13 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/hero.avif')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy)]/90 via-[var(--navy)]/85 to-[var(--denim)]/90" />
+        {/* Light green overlay applied inline; heavy tint */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(45,138,94,0.9) 0%, rgba(45,138,94,0.6) 45%, rgba(45,138,94,0) 100%)',
+          }}
+        />
         
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
@@ -120,7 +126,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight">
             Denver&apos;s Home for Trusted, Comfortable, Family-Owned Dentistry
             </h1>
-          <p className="mt-6 text-xl sm:text-2xl text-[#c5e2c7] font-light max-w-2xl mx-auto">
+          <p className="mt-6 text-xl sm:text-2xl text-white font-light max-w-2xl mx-auto">
             Modern Care. Conservative Treatment. A Dental Experience Designed for You.
             </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -143,14 +149,14 @@ export default function Home() {
         {/* Bottom wave decoration */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--mint)"/>
+            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
           </svg>
         </div>
       </section>
 
       {/* WHY CHOOSE US - With swoosh decorations */}
-      <section className="relative py-24 gradient-mint overflow-hidden">
-        {/* Swoosh curves - visible gold */}
+      <section className="relative py-24 bg-white overflow-hidden">
+        {/* Swoosh curves - gold like reviews section */}
         <div className="swoosh-left bg-[var(--gold)]/50" />
         <div className="swoosh-right bg-[var(--gold)]/50" />
         
@@ -174,14 +180,14 @@ export default function Home() {
                 className="group relative"
               >
                 {/* Floating accent */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl bg-[var(--gold)]/10 rotate-12 group-hover:rotate-6 transition-transform duration-300" />
+                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl bg-white/20 rotate-12 group-hover:rotate-6 transition-transform duration-300" />
                 
-                <div className="relative bg-white/60 backdrop-blur-sm rounded-[2rem] p-8 hover:-translate-y-2 transition-all duration-300">
-                  <span className="text-5xl mb-6 block">{item.icon}</span>
-                  <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">
+                <div className="relative bg-[var(--navy)] rounded-[2rem] p-8 hover:-translate-y-2 transition-all duration-300">
+                  <span className="text-5xl mb-6 block text-white">{item.icon}</span>
+                  <h3 className="text-xl font-semibold text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-[var(--stone)] leading-relaxed">
+                  <p className="text-[#c4d4e8] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -192,12 +198,12 @@ export default function Home() {
       </section>
 
       {/* ABOUT PRACTICE */}
-      <section className="relative py-24 gradient-navy text-white overflow-hidden">
+      <section className="relative py-24 bg-[var(--mint)] overflow-hidden">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image with organic shape */}
             <div className="relative">
-              <div className="absolute inset-0 bg-[var(--gold)]/20 rounded-[3rem] rotate-3 scale-105" />
+              <div className="absolute inset-0 bg-[var(--navy)]/10 rounded-[3rem] rotate-3 scale-105" />
               <div className="relative overflow-hidden rounded-[3rem]">
               <Image
                 src="/images/drbright-lobby.jpg"
@@ -209,11 +215,11 @@ export default function Home() {
               </div>
               
               {/* Floating mission card */}
-              <div className="absolute -bottom-8 -right-8 lg:-right-12 bg-white rounded-3xl p-6 shadow-2xl max-w-sm">
+              <div className="absolute -bottom-8 -right-8 lg:-right-12 bg-[var(--navy)] rounded-3xl p-6 shadow-2xl max-w-sm">
                 <p className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold mb-2">
                   Our Mission
                 </p>
-                <p className="text-[var(--navy)] font-medium text-sm leading-relaxed">
+                <p className="text-white font-medium text-sm leading-relaxed">
                   Cherry Creek South Dental offers personalized, family-oriented care with modern technology, focusing on conservative, collaborative treatments for all your dental needs.
                 </p>
               </div>
@@ -221,10 +227,10 @@ export default function Home() {
             
             {/* Content */}
             <div className="space-y-6 lg:pl-8">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[var(--gold)] text-sm font-semibold tracking-wide">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide">
                 About the practice
               </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-[var(--navy)]">
                 Why Patients Choose Cherry Creek South Dental
               </h2>
               
@@ -232,27 +238,27 @@ export default function Home() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <Heart className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Family-owned practice with a warm, welcoming atmosphere</span>
+                  <span className="text-[var(--navy)]">Family-owned practice with a warm, welcoming atmosphere</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Longer cleaning appointments for deeper, more detailed preventive care</span>
+                  <span className="text-[var(--navy)]">Longer cleaning appointments for deeper, more detailed preventive care</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Conservative dentistry—you&apos;ll never be pushed into treatment</span>
+                  <span className="text-[var(--navy)]">Conservative dentistry—you&apos;ll never be pushed into treatment</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Heart className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Collaborative care: we build treatment plans with you</span>
+                  <span className="text-[var(--navy)]">Collaborative care: we build treatment plans with you</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Sparkles className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Modern technology for precise, comfortable diagnostics</span>
+                  <span className="text-[var(--navy)]">Modern technology for precise, comfortable diagnostics</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Star className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Trusted for general dentistry, cosmetic dentistry, facial aesthetics, and family care</span>
+                  <span className="text-[var(--navy)]">Trusted for general dentistry, cosmetic dentistry, facial aesthetics, and family care</span>
                 </li>
               </ul>
             </div>
@@ -261,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT DR. BRIGHT */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-br from-[#fef9f3] to-[#fdf6ed] overflow-hidden">
         
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
@@ -456,7 +462,7 @@ export default function Home() {
                 <div className="flex items-center gap-3 mb-4">
                   <div 
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-sm bg-[var(--navy)]"
-                  >
+              >
                     {review.avatar}
                   </div>
                   <div>
@@ -519,93 +525,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-      
-      {/* Wave transition between CTA and Location */}
-      <div className="bg-white">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block -mt-1">
-          <defs>
-            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(160)">
-              <stop offset="0%" stopColor="#064226" />
-              <stop offset="50%" stopColor="#0a3d1f" />
-              <stop offset="100%" stopColor="#052a16" />
-            </linearGradient>
-          </defs>
-          <path d="M0 0L60 10C120 20 240 40 360 50C480 60 600 60 720 55C840 50 960 40 1080 35C1200 30 1320 30 1380 30L1440 30V0H0Z" fill="url(#waveGradient)"/>
-        </svg>
-      </div>
 
-      {/* LOCATION MAP */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <div className="space-y-6">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide">
-                Our Location
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--navy)]">
-                Find Us in the Heart of Denver&apos;s Cherry Creek Area
-              </h2>
-              <p className="text-lg text-[var(--stone)] leading-relaxed">
-                We&apos;re conveniently located near Glendale, Colorado Boulevard, and Cherry Creek&apos;s residential neighborhoods—making us an easy choice for families, professionals, and Denver-area residents seeking high-quality, patient-first dental care.
-              </p>
-              
-              {/* Address Info */}
-              <div className="bg-[var(--mint)] rounded-2xl p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[var(--gold)]/20 flex items-center justify-center flex-shrink-0">
-                    <svg className="h-5 w-5 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[var(--navy)]">Cherry Creek South Dental</p>
-                    <p className="text-[var(--stone)]">5055 E Kentucky Ave<br />Denver, CO 80246</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[var(--gold)]/20 flex items-center justify-center flex-shrink-0">
-                    <svg className="h-5 w-5 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[var(--stone)]">Call: <a href="tel:(303) 377-7744" className="font-semibold text-[var(--navy)] hover:text-[var(--gold)]">(303) 377-7744</a></p>
-                    <p className="text-[var(--stone)]">Text: <a href="sms:(720) 864-1333" className="font-semibold text-[var(--navy)] hover:text-[var(--gold)]">(720) 864-1333</a></p>
-                  </div>
-                </div>
-              </div>
-              
-              <a
-                href="tel:(303) 377-7744"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-[var(--navy)] hover:text-white hover:scale-105"
-              >
-                Schedule Your Appointment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
-            
-            {/* Map */}
-            <div className="relative">
-              <div className="absolute inset-4 bg-[var(--gold)]/20 rounded-[2rem] rotate-3" />
-              <div className="relative rounded-[2rem] overflow-hidden shadow-xl">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3069.7435520586664!2d-104.9279661!3d39.7004696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7d089e7f05fb%3A0x53c315a85d1e3f98!2sCherry%20Creek%20South%20Dental!5e0!3m2!1sen!2sar!4v1764883450582!5m2!1sen!2sar"
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Cherry Creek South Dental Location"
-                  className="w-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

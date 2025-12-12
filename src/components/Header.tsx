@@ -31,21 +31,21 @@ export default function Header() {
             
             {/* Phone Numbers */}
             <div className="flex items-center gap-4">
-              <a
-                href="tel:(303) 377-7744"
+            <a
+              href="tel:(303) 377-7744"
                 className="flex items-center gap-1.5 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
-              >
+            >
                 <Phone className="h-3.5 w-3.5" />
                 Call: (303) 377-7744
-              </a>
+            </a>
               <span className="text-white/50">|</span>
-              <a
-                href="sms:(720) 864-1333"
+            <a
+              href="sms:(720) 864-1333"
                 className="flex items-center gap-1.5 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
-              >
+            >
                 <MessageCircle className="h-3.5 w-3.5" />
                 Text: (720) 864-1333
-              </a>
+            </a>
             </div>
             
             {/* Hours */}

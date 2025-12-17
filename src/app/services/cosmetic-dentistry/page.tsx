@@ -70,7 +70,13 @@ export default function CosmeticDentistry() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/drbright-patient.jpg')" }}
         />
-        <div className="absolute inset-0 bg-[var(--navy)]/80" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(45,138,94,0.9) 0%, rgba(45,138,94,0.6) 45%, rgba(45,138,94,0) 100%)',
+          }}
+        />
         <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 py-24 text-[#f4fbf2]">
           <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
             Transform Your Smile With Natural, Beautiful Results

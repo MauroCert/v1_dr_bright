@@ -79,7 +79,13 @@ export default function Services() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/drbright-lobby.jpg')" }}
         />
-        <div className="absolute inset-0 bg-[var(--navy)]/85" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(45,138,94,0.9) 0%, rgba(45,138,94,0.6) 45%, rgba(45,138,94,0) 100%)',
+          }}
+        />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 text-[#f4fbf2]">
           <div className="space-y-6 text-center lg:text-left">
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">

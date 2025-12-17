@@ -6,7 +6,7 @@ const preventivePillars = [
   {
     title: 'Longer Hygiene Visits',
     copy:
-      'We schedule generous time for cleanings, exams, and questions so preventive visits never feel rushed.',
+      'Modeled after Miyamoto Family Dental’s preventive philosophy, we schedule generous time for cleanings, exams, and questions.',
     points: ['Ultrasonic + hand scaling combo', 'Gum health charting each visit', 'Personalized home-care coaching'],
   },
   {
@@ -16,12 +16,12 @@ const preventivePillars = [
   },
   {
     title: 'Home Care Partners',
-    copy: 'We pair each patient with tailored product and technique recommendations.',
+    copy: 'We mirror Miyamoto’s educational approach by pairing each patient with tailored product and technique recommendations.',
     points: ['Electric brush guidance', 'Floss & water flosser demos', 'Follow-up check-ins by text'],
   },
   {
     title: 'Periodontal Therapy',
-    copy: 'For gums that need extra support we stage therapy visits with the same joyful, plant-filled energy you feel in our atrium.',
+    copy: 'For gums that need extra support we stage therapy visits with the same joyful, plant-filled energy you see on drbrightsmiles.com.',
     points: ['Localized irrigation', 'Comfort-focused anesthesia options', 'Ongoing maintenance plans'],
   },
 ];
@@ -37,7 +37,7 @@ const visitTimeline = [
   },
   {
     title: 'Co-Planning',
-    description: 'Dr. Bright reviews findings chairside, encouraging collaborative co-planning.',
+    description: 'Dr. Bright reviews findings chairside, similar to the collaborative tone on MiyamotoFamilyDental.com.',
   },
   {
     title: 'Comfort Menu',
@@ -60,14 +60,20 @@ export default function GeneralDentistry() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/drbright-patient.jpg')" }}
         />
-        <div className="absolute inset-0 bg-[var(--navy)]/80" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(45,138,94,0.9) 0%, rgba(45,138,94,0.6) 45%, rgba(45,138,94,0) 100%)',
+          }}
+        />
         <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 py-24 text-[#f4fbf2]">
           <p className="text-xs uppercase tracking-[0.3em] text-[#c5e2c7]">General Dentistry</p>
           <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-            Preventive care delivered with Dr. Bright’s calm touch.
+            Preventive care inspired by Miyamoto, delivered with Dr. Bright’s calm touch.
           </h1>
           <p className="text-lg text-[#eadfcf]">
-            Longer appointments, joyful surroundings, and honest education are the hallmarks of Cherry Creek South Dental.
+            Longer appointments, joyful surroundings, and honest education—exactly what you see on drbrightsmiles.com and what we admired on MiyamotoFamilyDental.com.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
@@ -92,7 +98,7 @@ export default function GeneralDentistry() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-12 text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Cleanings & Prevention</p>
-            <h2 className="mt-3 text-3xl font-semibold text-[var(--navy)]">Everything you expect from a thorough preventive visit—tailored for Denver.</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-[var(--navy)]">Everything you loved on Miyamoto’s page—now localized for Denver.</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {preventivePillars.map((pillar) => (
@@ -126,7 +132,7 @@ export default function GeneralDentistry() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/85 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8 space-y-2 text-white">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#f1dcb8]">Inside Cherry Creek South Dental</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-[#f1dcb8]">As seen on drbrightsmiles.com</p>
               <p className="text-2xl font-semibold">Atrium calm + concierge-level time</p>
             </div>
           </div>

@@ -9,7 +9,7 @@ const signatureStacks = [
       'A focus on preventive dentistry helps you maintain the highest standard of oral health while limiting dental expenditures.',
     href: '/services/general-dentistry',
     badge: 'Preventive',
-    image: '/images/drbright-patient.jpg',
+    image: '/Main%20service%20page/Copy%20of%20Dental%20Exams%20&%20Cleanings.jpg',
     checklist: ['Longer hygiene visits', 'Oral cancer screenings', 'Home care coaching'],
   },
   {
@@ -18,7 +18,7 @@ const signatureStacks = [
       'Same-day relief for tooth pain, broken teeth, or infections with Dr. Bright’s calm bedside manner.',
     href: '/services/emergency-dentistry',
     badge: 'Same-Day',
-    image: '/images/drbright-lobby.jpg',
+    image: '/Main%20service%20page/european-mid-pleased-dentist-woman-face-mask-working-dental-clinic.jpg',
     checklist: ['Rapid diagnostics', 'Temporary restorations', 'Medication coordination'],
   },
   {
@@ -27,7 +27,7 @@ const signatureStacks = [
       'Volumes of research confirm the influential role smiles play in confidence, relationships, and first impressions.',
     href: '/services/cosmetic-dentistry',
     badge: 'Cosmetic',
-    image: '/images/drbright-patient.jpg',
+    image: '/Main%20service%20page/Copy%20of%20Cosmetic%20Dentistry.jpg',
     checklist: ['Porcelain veneers', 'Whitening plans', 'Facial aesthetics'],
   },
   {
@@ -36,8 +36,8 @@ const signatureStacks = [
       'Discreet aligner plans with digital scans, remote check-ins, and Dr. Bright’s direct oversight.',
     href: '/services/invisalign',
     badge: 'Aligners',
-    image: '/images/drbright-invisalign.png',
-    imageType: 'logo',
+    image: '/Main%20service%20page/Copy%20of%20Invisalign%C2%AE%20Clear%20Aligners.jpg',
+    imageType: 'photo',
     checklist: ['Digital impressions', 'Tray coaching', 'Retention planning'],
   },
   {
@@ -46,7 +46,7 @@ const signatureStacks = [
       'From single implants to All-on-4 style solutions, restorative planning is tailored to your smile goals.',
     href: '/services/restorative-dentistry',
     badge: 'Implants',
-    image: '/images/drbright-patient.jpg',
+    image: '/Main%20service%20page/young-woman-is-dental-chair-drilling-her-tooth-by-specialist-modern-clinic.jpg',
     checklist: ['Guided surgery partners', 'Immediate temporaries', 'Maintenance visits'],
   },
   {
@@ -55,8 +55,8 @@ const signatureStacks = [
       'Laughing gas and other comfort options keep anxious patients relaxed during any procedure.',
     href: '/services/sedation-dentistry',
     badge: 'Comfort',
-    image: '/images/drbright-covid-badge.png',
-    imageType: 'logo',
+    image: '/Main%20service%20page/Copy%20of%20Sedation%20Dentistry.jpg',
+    imageType: 'photo',
     checklist: ['Nitrous oxide', 'Comfort amenities', 'Longer appointment buffers'],
   },
   {
@@ -65,7 +65,7 @@ const signatureStacks = [
       'Simple or surgical extractions performed with extended appointment times and gentle technique.',
     href: '/services/extractions',
     badge: 'Surgical',
-    image: '/images/drbright-lobby.jpg',
+    image: '/Main%20service%20page/orthodontist-with-latex-glove-handling-dental-equipment.jpg',
     checklist: ['Wisdom teeth coordination', 'Bone preservation', 'Aftercare check-ins'],
   },
 ];
@@ -77,7 +77,7 @@ export default function Services() {
       <section className="relative isolate overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/drbright-lobby.jpg')" }}
+          style={{ backgroundImage: "url('/Main%20service%20page/Hero.jpg')" }}
         />
         <div
           className="absolute inset-0 pointer-events-none"

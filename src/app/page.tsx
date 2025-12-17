@@ -39,7 +39,7 @@ export default function Home() {
         'Extended appointment times, deeper cleanings, and AI-enhanced diagnostics ensure better preventive care and long-term oral health.',
       href: '/services#preventive',
       badge: 'Preventive',
-      image: '/images/drbright-lobby.jpg',
+      image: '/Homepage/Dental%20Exams%20&%20Cleanings.jpg',
       imageType: 'photo',
     },
     {
@@ -48,7 +48,7 @@ export default function Home() {
         'From whitening and veneers to full smile makeovers, we create natural, confidence-boosting results tailored to your goals.',
       href: '/services/cosmetic-dentistry',
       badge: 'Cosmetic',
-      image: '/images/drbright-patient.jpg',
+      image: '/Homepage/Cosmetic%20Dentistry.jpg',
       imageType: 'photo',
     },
     {
@@ -57,8 +57,8 @@ export default function Home() {
         'Straighten your teeth discreetly and comfortably using advanced digital scanning and personalized aligner planning.',
       href: '/services#invisalign',
       badge: 'Orthodontics',
-      image: '/images/drbright-invisalign.png',
-      imageType: 'logo',
+      image: '/Homepage/Invisalign%C2%AE%20Clear%20Aligners.jpg',
+      imageType: 'photo',
     },
     {
       title: 'Sedation Dentistry',
@@ -66,8 +66,8 @@ export default function Home() {
         'We offer gentle, anxiety-free care using professional sedation so you can comfortably receive comprehensive treatment in a single visit.',
       href: '/services#sedation',
       badge: 'Comfort',
-      image: '/images/drbright-covid-badge.png',
-      imageType: 'logo',
+      image: '/Homepage/Sedation%20Dentistry.jpg',
+      imageType: 'photo',
     },
   ];
 
@@ -103,7 +103,10 @@ export default function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero.avif')" }}
+          style={{
+            backgroundImage: "url('/Homepage/Why%20Patients%20Choose%20Cherry%20Creek%20South%20Dental.jpg')",
+            backgroundPosition: 'center 20%',
+          }}
         />
         {/* Light green overlay applied inline; heavy tint */}
         <div
@@ -355,13 +358,10 @@ export default function Home() {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {services.map((service, index) => (
-              <div
-                key={service.title}
-                className={`group relative ${index % 2 === 1 ? 'md:translate-y-8' : ''}`}
-              >
-                <div className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div key={service.title} className="group h-full">
+                <div className="h-full bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
                   <div className="relative h-56 overflow-hidden">
                   <Image
                     src={service.image}
@@ -372,13 +372,13 @@ export default function Home() {
                           ? 'object-contain bg-gradient-to-br from-[var(--mint)] to-white p-10'
                           : 'object-cover group-hover:scale-105 transition-transform duration-500'
                     }
-                      sizes="(min-width: 768px) 500px, 100vw"
+                      sizes="(min-width: 1024px) 500px, (min-width: 768px) 400px, 100vw"
                   />
                     <span className="absolute left-4 top-4 rounded-full bg-[var(--navy)] px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
                       {service.badge}
                     </span>
                 </div>
-                  <div className="p-8">
+                  <div className="p-8 flex-1 flex flex-col">
                     <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">
                       {service.title}
                     </h3>
@@ -387,7 +387,7 @@ export default function Home() {
                     </p>
                   <Link
                     href={service.href}
-                      className="inline-flex items-center font-semibold text-[var(--gold)] hover:text-[var(--denim)] transition-colors"
+                      className="inline-flex items-center font-semibold text-[var(--gold)] hover:text-[var(--denim)] transition-colors mt-auto"
                   >
                   Learn more
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

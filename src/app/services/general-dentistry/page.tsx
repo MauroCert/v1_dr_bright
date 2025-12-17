@@ -58,7 +58,7 @@ export default function GeneralDentistry() {
       <section className="relative isolate overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/drbright-patient.jpg')" }}
+          style={{ backgroundImage: "url('/Individual%20service%20page/Hero.jpg')" }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
@@ -124,7 +124,7 @@ export default function GeneralDentistry() {
         <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
           <div className="relative min-h-[360px] overflow-hidden rounded-3xl shadow-xl">
             <Image
-              src="/images/drbright-lobby.jpg"
+              src="/Individual%20service%20page/What%20your%20general%20dentistry%20visit%20feels%20like.jpg"
               alt="Joyful atrium inside Cherry Creek South Dental"
               fill
               className="object-cover"

@@ -142,7 +142,7 @@ export default function Home() {
               </a>
               <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center rounded-full border-2 border-white/40 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/10 hover:border-white/60"
+              className="inline-flex items-center justify-center rounded-full bg-white/90 px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-white hover:scale-105 shadow-md"
             >
               Call Us
             </a>

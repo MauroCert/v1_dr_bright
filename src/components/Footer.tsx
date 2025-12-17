@@ -29,7 +29,7 @@ export default function Footer() {
       
       <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           {/* Brand & Contact */}
           <div className="lg:col-span-1">
             <Image
@@ -39,9 +39,17 @@ export default function Footer() {
               height={50}
               className="h-12 w-auto brightness-0 invert mb-6"
             />
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Family-owned dentistry with longer appointments, modern technology, and a calming atmosphere.
-            </p>
+            <div className="mb-6 overflow-hidden rounded-2xl border border-white/10 shadow-lg md:-mx-4 lg:-mx-6">
+              <iframe
+                title="Cherry Creek South Dental on Google Maps"
+                src="https://maps.google.com/maps?q=Cherry%20Creek%20South%20Dental%2C%205055%20E%20Kentucky%20Ave%2C%20Denver%2C%20CO%2080246&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-[115%] md:w-[130%] h-52 md:h-64 max-w-none"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
             <div className="flex gap-3">
               <a 
                 href="#" 
@@ -132,27 +140,6 @@ export default function Footer() {
               Get Directions
               <ArrowRight className="h-4 w-4" />
             </a>
-          </div>
-
-          {/* Location Map */}
-          <div>
-            <h4 className="text-[var(--gold)] font-semibold mb-6">Our Location</h4>
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3069.7435520586664!2d-104.9279661!3d39.7004696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7d089e7f05fb%3A0x53c315a85d1e3f98!2sCherry%20Creek%20South%20Dental!5e0!3m2!1sen!2sar!4v1764883450582!5m2!1sen!2sar"
-                width="100%"
-                height="200"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Cherry Creek South Dental Location"
-                className="w-full"
-              />
-            </div>
-            <p className="text-white/70 text-xs mt-3 leading-relaxed">
-              Conveniently located in Denver&apos;s Cherry Creek area, serving families and professionals with exceptional dental care.
-            </p>
           </div>
         </div>
 

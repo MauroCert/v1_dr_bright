@@ -29,54 +29,31 @@ export default function Footer() {
       
       <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
-          {/* Brand & Contact */}
+        <div className="grid grid-cols-1 gap-12 lg:[grid-template-columns:1.5fr_0.8fr_0.8fr_0.8fr]">
+          {/* Map */}
           <div className="lg:col-span-1">
-            <Image
-              src="/logo.avif"
-              alt="Cherry Creek South Dental"
-              width={180}
-              height={50}
-              className="h-12 w-auto brightness-0 invert mb-6"
-            />
             <div className="mb-6 overflow-hidden rounded-2xl border border-white/10 shadow-lg md:-mx-4 lg:-mx-6">
               <iframe
                 title="Cherry Creek South Dental on Google Maps"
                 src="https://maps.google.com/maps?q=Cherry%20Creek%20South%20Dental%2C%205055%20E%20Kentucky%20Ave%2C%20Denver%2C%20CO%2080246&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-[115%] md:w-[130%] h-52 md:h-64 max-w-none"
+                className="w-full h-72 md:h-80 max-w-none"
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-            <div className="flex gap-3">
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--gold)] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--gold)] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-[var(--gold)] font-semibold mb-6">Quick Links</h4>
-            <nav className="space-y-3">
+          <div className="space-y-4">
+            <h4 className="text-[var(--gold)] font-semibold">Quick Links</h4>
+            <nav className="space-y-2 text-sm">
               {quickLinks.map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="block text-white/70 hover:text-[var(--gold)] transition-colors text-sm"
+                  className="block text-white/70 hover:text-[var(--gold)] transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -85,9 +62,9 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-                <div>
-            <h4 className="text-[var(--gold)] font-semibold mb-6">Contact</h4>
-            <div className="space-y-4 text-sm">
+                <div className="space-y-4">
+            <h4 className="text-[var(--gold)] font-semibold">Contact</h4>
+            <div className="space-y-3 text-sm">
               <a 
                 href="tel:(303) 377-7744" 
                 className="flex items-center gap-3 text-white/70 hover:text-[var(--gold)] transition-colors"
@@ -113,15 +90,31 @@ export default function Footer() {
                 <span>5055 E Kentucky Ave<br />Denver, CO 80246</span>
                 </div>
               </div>
+            <div className="flex gap-3 pt-2">
+              <a 
+                href="#" 
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--gold)] transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a 
+                href="#" 
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--gold)] transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+            </div>
             </div>
 
           {/* Hours */}
-            <div>
-            <h4 className="text-[var(--gold)] font-semibold mb-6 flex items-center gap-2">
+            <div className="space-y-4">
+            <h4 className="text-[var(--gold)] font-semibold flex items-center gap-2">
               <Clock className="h-4 w-4" />
                 Office Hours
               </h4>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-1.5 text-sm">
                 {hours.map((schedule) => (
                 <div key={schedule.day} className="flex justify-between text-white/70">
                     <span>{schedule.day}</span>
@@ -146,9 +139,18 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-white/50">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/logo.avif"
+                alt="Cherry Creek South Dental"
+                width={160}
+                height={40}
+                className="h-8 w-auto brightness-0 invert"
+              />
+              <p className="text-xs text-white/50">
               © {currentYear} Cherry Creek South Dental, PLLC. All rights reserved.
-            </p>
+              </p>
+            </div>
             <div className="flex items-center gap-6 text-xs text-white/50">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy

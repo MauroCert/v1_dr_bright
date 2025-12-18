@@ -209,8 +209,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-[var(--navy)]/10 rounded-[3rem] rotate-3 scale-105" />
               <div className="relative overflow-hidden rounded-[3rem]">
               <Image
-                src="/images/drbright-lobby.jpg"
-                alt="Light-filled Cherry Creek South Dental atrium"
+                src="/Homepage/Dental Exams & Cleanings.jpg"
+                alt="Dental exams and cleanings at Cherry Creek South Dental"
                   width={600}
                   height={400}
                   className="w-full h-[400px] object-cover"

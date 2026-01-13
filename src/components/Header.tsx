@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Phone, MessageCircle, Menu, X, Clock, MapPin } from 'lucide-react';
@@ -62,19 +61,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main navigation */}
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex-shrink-0">
-          <Image 
-            src="/logo.avif" 
-            alt="Cherry Creek South Dental" 
-            width={200} 
-            height={55} 
-            priority 
-            className="h-12 w-auto md:h-14" 
-          />
-        </Link>
-        
+      {/* Main navigation - centered */}
+      <div className="relative mx-auto flex max-w-6xl items-center justify-center px-6 py-4">
         <nav className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <Link 
@@ -87,15 +75,16 @@ export default function Header() {
           ))}
           <a
             href="tel:3033777744"
-            className="ml-4 rounded-md bg-[var(--gold)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--navy)] hover:shadow-md"
+            className="ml-4 bg-[var(--gold)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--navy)] hover:shadow-md"
           >
             Schedule Appointment
           </a>
         </nav>
         
+        {/* Mobile menu button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="rounded-md p-2 text-[var(--navy)] hover:bg-[var(--mint)] transition-colors lg:hidden"
+          className="absolute right-6 p-2 text-[var(--navy)] hover:bg-[var(--mint)] transition-colors lg:hidden"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -114,7 +103,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="rounded-md px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
+                className="px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -124,14 +113,14 @@ export default function Header() {
           <div className="mt-4 flex flex-col gap-3 border-t border-gray-100 pt-4">
             <a
               href="tel:3033777744"
-              className="flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-4 py-3 font-semibold text-white transition-colors hover:bg-[var(--navy)]"
+              className="flex items-center justify-center gap-2 bg-[var(--gold)] px-4 py-3 font-semibold text-white transition-colors hover:bg-[var(--navy)]"
             >
               <Phone className="h-4 w-4" />
               Schedule Appointment
             </a>
             <a
               href="sms:7208641333"
-              className="flex items-center justify-center gap-2 rounded-md border-2 border-[var(--navy)] px-4 py-3 font-semibold text-[var(--navy)] transition-colors hover:bg-[var(--navy)] hover:text-white"
+              className="flex items-center justify-center gap-2 border-2 border-[var(--navy)] px-4 py-3 font-semibold text-[var(--navy)] transition-colors hover:bg-[var(--navy)] hover:text-white"
             >
               <MessageCircle className="h-4 w-4" />
               Text Us

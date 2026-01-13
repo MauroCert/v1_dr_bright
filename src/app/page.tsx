@@ -1,23 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, ShieldCheck, Sparkles, Smile } from 'lucide-react';
 
 export default function Home() {
   const howWeCanHelp = [
     {
-      title: 'I Want to Keep My Teeth Healthy',
-      description: 'We value preventive and functional care for all ages, with longer appointments and AI-enhanced diagnostics.',
+      titleStart: 'I Want to Keep',
+      titleHighlight: 'My',
+      titleEnd: 'Teeth Forever',
+      description: 'Dental health moves through many stages. We value preventive and functional care for all ages.',
       href: '/services/general-dentistry',
+      icon: ShieldCheck,
     },
     {
-      title: 'I Want to Improve My Smile',
+      titleStart: 'I Want to Improve',
+      titleHighlight: 'My',
+      titleEnd: 'Smile',
       description: 'Dr. Bright offers a variety of cosmetic dentistry options to customize your smile and confidence.',
       href: '/services/cosmetic-dentistry',
+      icon: Sparkles,
     },
     {
-      title: 'I Need Specialized Care',
-      description: 'From Invisalign to sedation dentistry, we offer advanced treatments tailored to your needs.',
+      titleStart: 'I Need',
+      titleHighlight: 'My',
+      titleEnd: 'Tooth Replaced',
+      description: 'We offer single or multiple teeth replacements to fit your functional needs and lifestyle.',
       href: '/services',
+      icon: Smile,
     },
   ];
 
@@ -62,7 +71,7 @@ export default function Home() {
             alt="Cherry Creek South Dental"
             width={180}
             height={50}
-            className="mx-auto h-14 w-auto mb-8 brightness-0 invert"
+            className="mx-auto h-16 w-auto mb-8"
             priority
           />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4">
@@ -74,13 +83,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
             >
               Request Appointment
             </a>
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-white hover:text-[var(--navy)]"
+              className="inline-flex items-center justify-center bg-white text-[var(--navy)] px-8 py-4 text-base font-semibold transition hover:bg-white/90"
             >
               (303) 377-7744
             </a>
@@ -98,70 +107,58 @@ export default function Home() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <polygon points="0,0 1440,96 1440,0" fill="var(--gold)" />
-          <polygon points="0,0 0,96 1440,96" fill="white" />
+          <polygon points="0,0 0,96 1440,96" fill="#f8f6f3" />
         </svg>
       </div>
 
-      {/* HOW WE CAN HELP - 3 clean cards like SMYLE */}
-      <section className="py-24 bg-white -mt-1">
+      {/* HOW WE CAN HELP - SMYLE style cards with icons */}
+      <section className="py-24 bg-[#f8f6f3] -mt-1">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-light tracking-wide text-[var(--navy)] text-center mb-16 uppercase">
             How We Can Help
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-10">
-            {howWeCanHelp.map((item) => (
-              <div
-                key={item.title}
-                className="text-center"
-              >
-                <h3 className="text-xl font-bold text-[var(--navy)] mb-4 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {item.description}
-                </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {howWeCanHelp.map((item) => {
+              const IconComponent = item.icon;
+              return (
                 <Link
+                  key={item.titleEnd}
                   href={item.href}
-                  className="inline-flex items-center font-semibold text-[var(--gold)] hover:underline transition"
+                  className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all"
                 >
-                  Learn More
+                  {/* Icon */}
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                    <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  
+                  {/* Title with highlighted "My" */}
+                  <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">
+                    {item.titleStart}{' '}
+                    <span className="text-[var(--gold)]">{item.titleHighlight}</span>{' '}
+                    {item.titleEnd}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {item.description}
+                  </p>
                 </Link>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* A PRACTICE BUILT FOR YOU - Like SMYLE's split section */}
-      <section className="py-24 bg-[#f5f5f5]">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image */}
-            <div className="relative">
-              <Image
-                src="/Homepage/Dental Exams & Cleanings.jpg"
-                alt="Cherry Creek South Dental office"
-                width={600}
-                height={500}
-                className="w-full h-[450px] object-cover rounded-lg"
-              />
-            </div>
-            
-            {/* Content */}
-            <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] leading-tight">
-                A Practice<br />Built For <span className="text-[var(--gold)]">You</span>
-              </h2>
-              <Link
-                href="/about"
-                className="inline-flex items-center font-semibold text-[var(--gold)] hover:underline transition"
-              >
-                Meet Dr. Bright, DDS
-              </Link>
-            </div>
-          </div>
-        </div>
+      {/* Full-width Image Banner */}
+      <section className="relative h-[400px] w-full">
+        <Image
+          src="/Homepage/Dental Exams & Cleanings.jpg"
+          alt="Cherry Creek South Dental office"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
       </section>
 
       {/* MEET DR. BRIGHT - Bio section like SMYLE */}
@@ -169,13 +166,13 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left - Image */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 flex justify-center">
               <Image
                 src="/images/Digital Assets/Dr. Bright and family.png"
                 alt="Dr. Bright and family"
-                width={600}
-                height={500}
-                className="w-full h-[450px] object-cover rounded-lg"
+                width={450}
+                height={450}
+                className="w-[450px] h-[450px] object-cover rounded-full"
               />
             </div>
             
@@ -245,13 +242,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
             >
               Request Appointment
             </a>
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center bg-transparent border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--navy)] hover:text-white"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 text-base font-semibold transition hover:bg-[var(--navy)] hover:text-white"
             >
               (303) 377-7744
             </a>
@@ -259,68 +256,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PATIENT REVIEWS - Clean testimonials like SMYLE */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-4">
-            See What Our Patients<br />Have to Say
-          </h2>
-          
-          {/* Google Rating */}
-          <div className="flex items-center justify-center gap-3 mb-16">
-            <svg className="h-6 w-6" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-            </svg>
-            <div className="flex">
-              {[...Array(5)].map((_, idx) => (
-                <Star key={idx} className="h-5 w-5 fill-[var(--gold)] text-[var(--gold)]" />
-              ))}
-            </div>
-            <span className="text-gray-600">5.0 • 47 Reviews</span>
+      {/* PATIENT REVIEWS - Split layout with image */}
+      <section className="bg-white">
+        <div className="grid lg:grid-cols-2">
+          {/* Left - Image */}
+          <div className="relative h-[600px] lg:h-auto">
+            <Image
+              src="/Homepage/Cosmetic Dentistry.jpg"
+              alt="Happy patient at Cherry Creek South Dental"
+              fill
+              className="object-cover"
+            />
           </div>
           
-          {/* Review Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {googleReviews.map((review) => (
-              <div
-                key={review.name}
-                className="bg-[#f9f9f9] rounded-lg p-6"
-              >
-                {/* Reviewer Info */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[var(--navy)] flex items-center justify-center text-white font-semibold text-lg">
-                    {review.initial}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[var(--navy)]">{review.name}</p>
-                    <div className="flex">
-                      {[...Array(5)].map((_, idx) => (
-                        <Star key={idx} className="h-4 w-4 fill-[var(--gold)] text-[var(--gold)]" />
-                      ))}
+          {/* Right - Testimonials */}
+          <div className="py-16 px-8 lg:px-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
+              See What Our Patients<br />Have to Say
+            </h2>
+            
+            {/* Google Rating */}
+            <div className="flex items-center gap-3 mb-10">
+              <svg className="h-6 w-6" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              <div className="flex">
+                {[...Array(5)].map((_, idx) => (
+                  <Star key={idx} className="h-5 w-5 fill-[var(--gold)] text-[var(--gold)]" />
+                ))}
+              </div>
+              <span className="text-gray-600">5.0 • 47 Reviews</span>
+            </div>
+            
+            {/* Review Cards - Stacked */}
+            <div className="space-y-6">
+              {googleReviews.map((review) => (
+                <div
+                  key={review.name}
+                  className="bg-[#f9f9f9] p-5"
+                >
+                  {/* Reviewer Info */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[var(--navy)] flex items-center justify-center text-white font-semibold">
+                      {review.initial}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-[var(--navy)] text-sm">{review.name}</p>
+                      <div className="flex">
+                        {[...Array(5)].map((_, idx) => (
+                          <Star key={idx} className="h-3 w-3 fill-[var(--gold)] text-[var(--gold)]" />
+                        ))}
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* Review Text */}
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    &ldquo;{review.quote}&rdquo;
+                  </p>
                 </div>
-                
-                {/* Review Text */}
-                <p className="text-gray-600 leading-relaxed">
-                  &ldquo;{review.quote}&rdquo;
-                </p>
-                
-                {/* Google verification */}
-                <div className="mt-4 pt-4 border-t border-gray-200 flex items-center gap-2">
-                  <svg className="h-4 w-4" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                  </svg>
-                  <span className="text-sm text-gray-500">Verified Google Review</span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -337,14 +336,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
             >
               Request Appointment
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center bg-transparent border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--navy)] hover:text-white"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 text-base font-semibold transition hover:bg-[var(--navy)] hover:text-white"
             >
               (303) 377-7744
             </a>

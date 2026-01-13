@@ -167,7 +167,7 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-medium"
+                  className="w-full bg-blue-600 text-white py-3 px-4 hover:bg-blue-700 transition-colors font-medium"
                 >
                   Send Message
                 </button>
@@ -230,13 +230,13 @@ export default function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition-colors"
+              className="bg-red-600 text-white px-8 py-3 font-medium hover:bg-red-700 transition-colors"
             >
               Emergency: (303) 377-7744
             </a>
             <a
               href="sms:(720) 864-1333"
-              className="bg-red-700 text-white px-8 py-3 rounded-md font-medium hover:bg-red-800 transition-colors"
+              className="bg-red-700 text-white px-8 py-3 font-medium hover:bg-red-800 transition-colors"
             >
               Text Emergency Line
             </a>

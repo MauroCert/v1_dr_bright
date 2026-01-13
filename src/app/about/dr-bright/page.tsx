@@ -55,13 +55,13 @@ export default function DrBright() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:(303) 377-7744"
-                  className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors text-center"
+                  className="bg-blue-600 text-white px-6 py-3 font-medium hover:bg-blue-700 transition-colors text-center"
                 >
                   Schedule with Dr. Bright
                 </a>
                 <Link
                   href="/about"
-                  className="bg-gray-100 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition-colors text-center"
+                  className="bg-gray-100 text-gray-900 px-6 py-3 font-medium hover:bg-gray-200 transition-colors text-center"
                 >
                   About Our Practice
                 </Link>
@@ -205,13 +205,13 @@ export default function DrBright() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-600 px-8 py-3 font-medium hover:bg-gray-100 transition-colors"
             >
               Call (303) 377-7744
             </a>
             <Link
               href="/contact"
-              className="bg-blue-700 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-800 transition-colors"
+              className="bg-blue-700 text-white px-8 py-3 font-medium hover:bg-blue-800 transition-colors"
             >
               Contact Us
             </Link>

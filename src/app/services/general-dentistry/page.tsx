@@ -78,14 +78,14 @@ export default function GeneralDentistry() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
+              className="inline-flex items-center justify-center bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
             >
               Reserve a preventive visit
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center rounded-full border border-white/70 px-8 py-3 font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center border border-white/70 px-8 py-3 font-semibold text-white transition hover:bg-white/10"
             >
               Call (303) 377-7744
             </Link>
@@ -167,13 +167,13 @@ export default function GeneralDentistry() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
               href="sms:(720) 864-1333"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
+              className="inline-flex items-center justify-center bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
             >
               Text (720) 864-1333
             </a>
             <a
               href="/membership"
-              className="inline-flex items-center justify-center rounded-full border border-white px-8 py-3 font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center border border-white px-8 py-3 font-semibold text-white transition hover:bg-white/10"
             >
               View membership details
             </a>

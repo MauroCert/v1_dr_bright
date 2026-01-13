@@ -170,7 +170,7 @@ export default function PatientInfo() {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors font-medium">
+                <button className="w-full bg-blue-600 text-white py-2 px-4 hover:bg-blue-700 transition-colors font-medium">
                   Download Forms
                 </button>
               </div>
@@ -264,13 +264,13 @@ export default function PatientInfo() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-600 px-8 py-3 font-medium hover:bg-gray-100 transition-colors"
             >
               Call (303) 377-7744
             </a>
             <Link
               href="/contact"
-              className="bg-blue-700 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-800 transition-colors"
+              className="bg-blue-700 text-white px-8 py-3 font-medium hover:bg-blue-800 transition-colors"
             >
               Contact Us
             </Link>

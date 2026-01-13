@@ -93,7 +93,7 @@ export default function Services() {
           </p>
           <a
             href="tel:3033777744"
-            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
           >
             Schedule Your Appointment
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -219,13 +219,13 @@ export default function Services() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
             >
               Call (303) 377-7744
             </a>
             <a
               href="sms:7208641333"
-              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-white hover:text-[var(--navy)]"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 text-base font-semibold transition hover:bg-white hover:text-[var(--navy)]"
             >
               Text (720) 864-1333
             </a>

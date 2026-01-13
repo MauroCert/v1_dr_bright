@@ -82,13 +82,13 @@ export default function About() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/about/meet-the-team"
-                  className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors text-center"
+                  className="bg-blue-600 text-white px-6 py-3 font-medium hover:bg-blue-700 transition-colors text-center"
                 >
                   Meet Our Team
                 </Link>
                 <Link
                   href="/about/dr-bright"
-                  className="bg-gray-100 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition-colors text-center"
+                  className="bg-gray-100 text-gray-900 px-6 py-3 font-medium hover:bg-gray-200 transition-colors text-center"
                 >
                   About Dr. Bright
                 </Link>
@@ -184,13 +184,13 @@ export default function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-600 px-8 py-3 font-medium hover:bg-gray-100 transition-colors"
             >
               Call (303) 377-7744
             </a>
             <a
               href="sms:(720) 864-1333"
-              className="bg-green-600 text-white px-8 py-3 rounded-md font-medium hover:bg-green-700 transition-colors"
+              className="bg-green-600 text-white px-8 py-3 font-medium hover:bg-green-700 transition-colors"
             >
               Text (720) 864-1333
             </a>

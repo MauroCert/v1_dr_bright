@@ -151,14 +151,23 @@ export default function Home() {
       </section>
 
       {/* Full-width Image Banner */}
-      <section className="relative h-[400px] w-full">
+      <section className="relative h-[550px] w-full">
         <Image
           src="/Homepage/Dental Exams & Cleanings.jpg"
           alt="Cherry Creek South Dental office"
           fill
-          className="object-cover"
+          className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-black/50" />
+        {/* Centered Text */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl text-white font-light tracking-wide text-center px-6"
+            style={{ fontFamily: 'Lato, sans-serif' }}
+          >
+            A Practice Made for Your Needs
+          </h2>
+        </div>
       </section>
 
       {/* MEET DR. BRIGHT - Bio section like SMYLE */}

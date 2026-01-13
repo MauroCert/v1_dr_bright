@@ -1,531 +1,356 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  CheckCircle2,
-  Leaf,
-  Sparkles,
-  Star,
-  Heart,
-  Shield,
-} from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 
 export default function Home() {
-  const whyChooseUs = [
+  const howWeCanHelp = [
     {
-      title: 'Office Environment',
-      description:
-        'Our office features a calming atrium filled with natural light and plants, helping every visit feel more like a retreat than a clinical appointment.',
-      icon: '🌿',
+      title: 'I Want to Keep My Teeth Healthy',
+      description: 'We value preventive and functional care for all ages, with longer appointments and AI-enhanced diagnostics.',
+      href: '/services/general-dentistry',
     },
     {
-      title: 'State-of-the-Art Technology',
-      description:
-        'We use state-of-the-art dental technology—including AI-integrated X-rays, CBCT imaging for TMJ and bone scans, and top-of-the-line digital scanners.',
-      icon: '🔬',
-    },
-    {
-      title: 'Focus on Care Quality',
-      description:
-        'Our technology ensures accuracy, comfort, and exceptional quality of care.',
-      icon: '✨',
-    },
-  ];
-
-  const services = [
-    {
-      title: 'Dental Exams & Cleanings',
-      description:
-        'Extended appointment times, deeper cleanings, and AI-enhanced diagnostics ensure better preventive care and long-term oral health.',
-      href: '/services#preventive',
-      badge: 'Preventive',
-      image: '/Homepage/Dental%20Exams%20&%20Cleanings.jpg',
-      imageType: 'photo',
-    },
-    {
-      title: 'Cosmetic Dentistry',
-      description:
-        'From whitening and veneers to full smile makeovers, we create natural, confidence-boosting results tailored to your goals.',
+      title: 'I Want to Improve My Smile',
+      description: 'Dr. Bright offers a variety of cosmetic dentistry options to customize your smile and confidence.',
       href: '/services/cosmetic-dentistry',
-      badge: 'Cosmetic',
-      image: '/Homepage/Cosmetic%20Dentistry.jpg',
-      imageType: 'photo',
     },
     {
-      title: 'Invisalign® Clear Aligners',
-      description:
-        'Straighten your teeth discreetly and comfortably using advanced digital scanning and personalized aligner planning.',
-      href: '/services#invisalign',
-      badge: 'Orthodontics',
-      image: '/Homepage/Invisalign%C2%AE%20Clear%20Aligners.jpg',
-      imageType: 'photo',
-    },
-    {
-      title: 'Sedation Dentistry',
-      description:
-        'We offer gentle, anxiety-free care using professional sedation so you can comfortably receive comprehensive treatment in a single visit.',
-      href: '/services#sedation',
-      badge: 'Comfort',
-      image: '/Homepage/Sedation%20Dentistry.jpg',
-      imageType: 'photo',
+      title: 'I Need Specialized Care',
+      description: 'From Invisalign to sedation dentistry, we offer advanced treatments tailored to your needs.',
+      href: '/services',
     },
   ];
 
   const googleReviews = [
     {
       name: 'Sarah M.',
-      date: '2 weeks ago',
-      avatar: 'S',
-      avatarColor: '#4285F4',
+      initial: 'S',
       quote: 'Dr. Bright and his team made me feel completely comfortable. The longer appointment times really make a difference. Highly recommend!',
     },
     {
       name: 'Mike R.',
-      date: '1 month ago',
-      avatar: 'M',
-      avatarColor: '#EA4335',
+      initial: 'M',
       quote: 'Family-owned practice with modern technology. The AI x-rays are amazing! Best dental experience I\'ve had.',
     },
     {
       name: 'Jennifer L.',
-      date: '3 weeks ago',
-      avatar: 'J',
-      avatarColor: '#34A853',
+      initial: 'J',
       quote: 'The calming atmosphere and patient-first approach is exactly what I needed. Dr. Bright is wonderful!',
     },
   ];
 
-
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] overflow-hidden">
-      {/* HERO - Minimal & Clean */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <div className="bg-white">
+      {/* HERO - Full width image with overlay like SMYLE */}
+      <section className="relative min-h-[85vh] flex items-center justify-center">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/Homepage/Why%20Patients%20Choose%20Cherry%20Creek%20South%20Dental.jpg')",
-            backgroundPosition: 'center 20%',
-          }}
-        />
-        {/* Light green overlay applied inline; heavy tint */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(45,138,94,0.9) 0%, rgba(45,138,94,0.6) 45%, rgba(45,138,94,0) 100%)',
-          }}
-        />
-        
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+        <div className="absolute inset-0">
           <Image
-            src="/images/drbright-logo.png"
+            src="/Homepage/Why Patients Choose Cherry Creek South Dental.jpg"
             alt="Cherry Creek South Dental"
-            width={180}
-            height={180}
-            className="mx-auto h-28 w-auto mb-8 drop-shadow-2xl"
+            fill
+            className="object-cover object-top"
             priority
           />
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight">
-            Denver&apos;s Home for Trusted, Comfortable, Family-Owned Dentistry
-            </h1>
-          <p className="mt-6 text-xl sm:text-2xl text-white font-light max-w-2xl mx-auto">
-            Modern Care. Conservative Treatment. A Dental Experience Designed for You.
-            </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-white hover:scale-105"
-              >
-              Schedule Your Appointment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-              <a
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <Image
+            src="/logo.avif"
+            alt="Cherry Creek South Dental"
+            width={180}
+            height={50}
+            className="mx-auto h-14 w-auto mb-8 brightness-0 invert"
+            priority
+          />
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4">
+            <span className="text-[var(--gold)]">Cherry Creek South</span> Dental
+          </h1>
+          <p className="text-xl sm:text-2xl text-white/90 mb-10">
+            Top Dentist in Denver, CO
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
               href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center rounded-full bg-white/90 px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-white hover:scale-105 shadow-md"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
             >
-              Call Us
+              Request Appointment
+            </a>
+            <a
+              href="tel:(303) 377-7744"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-white hover:text-[var(--navy)]"
+            >
+              (303) 377-7744
             </a>
           </div>
         </div>
-
-        {/* Bottom wave decoration */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-          </svg>
-        </div>
       </section>
 
-      {/* WHY CHOOSE US - With swoosh decorations */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        {/* Swoosh curves - gold like reviews section */}
-        <div className="swoosh-left bg-[var(--gold)]/50" />
-        <div className="swoosh-right bg-[var(--gold)]/50" />
-        
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide mb-4">
-              Why Choose Us
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--navy)] mb-4">
-              Where Patient-First Care Meets Advanced Dentistry
-            </h2>
-            <p className="text-lg text-[var(--stone)] max-w-3xl mx-auto leading-relaxed">
-              Cherry Creek South Dental is a family-owned dental practice in Denver, proudly offering a relaxed, unrushed, and truly personalized dental experience. Unlike corporate offices, we take the time to get to know you, understand your goals, and deliver dentistry that keeps you comfortable and confident.
-            </p>
-          </div>
+      {/* Geometric Divider - Hero to How We Can Help */}
+      <div className="relative h-24 -mt-1">
+        <svg
+          className="absolute w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="0,0 1440,96 1440,0" fill="var(--gold)" />
+          <polygon points="0,0 0,96 1440,96" fill="white" />
+        </svg>
+      </div>
+
+      {/* HOW WE CAN HELP - 3 clean cards like SMYLE */}
+      <section className="py-24 bg-white -mt-1">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-16">
+            How We Can Help
+          </h2>
           
-          <div className="grid gap-8 md:grid-cols-3">
-            {whyChooseUs.map((item) => (
+          <div className="grid md:grid-cols-3 gap-10">
+            {howWeCanHelp.map((item) => (
               <div
                 key={item.title}
-                className="group relative"
+                className="text-center"
               >
-                {/* Floating accent */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl bg-white/20 rotate-12 group-hover:rotate-6 transition-transform duration-300" />
-                
-                <div className="relative bg-[var(--navy)] rounded-[2rem] p-8 hover:-translate-y-2 transition-all duration-300">
-                  <span className="text-5xl mb-6 block text-white">{item.icon}</span>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#c4d4e8] leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                <h3 className="text-xl font-bold text-[var(--navy)] mb-4 leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {item.description}
+                </p>
+                <Link
+                  href={item.href}
+                  className="inline-flex items-center font-semibold text-[var(--gold)] hover:underline transition"
+                >
+                  Learn More
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ABOUT PRACTICE */}
-      <section className="relative py-24 bg-[var(--mint)] overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4">
+      {/* A PRACTICE BUILT FOR YOU - Like SMYLE's split section */}
+      <section className="py-24 bg-[#f5f5f5]">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image with organic shape */}
+            {/* Image */}
             <div className="relative">
-              <div className="absolute inset-0 bg-[var(--navy)]/10 rounded-[3rem] rotate-3 scale-105" />
-              <div className="relative overflow-hidden rounded-[3rem]">
               <Image
                 src="/Homepage/Dental Exams & Cleanings.jpg"
-                alt="Dental exams and cleanings at Cherry Creek South Dental"
-                  width={600}
-                  height={400}
-                  className="w-full h-[400px] object-cover"
-                />
-              </div>
-              
-              {/* Floating mission card */}
-              <div className="absolute -bottom-8 -right-8 lg:-right-12 bg-[var(--navy)] rounded-3xl p-6 shadow-2xl max-w-sm">
-                <p className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold mb-2">
-                  Our Mission
-                </p>
-                <p className="text-white font-medium text-sm leading-relaxed">
-                  Cherry Creek South Dental offers personalized, family-oriented care with modern technology, focusing on conservative, collaborative treatments for all your dental needs.
-                </p>
-              </div>
+                alt="Cherry Creek South Dental office"
+                width={600}
+                height={500}
+                className="w-full h-[450px] object-cover rounded-lg"
+              />
             </div>
             
             {/* Content */}
-            <div className="space-y-6 lg:pl-8">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide">
-                About the practice
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-[var(--navy)]">
-                Why Patients Choose Cherry Creek South Dental
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] leading-tight">
+                A Practice<br />Built For <span className="text-[var(--gold)]">You</span>
               </h2>
-              
-              {/* Benefits list with icons */}
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <Heart className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[var(--navy)]">Family-owned practice with a warm, welcoming atmosphere</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[var(--navy)]">Longer cleaning appointments for deeper, more detailed preventive care</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Shield className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[var(--navy)]">Conservative dentistry—you&apos;ll never be pushed into treatment</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Heart className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[var(--navy)]">Collaborative care: we build treatment plans with you</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Sparkles className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[var(--navy)]">Modern technology for precise, comfortable diagnostics</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Star className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[var(--navy)]">Trusted for general dentistry, cosmetic dentistry, facial aesthetics, and family care</span>
-                </li>
-              </ul>
+              <Link
+                href="/about"
+                className="inline-flex items-center font-semibold text-[var(--gold)] hover:underline transition"
+              >
+                Meet Dr. Bright, DDS
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ABOUT DR. BRIGHT */}
-      <section className="relative py-24 bg-gradient-to-br from-[#fef9f3] to-[#fdf6ed] overflow-hidden">
-        
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid lg:grid-cols-5 gap-12 items-center">
-            {/* Content - takes 3 cols */}
-            <div className="lg:col-span-3 space-y-6 order-2 lg:order-1">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide">
-                Meet Dr. Bright
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--navy)]">
-                Meet Dr. Bright — Your Trusted Denver Dentist
-              </h2>
-              <p className="text-lg text-[var(--stone)] leading-relaxed">
-                Dr. Bright is known for his gentle approach, meticulous attention to detail, and commitment to helping patients feel relaxed and informed. With extensive experience in both general and cosmetic dentistry, he blends advanced clinical skill with a friendly, patient-centered philosophy that sets the tone for the entire practice.
-              </p>
-              <p className="text-lg text-[var(--stone)] leading-relaxed">
-                He believes that exceptional dentistry starts with trust. That&apos;s why he takes time to explain every option, answer every question, and help each patient participate in their oral health decisions. His goal is to provide the kind of dentistry he&apos;d want for his own family—thorough, conservative, and focused on long-term wellness.
-              </p>
-              
-              <div>
-                <p className="font-semibold text-[var(--navy)] mb-3">Special interests include:</p>
-                <ul className="space-y-3 text-[var(--stone)]">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                    <span>Preventive & general dentistry</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                    <span>Cosmetic smile transformations</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                    <span>Invisalign® clear aligners</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                    <span>Dental implants & restorations</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                    <span>Facial aesthetic treatments (including Botox)</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                    <span>TMJ evaluation with CBCT imaging</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <a
-                href="tel:(303) 377-7744"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-[var(--navy)] hover:text-white hover:scale-105"
-              >
-                Schedule Your Appointment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+      {/* MEET DR. BRIGHT - Bio section like SMYLE */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Image */}
+            <div className="order-2 lg:order-1">
+              <Image
+                src="/images/Digital Assets/Dr. Bright and family.png"
+                alt="Dr. Bright and family"
+                width={600}
+                height={500}
+                className="w-full h-[450px] object-cover rounded-lg"
+              />
             </div>
             
-            {/* Image - takes 2 cols */}
-            <div className="lg:col-span-2 order-1 lg:order-2 relative">
-              <div className="absolute inset-4 bg-[var(--gold)]/20 rounded-[2.5rem] -rotate-6" />
-              <div className="relative overflow-hidden rounded-[2.5rem] shadow-xl">
-            <Image
-              src="/images/Digital Assets/Dr. Bright and family.png"
-              alt="Dr. Bright and family"
-                  width={500}
-                  height={600}
-                  className="w-full h-[500px] object-cover"
-                />
+            {/* Right - Content */}
+            <div className="space-y-6 order-1 lg:order-2">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
+                Meet Dr. Bright, DDS
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Dr. Bright is dedicated to staying up to date on the latest dental techniques to always strive for the best care for his patients. He has a genuine desire to always learn and improve, and is part of multiple local study clubs with other dentists and specialists.
+              </p>
+              
+              <div className="space-y-6 pt-4">
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--navy)] mb-3">Our Vision</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    To redefine the dental experience by blending precision, artistry, and personalized care — creating a space where trust, comfort, and uncompromising quality come together to transform smiles and lives.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--navy)] mb-3">Our Mission</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our mission is to provide an extraordinary dental experience that combines precision, artistry, and comfort — treating every patient with genuine warmth and personalized care.
+                  </p>
+                </div>
               </div>
+              
+              <Link
+                href="/about"
+                className="inline-flex items-center font-semibold text-[var(--gold)] hover:underline transition pt-2"
+              >
+                Learn More About Our Office
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TOP SERVICES */}
-      <section className="relative py-24 bg-[var(--mint)] overflow-hidden">
-        
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide mb-4">
-              Services
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--navy)]">
-              Comprehensive Dental Services to Support Every Smile
-            </h2>
+      {/* Geometric Divider - Meet Dr. Bright to Why Choose Us */}
+      <div className="relative h-24 -mt-1">
+        <svg
+          className="absolute w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
+          <polygon points="0,0 0,96 1440,0" fill="white" />
+        </svg>
+      </div>
+
+      {/* WHY CHOOSE US - Full width text section like SMYLE */}
+      <section className="py-24 bg-[#f5f5f5] -mt-1">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-10">
+            Why choose us?
+          </h2>
+          <div className="space-y-6 text-lg text-gray-600 leading-relaxed text-center">
+            <p>
+              At Cherry Creek South Dental we provide quality comprehensive oral healthcare for your whole family. Our patients include families of all ages from young children to grandparents and great-grandparents. We build lifelong relationships at our dental office for a lifetime of wellness!
+            </p>
+            <p>
+              We are happily accepting new patients who value their health as much as we do. We provide preventive, restorative, and cosmetic dentistry for patients of all ages. With our patient-centered approach to dentistry, our goal is to educate patients with all necessary information to make an informed decision with Dr. Bright on their dental needs.
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {services.map((service, index) => (
-              <div key={service.title} className="group h-full">
-                <div className="h-full bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col">
-                  <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className={
-                      service.imageType === 'logo'
-                          ? 'object-contain bg-gradient-to-br from-[var(--mint)] to-white p-10'
-                          : 'object-cover group-hover:scale-105 transition-transform duration-500'
-                    }
-                      sizes="(min-width: 1024px) 500px, (min-width: 768px) 400px, 100vw"
-                  />
-                    <span className="absolute left-4 top-4 rounded-full bg-[var(--navy)] px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
-                      {service.badge}
-                    </span>
-                </div>
-                  <div className="p-8 flex-1 flex flex-col">
-                    <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-[var(--stone)] leading-relaxed mb-4">
-                      {service.description}
-                    </p>
-                  <Link
-                    href={service.href}
-                      className="inline-flex items-center font-semibold text-[var(--gold)] hover:text-[var(--denim)] transition-colors mt-auto"
-                  >
-                  Learn more
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link
-              href="/services"
-              className="inline-flex items-center rounded-full border-2 border-[var(--navy)] px-8 py-3 text-[var(--navy)] font-semibold hover:bg-[var(--navy)] hover:text-white transition-colors"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <a
+              href="tel:(303) 377-7744"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
             >
-              View all services
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+              Request Appointment
+            </a>
+            <a
+              href="tel:(303) 377-7744"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--navy)] hover:text-white"
+            >
+              (303) 377-7744
+            </a>
           </div>
         </div>
       </section>
 
-      {/* REVIEWS - Google Reviews Style */}
-      <section className="relative py-24 bg-white overflow-hidden">
-        {/* Swoosh curves */}
-        <div className="swoosh-left bg-[var(--gold)]/50" />
-        <div className="swoosh-right bg-[var(--gold)]/50" />
-        
-        <div className="mx-auto max-w-5xl px-4">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-sm font-semibold tracking-wide mb-4">
-              Patient Reviews
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[var(--navy)]">
-              What Patients Love About Cherry Creek South Dental
-            </h2>
-          </div>
+      {/* PATIENT REVIEWS - Clean testimonials like SMYLE */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-4">
+            See What Our Patients<br />Have to Say
+          </h2>
           
-          {/* Google Reviews Header */}
-          <div className="bg-[var(--mint)] rounded-[2rem] p-6 mb-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* Google Logo & Rating */}
-              <div className="flex items-center gap-4">
-                <svg className="h-8 w-8" viewBox="0 0 24 24">
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl font-bold text-[var(--navy)]">5.0</span>
-                  <div className="flex">
-                    {[...Array(5)].map((_, idx) => (
-                      <Star key={idx} className="h-5 w-5 fill-[var(--gold)] text-[var(--gold)]" />
-                    ))}
-                  </div>
-                  <span className="text-[var(--stone)]">• 47 Google Reviews</span>
-                </div>
-              </div>
+          {/* Google Rating */}
+          <div className="flex items-center justify-center gap-3 mb-16">
+            <svg className="h-6 w-6" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <div className="flex">
+              {[...Array(5)].map((_, idx) => (
+                <Star key={idx} className="h-5 w-5 fill-[var(--gold)] text-[var(--gold)]" />
+              ))}
             </div>
+            <span className="text-gray-600">5.0 • 47 Reviews</span>
           </div>
           
           {/* Review Cards */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {googleReviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-gradient-to-br from-[var(--mint)] to-[var(--background)] rounded-[2rem] p-6 hover:-translate-y-1 transition-all duration-300"
+                className="bg-[#f9f9f9] rounded-lg p-6"
               >
                 {/* Reviewer Info */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div 
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-sm bg-[var(--navy)]"
-              >
-                    {review.avatar}
+                  <div className="w-12 h-12 rounded-full bg-[var(--navy)] flex items-center justify-center text-white font-semibold text-lg">
+                    {review.initial}
                   </div>
                   <div>
                     <p className="font-semibold text-[var(--navy)]">{review.name}</p>
-                    <p className="text-xs text-[var(--stone)]">{review.date}</p>
+                    <div className="flex">
+                      {[...Array(5)].map((_, idx) => (
+                        <Star key={idx} className="h-4 w-4 fill-[var(--gold)] text-[var(--gold)]" />
+                      ))}
+                    </div>
                   </div>
                 </div>
                 
-                {/* Stars */}
-                <div className="flex mb-3">
-                  {[...Array(5)].map((_, idx) => (
-                    <Star key={idx} className="h-4 w-4 fill-[var(--gold)] text-[var(--gold)]" />
-                  ))}
-                </div>
-                
                 {/* Review Text */}
-                <p className="text-[var(--stone)] text-sm leading-relaxed">
-                  {review.quote}
+                <p className="text-gray-600 leading-relaxed">
+                  &ldquo;{review.quote}&rdquo;
                 </p>
                 
-                {/* Google Icon */}
-                <div className="mt-4 pt-4 border-t border-[var(--gold)]/20 flex items-center gap-2">
+                {/* Google verification */}
+                <div className="mt-4 pt-4 border-t border-gray-200 flex items-center gap-2">
                   <svg className="h-4 w-4" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                   </svg>
-                  <span className="text-xs text-[var(--stone)]">Posted on Google</span>
+                  <span className="text-sm text-gray-500">Verified Google Review</span>
                 </div>
               </div>
             ))}
           </div>
-          
-          {/* Description after reviews */}
-          <div className="text-center mt-10 max-w-2xl mx-auto">
-            <p className="text-lg text-[var(--stone)] leading-relaxed">
-              Patients consistently praise our attentive care, relaxing environment, and Dr. Bright&apos;s gentle, transparent approach.
-            </p>
+        </div>
+      </section>
+
+      {/* BOOK YOUR APPOINTMENT - CTA section like SMYLE */}
+      <section className="py-24 bg-[#f5f5f5]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">
+            Book Your Appointment
+          </h2>
+          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+            Ready to take the next step towards a healthier smile? Contact us with any questions or to schedule an appointment.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:(303) 377-7744"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+            >
+              Request Appointment
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+            <a
+              href="tel:(303) 377-7744"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--navy)] hover:text-white"
+            >
+              (303) 377-7744
+            </a>
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="relative py-24 gradient-navy overflow-hidden">
-        <div className="relative mx-auto max-w-4xl px-4 text-center text-white">
-          <Leaf className="h-12 w-12 mx-auto text-[var(--gold)] mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-6">
-            Ready to Transform Your Smile?
-          </h2>
-          <p className="text-lg text-[#c5e2c7] max-w-2xl mx-auto mb-10">
-            Whether you&apos;re looking for subtle refinements or a complete transformation, Cherry Creek South Dental is here to help you achieve a smile you love.
-          </p>
-          <a
-            href="tel:(303) 377-7744"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-white hover:scale-105"
-          >
-            Schedule Your Appointment
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
-        </div>
-      </section>
-
     </div>
   );
 }

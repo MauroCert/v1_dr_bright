@@ -105,7 +105,7 @@ export default function Footer() {
               >
                 <Instagram className="h-4 w-4" />
               </a>
-            </div>
+              </div>
             </div>
 
           {/* Hours */}
@@ -147,9 +147,9 @@ export default function Footer() {
                 height={40}
                 className="h-8 w-auto brightness-0 invert"
               />
-              <p className="text-xs text-white/50">
+            <p className="text-xs text-white/50">
               © {currentYear} Cherry Creek South Dental, PLLC. All rights reserved.
-              </p>
+            </p>
             </div>
             <div className="flex items-center gap-6 text-xs text-white/50">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">

@@ -18,108 +18,127 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
-      {/* Top bar with gradient */}
-      <div className="bg-gradient-to-r from-[var(--navy)] via-[var(--denim)] to-[var(--navy)] text-white">
-        <div className="mx-auto max-w-6xl px-4 py-2.5">
-          <div className="flex flex-col items-center gap-2 text-sm md:flex-row md:justify-between">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
+      {/* Top bar - elegant dark green */}
+      <div className="bg-[var(--navy)] text-white">
+        <div className="mx-auto max-w-6xl px-6 py-2">
+          <div className="flex flex-col items-center gap-2 text-xs md:flex-row md:justify-between md:text-sm">
             {/* Address */}
-            <div className="flex items-center gap-2 text-white/90">
-              <MapPin className="h-3.5 w-3.5" />
+            <a 
+              href="https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white/80 hover:text-[var(--gold)] transition-colors"
+            >
+              <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
               <span>5055 E Kentucky Ave, Denver, CO 80246</span>
-            </div>
+            </a>
             
             {/* Phone Numbers */}
-            <div className="flex items-center gap-4">
-            <a
-              href="tel:(303) 377-7744"
-                className="flex items-center gap-1.5 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
-            >
+            <div className="flex items-center gap-3 md:gap-5">
+              <a
+                href="tel:3033777744"
+                className="flex items-center gap-1.5 text-white/80 hover:text-[var(--gold)] transition-colors"
+              >
                 <Phone className="h-3.5 w-3.5" />
-                Call: (303) 377-7744
-            </a>
-              <span className="text-white/50">|</span>
-            <a
-              href="sms:(720) 864-1333"
-                className="flex items-center gap-1.5 font-medium text-white/90 hover:text-[var(--gold)] transition-colors"
-            >
+                <span className="font-medium">(303) 377-7744</span>
+              </a>
+              <span className="text-white/30 hidden md:inline">|</span>
+              <a
+                href="sms:7208641333"
+                className="flex items-center gap-1.5 text-white/80 hover:text-[var(--gold)] transition-colors"
+              >
                 <MessageCircle className="h-3.5 w-3.5" />
-                Text: (720) 864-1333
-            </a>
+                <span className="font-medium">(720) 864-1333</span>
+              </a>
             </div>
             
             {/* Hours */}
-            <div className="flex items-center gap-2 text-white/70">
+            <div className="hidden items-center gap-2 text-white/60 lg:flex">
               <Clock className="h-3.5 w-3.5" />
-              <span>Mon 8–5 • Tue 8–4 • Wed 8–4 • Thurs 7–1</span>
+              <span>Mon 8–5 • Tue 8–4 • Wed 8–4 • Thu 7–1</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main navigation */}
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex-shrink-0">
           <Image 
             src="/logo.avif" 
             alt="Cherry Creek South Dental" 
-            width={220} 
-            height={60} 
+            width={200} 
+            height={55} 
             priority 
-            className="h-14 w-auto" 
+            className="h-12 w-auto md:h-14" 
           />
         </Link>
         
-        <nav className="hidden flex-1 items-center justify-end gap-1 text-sm font-medium text-[var(--stone)] lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
             <Link 
               key={item.name} 
               href={item.href} 
-              className="px-4 py-2 rounded-full transition-colors hover:text-[var(--navy)] hover:bg-[var(--mint)]"
+              className="relative px-4 py-2 text-sm font-medium text-[var(--stone)] transition-colors hover:text-[var(--navy)] after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-[var(--gold)] after:-translate-x-1/2 after:transition-all hover:after:w-3/4"
             >
               {item.name}
             </Link>
           ))}
           <a
-            href="tel:(303) 377-7744"
-            className="ml-2 rounded-full bg-[var(--gold)] px-5 py-2.5 text-white font-semibold transition hover:bg-[var(--navy)]"
+            href="tel:3033777744"
+            className="ml-4 rounded-md bg-[var(--gold)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--navy)] hover:shadow-md"
           >
-            Schedule Your Appointment
+            Schedule Appointment
           </a>
         </nav>
         
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="ml-auto rounded-full p-2.5 text-[var(--navy)] hover:bg-[var(--mint)] transition-colors lg:hidden"
+          className="rounded-md p-2 text-[var(--navy)] hover:bg-[var(--mint)] transition-colors lg:hidden"
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile menu with animation */}
-      {isMenuOpen && (
-        <div className="border-t border-[var(--mint)] bg-white/98 backdrop-blur-sm px-4 pb-6 pt-4 lg:hidden">
-          <nav className="flex flex-col gap-1">
+      {/* Mobile menu */}
+      <div 
+        className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
+          isMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <nav className="border-t border-gray-100 bg-white px-6 pb-6 pt-4">
+          <div className="flex flex-col gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="rounded-xl px-4 py-3 text-[var(--stone)] hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
+                className="rounded-md px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+          </div>
+          <div className="mt-4 flex flex-col gap-3 border-t border-gray-100 pt-4">
             <a
-              href="tel:(303) 377-7744"
-              className="mt-2 rounded-full bg-[var(--gold)] px-4 py-3 text-center font-semibold text-white hover:bg-[var(--navy)] transition-colors"
+              href="tel:3033777744"
+              className="flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-4 py-3 font-semibold text-white transition-colors hover:bg-[var(--navy)]"
             >
-              Schedule Your Appointment
+              <Phone className="h-4 w-4" />
+              Schedule Appointment
             </a>
-          </nav>
-        </div>
-      )}
+            <a
+              href="sms:7208641333"
+              className="flex items-center justify-center gap-2 rounded-md border-2 border-[var(--navy)] px-4 py-3 font-semibold text-[var(--navy)] transition-colors hover:bg-[var(--navy)] hover:text-white"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Text Us
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles, Star, Heart, Shield, Clock, Smile } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Star, Heart, Shield, Clock } from 'lucide-react';
 
 type CosmeticService = {
   title: string;
@@ -9,7 +9,6 @@ type CosmeticService = {
   points: string[];
   image: string;
   note?: string;
-  imageType?: 'logo';
 };
 
 const cosmeticServices: CosmeticService[] = [
@@ -24,7 +23,7 @@ const cosmeticServices: CosmeticService[] = [
     title: 'Porcelain Veneers',
     description: 'Veneers are thin, custom-made porcelain shells that instantly refine your smile. They can change tooth shape, size, color, and alignment with stunning, natural results.',
     listTitle: 'Veneers can correct:',
-    points: ['Chips', 'Gaps', 'Discoloration', 'Uneven or worn teeth', 'Minor misalignment', 'Irregular shapes'],
+    points: ['Chips & gaps', 'Discoloration', 'Uneven or worn teeth', 'Minor misalignment'],
     note: 'Dr. Bright takes a meticulous approach to veneer design to ensure your results look beautifully natural—not artificial.',
     image: '/Individual service page/Hero.jpg',
   },
@@ -32,21 +31,21 @@ const cosmeticServices: CosmeticService[] = [
     title: 'Invisalign® Clear Aligners',
     description: 'Straighten your teeth discreetly with Invisalign. Using digital scanning technology, we create a custom treatment plan that gradually moves your teeth into better alignment—without metal brackets or wires.',
     listTitle: 'Great for improving:',
-    points: ['Crowding', 'Spacing', 'Bite alignment', 'Overlapping teeth', 'Aesthetic harmony'],
+    points: ['Crowding', 'Spacing', 'Bite alignment', 'Aesthetic harmony'],
     image: '/Main service page/Copy of Invisalign® Clear Aligners.jpg',
   },
   {
     title: 'Cosmetic Bonding',
     description: 'Cosmetic bonding uses tooth-colored composite material to repair chips, cracks, and small gaps. It\'s a fast, conservative, and cost-effective way to enhance your smile in a single appointment.',
     listTitle: 'Bonding is ideal for:',
-    points: ['Minor aesthetic flaws', 'Fast fixes', 'Patients seeking a more affordable cosmetic option'],
+    points: ['Minor aesthetic flaws', 'Fast fixes', 'Affordable cosmetic options'],
     image: '/Main service page/young-woman-is-dental-chair-drilling-her-tooth-by-specialist-modern-clinic.jpg',
   },
   {
     title: 'Smile Makeovers',
     description: 'For patients looking for a dramatic transformation, we combine custom treatments—such as whitening, veneers, and Invisalign—to design a complete smile makeover.',
     listTitle: 'Each smile makeover includes:',
-    points: ['A comprehensive evaluation', 'Digital planning and imaging', 'Personalized treatment sequencing', 'Aesthetic design based on facial features, symmetry, and your goals'],
+    points: ['Comprehensive evaluation', 'Digital planning & imaging', 'Personalized treatment sequencing', 'Aesthetic design based on your goals'],
     image: '/Individual service page/What your general dentistry visit feels like.jpg',
   },
 ];
@@ -70,155 +69,185 @@ const consultationProcess = [
   },
 ];
 
+const faqs = [
+  {
+    question: 'Does cosmetic dentistry hurt?',
+    answer: 'Most cosmetic treatments are painless. Options like whitening, bonding, and Invisalign are minimally invasive. Veneer treatment is gentle and designed for long-term comfort.',
+  },
+  {
+    question: 'How long do cosmetic results last?',
+    answer: 'With proper care: Whitening lasts 1–3 years, Bonding lasts 3–7 years, Veneers last 10–15+ years, and Invisalign results are lifelong with retainers.',
+  },
+  {
+    question: 'Is cosmetic dentistry covered by insurance?',
+    answer: 'Most cosmetic treatments are considered elective. However, some procedures—like crowns or certain aligner treatments—may qualify for partial coverage depending on your provider.',
+  },
+  {
+    question: 'Am I a candidate for cosmetic dentistry?',
+    answer: 'If you are in good oral health and want to enhance your smile, you are likely a great candidate. We\'ll assess at your consultation.',
+  },
+];
+
 export default function CosmeticDentistry() {
   return (
-    <div className="bg-[var(--background)] text-[var(--navy)]">
+    <div className="bg-white">
       {/* HERO */}
-      <section className="relative isolate overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/Homepage/Cosmetic%20Dentistry.jpg')" }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'linear-gradient(to bottom, rgba(45,138,94,0.9) 0%, rgba(45,138,94,0.6) 45%, rgba(45,138,94,0) 100%)',
-          }}
-        />
-        <div className="relative mx-auto flex max-w-5xl flex-col gap-8 px-4 py-24 text-[#f4fbf2]">
-          <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-            Transform Your Smile With Natural, Beautiful Results
+      <section className="relative min-h-[60vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/Homepage/Cosmetic%20Dentistry.jpg"
+            alt="Cosmetic Dentistry at Cherry Creek South Dental"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
+            Transform Your <span className="text-[var(--gold)]">Smile</span>
           </h1>
-          <p className="text-lg text-[#eadfcf]">
-            At Cherry Creek South Dental, we believe cosmetic dentistry should enhance your smile in a way that looks natural, healthy, and uniquely you. Whether you&apos;re looking to brighten your teeth, refine your smile, or completely transform it, Dr. Bright combines advanced technology with a conservative, artistic approach to create results you&apos;ll love.
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Natural, beautiful results with Dr. Bright&apos;s artistic approach to cosmetic dentistry.
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="tel:(303) 377-7744"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-3 font-semibold text-[var(--navy)] transition hover:bg-white"
-            >
-              Schedule Your Appointment
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </div>
+          <a
+            href="tel:3033777744"
+            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+          >
+            Schedule Your Consultation
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
         </div>
       </section>
 
       {/* WHY CHOOSE COSMETIC DENTISTRY */}
-      <section className="relative py-20 bg-[var(--navy)] text-white overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image */}
-            <div className="relative min-h-[400px] overflow-hidden rounded-3xl shadow-xl order-2 lg:order-1">
+            <div className="relative h-[450px] rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/Main service page/Copy of Cosmetic Dentistry.jpg"
-                alt="Cosmetic dentistry results at Cherry Creek South Dental"
+                alt="Cosmetic dentistry results"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 520px, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/60 via-transparent to-transparent" />
             </div>
             
             {/* Content */}
-            <div className="space-y-6 lg:pl-8 order-1 lg:order-2">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[var(--gold)] text-sm font-semibold tracking-wide">
-                Why Choose Us
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold leading-tight">
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
                 Why Choose Cosmetic Dentistry With Dr. Bright?
               </h2>
               
-              {/* Benefits list with icons */}
               <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <Star className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Natural, high-quality aesthetic results</span>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Star className="h-5 w-5 text-[var(--gold)]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[var(--navy)]">Natural Results</h3>
+                    <p className="text-gray-600 text-sm">High-quality aesthetic outcomes that look and feel authentic</p>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Heart className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Customized treatment plans based on your goals, timeline, and budget</span>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Heart className="h-5 w-5 text-[var(--gold)]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[var(--navy)]">Personalized Plans</h3>
+                    <p className="text-gray-600 text-sm">Customized treatment based on your goals, timeline, and budget</p>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Sparkles className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">State-of-the-art technology for precision and comfort</span>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Sparkles className="h-5 w-5 text-[var(--gold)]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[var(--navy)]">Advanced Technology</h3>
+                    <p className="text-gray-600 text-sm">State-of-the-art equipment for precision and comfort</p>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Shield className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Conservative approach—no unnecessary work, ever</span>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Shield className="h-5 w-5 text-[var(--gold)]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[var(--navy)]">Conservative Approach</h3>
+                    <p className="text-gray-600 text-sm">No unnecessary work—we preserve your natural tooth structure</p>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Collaborative planning so you&apos;re in control every step of the way</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 text-[var(--gold)] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#c5e2c7]">Relaxed, welcoming environment with longer appointments and personal attention</span>
+                <li className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="h-5 w-5 text-[var(--gold)]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[var(--navy)]">Unhurried Care</h3>
+                    <p className="text-gray-600 text-sm">Longer appointments with personal attention at every step</p>
+                  </div>
                 </li>
               </ul>
-
-              <p className="text-lg text-[#eadfcf] italic border-l-4 border-[var(--gold)] pl-4">
-                Your smile is one of the first things people notice. We&apos;re here to make sure it&apos;s a smile that reflects confidence, health, and happiness.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* COSMETIC SERVICES */}
-      <section className="bg-[var(--background)] py-20">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mb-16 text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Our Cosmetic Services</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[var(--navy)]">Our Cosmetic Dentistry Services</h2>
+      <section className="py-24 bg-[#f5f5f5]">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
+              Our Cosmetic Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From subtle enhancements to complete smile transformations
+            </p>
           </div>
           
-          <div className="space-y-20">
+          <div className="space-y-16">
             {cosmeticServices.map((service, index) => (
               <div 
                 key={service.title} 
-                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className="bg-white rounded-lg shadow-sm overflow-hidden"
               >
-                {/* Image */}
-                <div className={`relative min-h-[350px] overflow-hidden rounded-3xl shadow-xl ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className={service.imageType === 'logo' ? 'object-contain bg-white p-12' : 'object-cover'}
-                    sizes="(min-width: 1024px) 520px, 100vw"
-                  />
-                  {service.imageType !== 'logo' && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/40 via-transparent to-transparent" />
-                  )}
-                </div>
-                
-                {/* Content */}
-                <div className={`space-y-5 ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="flex items-center gap-3">
-                    <Sparkles className="h-7 w-7 text-[var(--gold)]" />
-                    <h3 className="text-2xl sm:text-3xl font-semibold text-[var(--navy)]">{service.title}</h3>
-                  </div>
-                  <p className="text-lg text-[var(--stone)] leading-relaxed">{service.description}</p>
-                  
-                  <div className="pt-2">
-                    <p className="font-semibold text-[var(--navy)] mb-3">{service.listTitle}</p>
-                    <ul className="grid grid-cols-2 gap-2 text-sm text-[var(--stone)]">
-                      {service.points.map((point) => (
-                        <li key={point} className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
+                <div className={`grid lg:grid-cols-2 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  {/* Image */}
+                  <div className={`relative h-72 lg:h-auto ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   
-                  {service.note && (
-                    <p className="text-[var(--stone)] italic border-l-4 border-[var(--gold)] pl-4 mt-4">
-                      {service.note}
-                    </p>
-                  )}
+                  {/* Content */}
+                  <div className={`p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Sparkles className="h-6 w-6 text-[var(--gold)]" />
+                      <h3 className="text-2xl font-bold text-[var(--navy)]">{service.title}</h3>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
+                    
+                    <div>
+                      <p className="font-semibold text-[var(--navy)] mb-3">{service.listTitle}</p>
+                      <ul className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                        {service.points.map((point) => (
+                          <li key={point} className="flex items-center gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    {service.note && (
+                      <p className="text-gray-500 italic border-l-4 border-[var(--gold)] pl-4 mt-6 text-sm">
+                        {service.note}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -226,212 +255,124 @@ export default function CosmeticDentistry() {
         </div>
       </section>
 
-      {/* TRANSFORMATION PROCESS */}
-      <section className="py-20">
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[360px] overflow-hidden rounded-3xl shadow-xl">
-            <Image
-              src="/Main service page/orthodontist-with-latex-glove-handling-dental-equipment.jpg"
-              alt="Cosmetic treatment room at Cherry Creek South Dental"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 520px, 100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--navy)]/85 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 space-y-2 text-white">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#f1dcb8]">Your Smile Journey</p>
-              <p className="text-2xl font-semibold">Where artistry meets precision</p>
+      {/* CONSULTATION PROCESS */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image */}
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/Main service page/orthodontist-with-latex-glove-handling-dental-equipment.jpg"
+                alt="Cosmetic consultation"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <p className="text-2xl font-bold">Where artistry meets precision</p>
+              </div>
             </div>
-          </div>
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">The Process</p>
-            <h2 className="text-3xl font-semibold text-[var(--navy)]">What to Expect During Your Cosmetic Consultation</h2>
-            <div className="space-y-4">
-              {consultationProcess.map((step, index) => (
-                <div key={step.title} className="rounded-2xl border border-[#eadfce] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)] text-sm font-bold text-[var(--navy)]">
+            
+            {/* Content */}
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
+                Your Cosmetic Consultation
+              </h2>
+              <p className="text-gray-600">
+                What to expect when you visit us for a cosmetic consultation:
+              </p>
+              
+              <div className="space-y-4">
+                {consultationProcess.map((step, index) => (
+                  <div key={step.title} className="flex gap-4">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)] text-sm font-bold text-white flex-shrink-0">
                       {index + 1}
                     </span>
-                    <p className="font-semibold text-[var(--navy)]">{step.title}</p>
+                    <div>
+                      <h3 className="font-semibold text-[var(--navy)]">{step.title}</h3>
+                      <p className="text-gray-600 text-sm mt-1">{step.description}</p>
+                    </div>
                   </div>
-                  <p className="mt-2 pl-11 text-[var(--stone)]">{step.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ SECTION */}
-      <section className="bg-[var(--mint)] py-20">
-        <div className="mx-auto max-w-4xl px-4">
+      <section className="py-24 bg-[#f5f5f5]">
+        <div className="mx-auto max-w-3xl px-6">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Common Questions</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[var(--navy)]">Frequently Asked Questions</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
+              Frequently Asked Questions
+            </h2>
           </div>
           
           <div className="space-y-4">
-            {/* FAQ 1 */}
-            <details className="group rounded-2xl border border-[#eadfce] bg-white shadow-sm">
-              <summary className="flex cursor-pointer items-center justify-between p-6 font-semibold text-[var(--navy)] text-lg">
-                Does cosmetic dentistry hurt?
-                <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)]/10 text-[var(--gold)] transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--stone)] leading-relaxed">
-                Most cosmetic treatments are painless. Options like whitening, bonding, and Invisalign are minimally invasive. Veneer treatment is gentle and designed for long-term comfort.
-              </div>
-            </details>
-            
-            {/* FAQ 2 */}
-            <details className="group rounded-2xl border border-[#eadfce] bg-white shadow-sm">
-              <summary className="flex cursor-pointer items-center justify-between p-6 font-semibold text-[var(--navy)] text-lg">
-                How long do cosmetic results last?
-                <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)]/10 text-[var(--gold)] transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--stone)] leading-relaxed">
-                <p className="mb-3">With proper care:</p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--gold)]" />
-                    <span><strong>Whitening:</strong> 1–3 years</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--gold)]" />
-                    <span><strong>Bonding:</strong> 3–7 years</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--gold)]" />
-                    <span><strong>Veneers:</strong> 10–15+ years</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--gold)]" />
-                    <span><strong>Invisalign results:</strong> lifelong with retainers</span>
-                  </li>
-                </ul>
-              </div>
-            </details>
-            
-            {/* FAQ 3 */}
-            <details className="group rounded-2xl border border-[#eadfce] bg-white shadow-sm">
-              <summary className="flex cursor-pointer items-center justify-between p-6 font-semibold text-[var(--navy)] text-lg">
-                Is cosmetic dentistry covered by insurance?
-                <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)]/10 text-[var(--gold)] transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--stone)] leading-relaxed">
-                Most cosmetic treatments are considered elective. However, some procedures—like crowns or certain aligner treatments—may qualify for partial coverage depending on your provider.
-              </div>
-            </details>
-            
-            {/* FAQ 4 */}
-            <details className="group rounded-2xl border border-[#eadfce] bg-white shadow-sm">
-              <summary className="flex cursor-pointer items-center justify-between p-6 font-semibold text-[var(--navy)] text-lg">
-                Am I a candidate for cosmetic dentistry?
-                <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)]/10 text-[var(--gold)] transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--stone)] leading-relaxed">
-                If you are in good oral health and want to enhance your smile, you are likely a great candidate. We&apos;ll assess at your consultation.
-              </div>
-            </details>
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group bg-white rounded-lg shadow-sm">
+                <summary className="flex cursor-pointer items-center justify-between p-6 font-semibold text-[var(--navy)]">
+                  {faq.question}
+                  <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-xl transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* OTHER TREATMENTS TO CONSIDER */}
-      <section className="bg-[var(--background)] py-20">
-        <div className="mx-auto max-w-6xl px-4">
+      {/* OTHER TREATMENTS */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Explore More Options</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[var(--navy)]">Other Treatments to Consider</h2>
-            <p className="mt-4 text-lg text-[var(--stone)] max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
+              Other Treatments to Consider
+            </h2>
+            <p className="text-gray-600">
               Patients interested in cosmetic dentistry also commonly explore:
             </p>
           </div>
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Dental Implants */}
-            <Link href="/services/restorative-dentistry" className="group rounded-2xl border border-[#eadfce] bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+            <Link href="/services/restorative-dentistry" className="group bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition-all">
               <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)]/10">
+                <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center">
                   <Sparkles className="h-5 w-5 text-[var(--gold)]" />
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Dental Implants</h3>
+                <h3 className="font-bold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Dental Implants</h3>
               </div>
-              <p className="text-sm text-[var(--stone)] leading-relaxed">
-                A long-lasting, natural-looking solution for missing teeth. Dental implants replace the tooth root and support a custom crown to restore function, stability, and confidence in your smile.
+              <p className="text-sm text-gray-600">
+                A long-lasting, natural-looking solution for missing teeth.
               </p>
             </Link>
             
-            {/* Dental Crowns & Restorations */}
-            <Link href="/services/restorative-dentistry" className="group rounded-2xl border border-[#eadfce] bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+            <Link href="/services/restorative-dentistry" className="group bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition-all">
               <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)]/10">
+                <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center">
                   <Shield className="h-5 w-5 text-[var(--gold)]" />
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Dental Crowns & Restorations</h3>
+                <h3 className="font-bold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Dental Crowns</h3>
               </div>
-              <p className="text-sm text-[var(--stone)] leading-relaxed">
-                Crowns protect and strengthen damaged or weakened teeth. They restore full function while blending seamlessly with your natural smile using durable, tooth-colored materials.
+              <p className="text-sm text-gray-600">
+                Protect and strengthen damaged teeth with natural-looking restorations.
               </p>
             </Link>
             
-            {/* Invisalign */}
-            <Link href="/services/invisalign" className="group rounded-2xl border border-[#eadfce] bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+            <Link href="/services/general-dentistry" className="group bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:-translate-y-1 transition-all">
               <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)]/10">
-                  <Smile className="h-5 w-5 text-[var(--gold)]" />
-                </div>
-                <h3 className="text-lg font-semibold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Invisalign® Clear Aligners</h3>
-              </div>
-              <p className="text-sm text-[var(--stone)] leading-relaxed">
-                A discreet orthodontic treatment that straightens teeth using clear, removable trays. Ideal for correcting crowding, spacing, and bite issues without metal brackets.
-              </p>
-            </Link>
-            
-            {/* Botox */}
-            <Link href="/services" className="group rounded-2xl border border-[#eadfce] bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)]/10">
-                  <Star className="h-5 w-5 text-[var(--gold)]" />
-                </div>
-                <h3 className="text-lg font-semibold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Botox for Aesthetics & TMJ Relief</h3>
-              </div>
-              <p className="text-sm text-[var(--stone)] leading-relaxed">
-                Botox can smooth fine lines around the mouth and reduce jaw tension caused by clenching or TMJ disorders. A minimally invasive option that enhances both comfort and facial aesthetics.
-              </p>
-            </Link>
-            
-            {/* Professional Cleanings */}
-            <Link href="/services/general-dentistry" className="group rounded-2xl border border-[#eadfce] bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)]/10">
+                <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center">
                   <Heart className="h-5 w-5 text-[var(--gold)]" />
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Professional Dental Cleanings</h3>
+                <h3 className="font-bold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Professional Cleanings</h3>
               </div>
-              <p className="text-sm text-[var(--stone)] leading-relaxed">
-                Regular cleanings are essential for a healthy foundation before cosmetic work. Our longer appointments ensure thorough plaque removal, gum health evaluation, and preventive care.
-              </p>
-            </Link>
-            
-            {/* Teeth Whitening */}
-            <Link href="/services/cosmetic-dentistry" className="group rounded-2xl border border-[#eadfce] bg-white p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)]/10">
-                  <Sparkles className="h-5 w-5 text-[var(--gold)]" />
-                </div>
-                <h3 className="text-lg font-semibold text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Teeth Whitening</h3>
-              </div>
-              <p className="text-sm text-[var(--stone)] leading-relaxed">
-                Professional whitening brightens your smile safely and effectively, lifting deep stains and discoloration for a noticeably whiter, more radiant smile.
+              <p className="text-sm text-gray-600">
+                A healthy foundation before cosmetic work with thorough preventive care.
               </p>
             </Link>
           </div>
@@ -439,25 +380,32 @@ export default function CosmeticDentistry() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 gradient-navy overflow-hidden">
-        <div className="relative mx-auto max-w-4xl px-4 text-center text-white">
+      <section className="py-24 bg-[var(--navy)]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
           <Sparkles className="h-12 w-12 mx-auto text-[var(--gold)] mb-6" />
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Smile?
           </h2>
-          <p className="text-lg text-[#c5e2c7] max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10">
             Whether you&apos;re looking for subtle refinements or a complete transformation, Cherry Creek South Dental is here to help you achieve a smile you love.
           </p>
-          <a
-            href="tel:(303) 377-7744"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition hover:bg-white hover:scale-105"
-          >
-            Schedule Your Appointment
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:3033777744"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-[var(--gold)]/90"
+            >
+              Schedule Your Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+            <a
+              href="tel:3033777744"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 text-base font-semibold rounded-md transition hover:bg-white hover:text-[var(--navy)]"
+            >
+              (303) 377-7744
+            </a>
+          </div>
         </div>
       </section>
     </div>
   );
 }
-

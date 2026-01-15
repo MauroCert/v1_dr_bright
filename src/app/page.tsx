@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* HERO - Full width image with overlay like SMYLE */}
-      <section className="relative min-h-[85vh] flex items-center justify-center">
+      <section className="relative h-[calc(100vh-120px)] flex flex-col justify-end">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -64,14 +64,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        {/* Content - Positioned at bottom */}
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pb-10">
           <Image
             src="/logo.avif"
             alt="Cherry Creek South Dental"
-            width={180}
-            height={50}
-            className="mx-auto h-16 w-auto mb-8"
+            width={280}
+            height={80}
+            className="mx-auto h-28 w-auto mb-8"
             priority
           />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4">
@@ -211,9 +211,10 @@ export default function Home() {
               
               <Link
                 href="/about"
-                className="inline-flex items-center font-semibold text-[var(--gold)] hover:underline transition pt-2"
+                className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90 mt-4"
               >
                 Learn More About Our Office
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </div>
           </div>

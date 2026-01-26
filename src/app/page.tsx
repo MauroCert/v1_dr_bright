@@ -188,7 +188,7 @@ export default function Home() {
             {/* Right - Content */}
             <div className="space-y-6 order-1 lg:order-2">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
-                Derick Bright DMD, FAGD, AFAAID
+                Meet Dr. Bright, DDS
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 Dr. Bright and his family made Colorado their home in 2019, quickly falling in love with the mountains and community. He is a proud father to three young children: a spirited 6-year-old daughter, an adventurous 4-year-old son, and a sweet 7-month-old baby boy. An avid outdoorsman, Dr. Bright enjoys spending weekends with his family hiking scenic trails or fishing in the tranquil waters of the Rockies. When they&apos;re not exploring the great outdoors, you can often find them cheering on the Denver Nuggets!
@@ -452,32 +452,32 @@ export default function Home() {
       </section>
 
       {/* AFFILIATIONS - Professional associations and memberships */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-bold text-[var(--navy)] text-center mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-16">
             Our Professional Affiliations
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-16">
             <Image
               src="/affiliations_1.png"
               alt="Professional Affiliation"
-              width={180}
-              height={80}
-              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              width={280}
+              height={120}
+              className="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
             />
             <Image
               src="/affiliations_2.png"
               alt="Professional Affiliation"
-              width={180}
-              height={80}
-              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              width={280}
+              height={120}
+              className="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
             />
             <Image
               src="/affiliations_3.png"
               alt="Professional Affiliation"
-              width={180}
-              height={80}
-              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              width={280}
+              height={120}
+              className="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
             />
           </div>
         </div>

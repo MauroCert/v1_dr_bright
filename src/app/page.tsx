@@ -188,26 +188,14 @@ export default function Home() {
             {/* Right - Content */}
             <div className="space-y-6 order-1 lg:order-2">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
-                Meet Dr. Bright, DDS
+                Derick Bright DMD, FAGD, AFAAID
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Dr. Bright is dedicated to staying up to date on the latest dental techniques to always strive for the best care for his patients. He has a genuine desire to always learn and improve, and is part of multiple local study clubs with other dentists and specialists.
+              <p className="text-gray-600 leading-relaxed">
+                Dr. Bright and his family made Colorado their home in 2019, quickly falling in love with the mountains and community. He is a proud father to three young children: a spirited 6-year-old daughter, an adventurous 4-year-old son, and a sweet 7-month-old baby boy. An avid outdoorsman, Dr. Bright enjoys spending weekends with his family hiking scenic trails or fishing in the tranquil waters of the Rockies. When they&apos;re not exploring the great outdoors, you can often find them cheering on the Denver Nuggets!
               </p>
-              
-              <div className="space-y-6 pt-4">
-                <div>
-                  <h3 className="text-xl font-bold text-[var(--navy)] mb-3">Our Vision</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    To redefine the dental experience by blending precision, artistry, and personalized care — creating a space where trust, comfort, and uncompromising quality come together to transform smiles and lives.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[var(--navy)] mb-3">Our Mission</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Our mission is to provide an extraordinary dental experience that combines precision, artistry, and comfort — treating every patient with genuine warmth and personalized care.
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Dr. Bright believes that providing the best care means mastering the latest advancements in oral healthcare. In May 2024, he earned the prestigious title of Fellow of the Academy of General Dentistry (FAGD), a distinction held by only about 6% of dentists in North America. This achievement represents over 500 hours of continuing education and the completion of a rigorous comprehensive exam, ensuring he stays at the forefront of dental science. Additionally, as an Associate Fellow of the American Academy of Implant Dentistry, Dr. Bright possesses advanced skills in surgical procedures and tooth replacement. Whether you are visiting for Invisalign, Botox, implants, or a routine check-up, you can rest assured knowing Dr. Bright utilizes the latest techniques to protect your health.
+              </p>
               
               <Link
                 href="/about"
@@ -267,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* PATIENT REVIEWS - Split layout with image */}
-      <section className="bg-white">
+      <section className="bg-[var(--navy)]">
         <div className="grid lg:grid-cols-2">
           {/* Left - Image */}
           <div className="relative h-[600px] lg:h-auto">
@@ -281,7 +269,7 @@ export default function Home() {
           
           {/* Right - Testimonials */}
           <div className="py-16 px-8 lg:px-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               See What Our Patients<br />Have to Say
             </h2>
             
@@ -298,7 +286,7 @@ export default function Home() {
                   <Star key={idx} className="h-5 w-5 fill-[var(--gold)] text-[var(--gold)]" />
                 ))}
               </div>
-              <span className="text-gray-600">5.0 • 47 Reviews</span>
+              <span className="text-white/80">5.0 • 47 Reviews</span>
             </div>
             
             {/* Review Cards - Stacked */}
@@ -306,15 +294,15 @@ export default function Home() {
               {googleReviews.map((review) => (
                 <div
                   key={review.name}
-                  className="bg-[#f9f9f9] p-5"
+                  className="bg-white/10 backdrop-blur-sm p-5 border-l-4 border-[var(--gold)]"
                 >
                   {/* Reviewer Info */}
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-[var(--navy)] flex items-center justify-center text-white font-semibold">
+                    <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center text-white font-semibold">
                       {review.initial}
                     </div>
                     <div>
-                      <p className="font-semibold text-[var(--navy)] text-sm">{review.name}</p>
+                      <p className="font-semibold text-white text-sm">{review.name}</p>
                       <div className="flex">
                         {[...Array(5)].map((_, idx) => (
                           <Star key={idx} className="h-3 w-3 fill-[var(--gold)] text-[var(--gold)]" />
@@ -324,7 +312,7 @@ export default function Home() {
                   </div>
                   
                   {/* Review Text */}
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-white/90 leading-relaxed text-sm">
                     &ldquo;{review.quote}&rdquo;
                   </p>
                 </div>
@@ -459,6 +447,38 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AFFILIATIONS - Professional associations and memberships */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-2xl font-bold text-[var(--navy)] text-center mb-10">
+            Our Professional Affiliations
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-12">
+            <Image
+              src="/affiliations_1.png"
+              alt="Professional Affiliation"
+              width={180}
+              height={80}
+              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
+            <Image
+              src="/affiliations_2.png"
+              alt="Professional Affiliation"
+              width={180}
+              height={80}
+              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
+            <Image
+              src="/affiliations_3.png"
+              alt="Professional Affiliation"
+              width={180}
+              height={80}
+              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
           </div>
         </div>
       </section>

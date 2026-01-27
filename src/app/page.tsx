@@ -260,7 +260,7 @@ export default function Home() {
           {/* Left - Image */}
           <div className="relative h-[600px] lg:h-auto">
             <Image
-              src="/Homepage/Cosmetic Dentistry.jpg"
+              src="/See What Our Patients Have to Say.png"
               alt="Happy patient at Cherry Creek South Dental"
               fill
               className="object-cover"

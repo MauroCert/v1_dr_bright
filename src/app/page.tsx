@@ -97,22 +97,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Geometric Divider - Hero to How We Can Help */}
-      <div className="relative h-24 -mt-1">
-        <svg
-          className="absolute w-full h-full"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polygon points="0,0 1440,96 1440,0" fill="var(--gold)" />
-          <polygon points="0,0 0,96 1440,96" fill="#f8f6f3" />
-        </svg>
-      </div>
-
       {/* HOW WE CAN HELP - SMYLE style cards with icons */}
-      <section className="py-24 bg-[#f8f6f3] -mt-1">
+      <section className="py-24 bg-[#f8f6f3]">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl sm:text-4xl font-light tracking-wide text-[var(--navy)] text-center mb-16 uppercase">
             How We Can Help
@@ -209,8 +195,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Geometric Divider - Meet Dr. Bright to Why Choose Us */}
-      <div className="relative h-24 -mt-1">
+      {/* Modern Two-Tone Divider - Meet Dr. Bright to Why Choose Us */}
+      <div className="relative h-24">
         <svg
           className="absolute w-full h-full"
           preserveAspectRatio="none"
@@ -218,13 +204,15 @@ export default function Home() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
-          <polygon points="0,0 0,96 1440,0" fill="white" />
+          {/* Main angled shape - navy */}
+          <polygon points="0,96 0,20 1440,96" fill="var(--navy)" />
+          {/* Gold accent triangle */}
+          <polygon points="950,96 1440,40 1440,96" fill="var(--gold)" />
         </svg>
       </div>
 
       {/* WHY CHOOSE US - Full width text section like SMYLE */}
-      <section className="py-24 bg-[#f5f5f5] -mt-1">
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] text-center mb-10">
             Why choose us?

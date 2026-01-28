@@ -155,8 +155,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Geometric Divider - Signature Services to Why Choose Us */}
-      <div className="relative h-24 -mt-1">
+      {/* Modern Two-Tone Divider - Signature Services to Why Choose Us */}
+      <div className="relative h-24">
         <svg
           className="absolute w-full h-full"
           preserveAspectRatio="none"
@@ -164,13 +164,15 @@ export default function Services() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <polygon points="0,96 1440,0 1440,96" fill="#f8f6f3" />
-          <polygon points="0,0 0,96 1440,0" fill="white" />
+          {/* Main angled shape - navy */}
+          <polygon points="0,96 0,20 1440,96" fill="var(--navy)" />
+          {/* Gold accent triangle */}
+          <polygon points="950,96 1440,40 1440,96" fill="var(--gold)" />
         </svg>
       </div>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 bg-[#f8f6f3] -mt-1">
+      <section className="py-24 bg-[#f8f6f3]">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl sm:text-4xl font-light tracking-wide text-[var(--navy)] text-center mb-16 uppercase">
             Why Patients Choose Us
@@ -219,22 +221,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Geometric Divider - Why Choose Us to Book Appointment */}
-      <div className="relative h-24 -mt-1">
-        <svg
-          className="absolute w-full h-full"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
-          <polygon points="0,0 0,96 1440,0" fill="#f8f6f3" />
-        </svg>
-      </div>
-
       {/* BOOK YOUR APPOINTMENT - Form + Contact Cards */}
-      <section className="py-24 bg-[#f5f5f5] -mt-1">
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left - Form */}

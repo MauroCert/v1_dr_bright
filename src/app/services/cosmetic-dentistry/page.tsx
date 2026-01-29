@@ -193,8 +193,8 @@ export default function CosmeticDentistry() {
         </div>
       </section>
 
-      {/* Modern Two-Tone Divider - Why Choose to Cosmetic Services */}
-      <div className="relative h-24">
+      {/* Geometric Divider - Why Choose to Cosmetic Services */}
+      <div className="relative h-24 -mt-1">
         <svg
           className="absolute w-full h-full"
           preserveAspectRatio="none"
@@ -202,15 +202,13 @@ export default function CosmeticDentistry() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Main angled shape - navy */}
-          <polygon points="0,96 0,20 1440,96" fill="var(--navy)" />
-          {/* Gold accent triangle */}
-          <polygon points="950,96 1440,40 1440,96" fill="var(--gold)" />
+          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
+          <polygon points="0,0 0,96 1440,0" fill="white" />
         </svg>
       </div>
 
       {/* COSMETIC SERVICES */}
-      <section className="py-24 bg-[#f5f5f5]">
+      <section className="py-24 bg-[#f5f5f5] -mt-1">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">
@@ -312,6 +310,22 @@ export default function CosmeticDentistry() {
           </div>
         </div>
       </section>
+
+      {/* Modern Two-Tone Divider - Consultation to FAQ */}
+      <div className="relative h-24">
+        <svg
+          className="absolute w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Main angled shape - navy */}
+          <polygon points="0,96 0,20 1440,96" fill="var(--navy)" />
+          {/* Gold accent triangle */}
+          <polygon points="950,96 1440,40 1440,96" fill="var(--gold)" />
+        </svg>
+      </div>
 
       {/* FAQ SECTION */}
       <section className="py-24 bg-[#f5f5f5]">

@@ -1,37 +1,7 @@
-import { Phone, MessageCircle, MapPin, Clock, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, MessageCircle, MapPin, Clock, Mail, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
-  const contactMethods = [
-    {
-      icon: Phone,
-      title: 'Call Us',
-      primary: '(303) 377-7744',
-      secondary: 'Main office line',
-      href: 'tel:(303) 377-7744'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Text Us',
-      primary: '(720) 864-1333',
-      secondary: 'Quick responses',
-      href: 'sms:(720) 864-1333'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      primary: '5055 E Kentucky Ave',
-      secondary: 'Denver, CO 80246',
-      href: 'https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246'
-    },
-    {
-      icon: Mail,
-      title: 'Email Us',
-      primary: 'frontdesk@ccsdclinic.com',
-      secondary: 'General inquiries',
-      href: 'mailto:frontdesk@ccsdclinic.com'
-    }
-  ];
-
   const hours = [
     { day: 'Monday', hours: '8:00 AM - 5:00 PM' },
     { day: 'Tuesday', hours: '8:00 AM - 4:00 PM' },
@@ -44,173 +14,179 @@ export default function Contact() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to start your journey to a healthier smile? Get in touch with Cherry Creek South Dental.
-              We&apos;re here to answer your questions and schedule your appointment.
-            </p>
+      {/* HERO */}
+      <section className="relative min-h-[60vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/IMG_5467 copy_edited.avif"
+            alt="Contact Cherry Creek South Dental"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
+            Get in <span className="text-[var(--gold)]">Touch</span>
+          </h1>
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            We&apos;re here to answer your questions and schedule your appointment. Reach out today.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:3033777744"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
+            >
+              Call (303) 377-7744
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+            <a
+              href="sms:7208641333"
+              className="inline-flex items-center justify-center bg-white text-[var(--navy)] px-8 py-4 text-base font-semibold transition hover:bg-white/90"
+            >
+              Text (720) 864-1333
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactMethods.map((method, index) => {
-              const IconComponent = method.icon;
-              return (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                  <IconComponent className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{method.title}</h3>
-                  <a
-                    href={method.href}
-                    className="block text-blue-600 hover:text-blue-700 font-medium mb-1"
-                  >
-                    {method.primary}
-                  </a>
-                  <p className="text-gray-600 text-sm">{method.secondary}</p>
-                </div>
-              );
-            })}
+      {/* CONTACT METHODS */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="tel:(303) 377-7744" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                <Phone className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">Call Us</h3>
+              <p className="text-[var(--gold)] font-medium">(303) 377-7744</p>
+              <p className="text-gray-600 text-sm mt-1">Main office line</p>
+            </a>
+            <a href="sms:(720) 864-1333" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                <MessageCircle className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">Text Us</h3>
+              <p className="text-[var(--gold)] font-medium">(720) 864-1333</p>
+              <p className="text-gray-600 text-sm mt-1">Quick responses</p>
+            </a>
+            <a href="https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246" target="_blank" rel="noopener noreferrer" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                <MapPin className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">Visit Us</h3>
+              <p className="text-[var(--gold)] font-medium">5055 E Kentucky Ave</p>
+              <p className="text-gray-600 text-sm mt-1">Denver, CO 80246</p>
+            </a>
+            <a href="mailto:frontdesk@ccsdclinic.com" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                <Mail className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">Email Us</h3>
+              <p className="text-[var(--gold)] font-medium">frontdesk@ccsdclinic.com</p>
+              <p className="text-gray-600 text-sm mt-1">General inquiries</p>
+            </a>
           </div>
+        </div>
+      </section>
 
-          {/* Contact Form and Hours */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your first name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your last name"
-                    />
-                  </div>
+      {/* Geometric Divider */}
+      <div className="relative h-24 -mt-1">
+        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
+          <polygon points="0,0 0,96 1440,0" fill="white" />
+        </svg>
+      </div>
+
+      {/* FORM + HOURS */}
+      <section className="py-24 bg-[#f5f5f5] -mt-1">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Form */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-light text-[var(--gold)] mb-4 uppercase tracking-wide">
+                Send Us a<br />Message
+              </h2>
+              <p className="text-gray-600 mb-8">
+                Ready to take the next step towards a healthier smile? Contact us with any questions or to schedule an appointment.
+              </p>
+              <form className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <input type="text" placeholder="First Name" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition" />
+                  <input type="text" placeholder="Last Name" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="(303) 123-4567"
-                  />
+                <div className="grid grid-cols-2 gap-4">
+                  <input type="email" placeholder="Email Address" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition" />
+                  <input type="tel" placeholder="Mobile Number" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition" />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Preferred Contact Method
-                  </label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option>Phone Call</option>
-                    <option>Text Message</option>
-                    <option>Email</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Service of Interest
-                  </label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option>General Dentistry</option>
-                    <option>Cosmetic Dentistry</option>
-                    <option>Invisalign</option>
-                    <option>Emergency Care</option>
-                    <option>Consultation</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Tell us about your dental needs or questions..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-4 hover:bg-blue-700 transition-colors font-medium"
-                >
-                  Send Message
+                <select className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition text-gray-500">
+                  <option value="">Service of Interest</option>
+                  <option>General Dentistry</option>
+                  <option>Cosmetic Dentistry</option>
+                  <option>Invisalign</option>
+                  <option>Dental Implants</option>
+                  <option>Emergency Care</option>
+                  <option>Sedation Dentistry</option>
+                  <option>Extractions</option>
+                  <option>Consultation</option>
+                  <option>Other</option>
+                </select>
+                <textarea placeholder="Your Message" rows={4} className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition resize-none" />
+                <button type="submit" className="w-full bg-[var(--gold)] text-white py-4 font-semibold transition hover:bg-[var(--gold)]/90">
+                  Submit Form
                 </button>
               </form>
             </div>
 
-            {/* Hours and Map */}
+            {/* Hours + Map */}
             <div className="space-y-8">
-              {/* Office Hours */}
-              <div className="bg-gray-50 rounded-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Office Hours</h2>
+              <div className="bg-white p-8 shadow-sm border-l-4 border-[var(--gold)]">
+                <h3 className="text-2xl font-bold text-[var(--navy)] mb-6">Office Hours</h3>
                 <div className="space-y-3">
                   {hours.map((schedule) => (
-                    <div key={schedule.day} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                      <span className="font-medium text-gray-900">{schedule.day}</span>
-                      <span className="text-gray-600">{schedule.hours}</span>
+                    <div key={schedule.day} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                      <span className="font-medium text-[var(--navy)]">{schedule.day}</span>
+                      <span className={schedule.hours === 'Closed' ? 'text-gray-400' : 'text-gray-600'}>{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <div className="mt-6 p-4 bg-[var(--gold)]/10 border-l-4 border-[var(--gold)]">
                   <div className="flex items-center mb-2">
-                    <Clock className="h-5 w-5 text-blue-600 mr-2" />
-                    <span className="font-semibold text-gray-900">Emergency Care Available</span>
+                    <Clock className="h-5 w-5 text-[var(--gold)] mr-2" />
+                    <span className="font-semibold text-[var(--navy)]">Emergency Care Available</span>
                   </div>
                   <p className="text-sm text-gray-600">
-                    For dental emergencies outside regular hours, please call our emergency line or visit your nearest emergency room.
+                    For dental emergencies outside regular hours, call our main line for urgent guidance.
                   </p>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-gray-100 rounded-lg h-80 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <MapPin className="h-16 w-16 mx-auto mb-4 text-gray-400" />
-                  <h3 className="text-lg font-semibold mb-2">Our Location</h3>
-                  <p className="mb-4">5055 E Kentucky Ave, Denver, CO 80246</p>
-                  <a
-                    href="https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-700 font-medium"
-                  >
-                    Get Directions →
+              <div className="bg-white p-8 shadow-sm border-l-4 border-[var(--gold)]">
+                <h3 className="text-2xl font-bold text-[var(--navy)] mb-4">Our Location</h3>
+                <p className="text-gray-600 mb-4">5055 E Kentucky Ave, Denver, CO 80246</p>
+                <a
+                  href="https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[var(--gold)] font-semibold hover:underline"
+                >
+                  Get Directions
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
+                <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Get Connected</h3>
+                <div className="flex items-center gap-3">
+                  <a href="https://g.page/r/CQVBXHNMdHxCEAE" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition">
+                    <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                  </a>
+                  <a href="https://www.facebook.com/drbrightdds" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition">
+                    <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </a>
+                  <a href="https://www.instagram.com/drbrightdds" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition">
+                    <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                   </a>
                 </div>
               </div>
@@ -219,24 +195,23 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Emergency Contact */}
-      <section className="py-16 bg-red-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Dental Emergency?</h2>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            If you&apos;re experiencing a dental emergency such as severe tooth pain, broken teeth,
-            or lost fillings, don&apos;t wait. Contact us immediately for emergency care.
+      {/* EMERGENCY BANNER */}
+      <section className="bg-[var(--navy)] py-12">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Dental Emergency?</h2>
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            If you&apos;re experiencing severe tooth pain, broken teeth, or lost fillings, don&apos;t wait. Contact us immediately for emergency care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:(303) 377-7744"
-              className="bg-red-600 text-white px-8 py-3 font-medium hover:bg-red-700 transition-colors"
+              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
             >
               Emergency: (303) 377-7744
             </a>
             <a
               href="sms:(720) 864-1333"
-              className="bg-red-700 text-white px-8 py-3 font-medium hover:bg-red-800 transition-colors"
+              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20"
             >
               Text Emergency Line
             </a>

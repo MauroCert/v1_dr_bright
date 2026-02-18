@@ -66,14 +66,6 @@ export default function Home() {
         
         {/* Content - Positioned at bottom */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pb-10">
-          <Image
-            src="/logo.avif"
-            alt="Cherry Creek South Dental"
-            width={280}
-            height={80}
-            className="mx-auto h-28 w-auto mb-8"
-            priority
-          />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-4">
             <span className="text-[var(--gold)]">Cherry Creek South</span> Dental
           </h1>

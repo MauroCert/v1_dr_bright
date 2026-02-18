@@ -1,87 +1,89 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Heart, Shield, Sparkles, Clock, Star, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Star, Heart, Shield, Clock, Phone, MapPin, Smile } from 'lucide-react';
 
-type PreventiveService = {
-  title: string;
-  description: string;
-  listTitle: string;
-  points: string[];
-  image: string;
-  note?: string;
-};
-
-const preventiveServices: PreventiveService[] = [
+const restorativeServices = [
   {
-    title: 'Comprehensive Exams & Cleanings',
-    description: 'We schedule generous time for cleanings, exams, and questions. Our hygiene visits go beyond the basics with thorough evaluations, AI-enhanced diagnostics, and personalized home-care coaching.',
-    listTitle: 'Each visit includes:',
-    points: ['Ultrasonic + hand scaling', 'Gum health charting', 'Oral cancer screening', 'Personalized home-care coaching'],
-    image: '/Main service page/Copy of Dental Exams & Cleanings.jpg',
+    title: 'Dental Implants',
+    description: 'Dental implants are the gold standard for replacing missing teeth. A titanium post is placed in the jawbone to act as an artificial root, topped with a natural-looking crown. Implants look, feel, and function like your own teeth.',
+    listTitle: 'Implants are ideal for:',
+    points: ['Single missing teeth', 'Multiple missing teeth', 'Full-arch restoration', 'Denture stabilization'],
+    image: '/Main service page/young-woman-is-dental-chair-drilling-her-tooth-by-specialist-modern-clinic.jpg',
   },
   {
-    title: 'Oral Cancer Screenings',
-    description: 'Every comprehensive visit includes an oral cancer screening and airway review for full-body wellness insights. Early detection is key, and we make it a standard part of your preventive care.',
-    listTitle: 'Screening includes:',
-    points: ['Head & neck exam', 'Airway + TMJ check', 'Soft tissue evaluation', 'Lifestyle risk review'],
+    title: 'Dental Crowns',
+    description: 'A dental crown is a custom-made cap that covers a damaged or weakened tooth, restoring its shape, size, strength, and appearance. We use high-quality materials for durable, natural-looking results.',
+    listTitle: 'Crowns are used for:',
+    points: ['Cracked or broken teeth', 'Large fillings', 'Post-root canal protection', 'Cosmetic improvement'],
     image: '/Individual service page/Hero.jpg',
   },
   {
-    title: 'Periodontal Therapy',
-    description: 'For gums that need extra support, we stage therapy visits with a focus on comfort and lasting results. Our approach targets infection at the source while keeping you relaxed throughout.',
-    listTitle: 'Treatment includes:',
-    points: ['Localized irrigation', 'Comfort-focused anesthesia', 'Deep scaling & root planing', 'Ongoing maintenance plans'],
-    note: 'Keeping your gums healthy is the foundation for preserving your natural teeth for life.',
+    title: 'Dental Bridges',
+    description: 'Bridges literally "bridge" the gap created by one or more missing teeth. They consist of two or more crowns anchored to adjacent teeth, with pontics (false teeth) in between.',
+    listTitle: 'Benefits include:',
+    points: ['Restored chewing ability', 'Natural appearance', 'Prevents teeth shifting', 'Quick treatment timeline'],
     image: '/Main service page/european-mid-pleased-dentist-woman-face-mask-working-dental-clinic.jpg',
   },
   {
-    title: 'Preventive Home Care Partners',
-    description: 'We pair each patient with tailored product and technique recommendations so you can maintain optimal oral health between visits. Our team is your partner in prevention.',
-    listTitle: 'We provide:',
-    points: ['Electric brush guidance', 'Floss & water flosser demos', 'Follow-up check-ins by text', 'Custom product recommendations'],
-    image: '/Main service page/young-woman-is-dental-chair-drilling-her-tooth-by-specialist-modern-clinic.jpg',
+    title: 'Dentures & Partials',
+    description: 'Modern dentures and partial dentures offer comfortable, natural-looking solutions for patients missing several or all teeth. Today\'s materials and techniques deliver a better fit and more realistic appearance than ever.',
+    listTitle: 'Options include:',
+    points: ['Full dentures', 'Partial dentures', 'Implant-supported dentures', 'Immediate dentures'],
+    image: '/Main service page/orthodontist-with-latex-glove-handling-dental-equipment.jpg',
+  },
+  {
+    title: 'Root Canal Therapy',
+    description: 'When the inner pulp of a tooth becomes infected or inflamed, root canal therapy saves the natural tooth. Modern techniques and anesthesia make this procedure comfortable and predictable.',
+    listTitle: 'Signs you may need one:',
+    points: ['Severe toothache', 'Sensitivity to hot/cold', 'Darkened tooth', 'Gum swelling or tenderness'],
+    note: 'Dr. Bright uses advanced rotary instruments and digital imaging for precise, comfortable root canal treatment.',
+    image: '/Individual service page/What your general dentistry visit feels like.jpg',
   },
 ];
 
-const visitTimeline = [
+const treatmentProcess = [
   {
-    title: 'Warm Welcome',
-    description: 'Atrium check-in, beverage station, and a judgment-free conversation about your goals.',
+    title: 'Comprehensive Evaluation',
+    description: 'Digital X-rays, CBCT scans, and a thorough exam to assess your teeth, bone structure, and overall oral health.',
   },
   {
-    title: 'Digital Diagnostics',
-    description: 'AI-assisted X-rays, CBCT as needed, intraoral photos, and periodontal charting.',
+    title: 'Personalized Treatment Plan',
+    description: 'Dr. Bright discusses all options, including timelines, costs, and expected outcomes, so you can make an informed decision.',
   },
   {
-    title: 'Co-Planning with Dr. Bright',
-    description: 'Dr. Bright reviews findings chairside and discusses options with you in a collaborative, educational approach.',
+    title: 'Precise Treatment',
+    description: 'Using advanced technology and techniques, we perform your restoration with attention to both function and aesthetics.',
   },
   {
-    title: 'Comfort Menu',
-    description: 'Laughing gas, weighted blankets, curated playlists, and breaks whenever you need them.',
+    title: 'Follow-Up & Maintenance',
+    description: 'Regular check-ups ensure your restoration stays strong and healthy for years to come.',
   },
 ];
 
 const faqs = [
   {
-    question: 'How often should I visit the dentist?',
-    answer: 'Most patients benefit from visits every 6 months for professional cleanings and exams. Depending on your oral health, Dr. Bright may recommend more frequent visits for optimal care.',
+    question: 'How long do dental implants last?',
+    answer: 'With proper care and regular dental visits, dental implants can last a lifetime. The crown on top typically lasts 10–15 years before it may need replacement due to normal wear.',
   },
   {
-    question: 'What happens during a dental exam?',
-    answer: 'Your exam includes digital X-rays, a thorough evaluation of your teeth, gums, bite, and jaw joints, an oral cancer screening, and a discussion of findings and recommendations with Dr. Bright.',
+    question: 'Are dental implants painful?',
+    answer: 'The procedure is performed under local anesthesia, so you should not feel pain during placement. Most patients report that post-operative discomfort is mild and manageable with over-the-counter pain medication.',
   },
   {
-    question: 'Why are your appointments longer?',
-    answer: 'We believe quality care takes time. Longer appointments mean more thorough cleanings, unhurried conversations about your health, and no feeling of being rushed out the door.',
+    question: 'How long does a crown last?',
+    answer: 'Dental crowns typically last 10–15 years or longer, depending on your oral habits and care. Avoiding habits like teeth grinding and ice chewing can extend their lifespan.',
   },
   {
-    question: 'Do you accept dental insurance?',
-    answer: 'Yes, we accept most major dental insurance plans. Our team will help verify your benefits and maximize your coverage. We also offer a membership plan for uninsured patients.',
+    question: 'Do I need a root canal?',
+    answer: 'If you have a persistent toothache, sensitivity to hot or cold, swelling, or a darkened tooth, you may need a root canal. Dr. Bright will evaluate your symptoms and recommend the best treatment.',
+  },
+  {
+    question: 'What is the cost of restorative treatments?',
+    answer: 'Costs vary based on the type and complexity of treatment. Most dental insurance plans cover a portion of restorative procedures. We offer flexible payment plans and financing to make treatment accessible.',
   },
 ];
 
-export default function GeneralDentistry() {
+export default function RestorativeDentistry() {
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -89,7 +91,7 @@ export default function GeneralDentistry() {
         <div className="absolute inset-0">
           <Image
             src="/Individual service page/Hero.jpg"
-            alt="General Dentistry at Cherry Creek South Dental"
+            alt="Restorative Dentistry at Cherry Creek South Dental"
             fill
             className="object-cover"
             priority
@@ -98,53 +100,45 @@ export default function GeneralDentistry() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-            Preventive Care for a <span className="text-[var(--gold)]">Lifetime</span> of Wellness
+            Restore Your <span className="text-[var(--gold)]">Smile</span>
           </h1>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Longer appointments, honest education, and personalized attention—delivered with Dr. Bright&apos;s calm, caring touch.
+            Dental implants, crowns, bridges, and more—designed to bring back your confidence and oral health.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              Reserve a Preventive Visit
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-white text-[var(--navy)] px-8 py-4 text-base font-semibold transition hover:bg-white/90"
-            >
-              (303) 377-7744
-            </a>
-          </div>
+          <a
+            href="tel:3033777744"
+            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
+          >
+            Schedule Your Consultation
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
         </div>
       </section>
 
-      {/* WHY CHOOSE GENERAL DENTISTRY */}
+      {/* WHY CHOOSE RESTORATIVE */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[450px] overflow-hidden shadow-lg">
               <Image
-                src="/Individual service page/What your general dentistry visit feels like.jpg"
-                alt="General dentistry visit"
+                src="/Main service page/young-woman-is-dental-chair-drilling-her-tooth-by-specialist-modern-clinic.jpg"
+                alt="Restorative dentistry results"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
-                Why Choose General Dentistry With Dr. Bright?
+                Why Choose Restorative Dentistry With Dr. Bright?
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Clock className="h-5 w-5 text-[var(--gold)]" />
+                    <Star className="h-5 w-5 text-[var(--gold)]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Longer Appointments</h3>
-                    <p className="text-gray-600 text-sm">Extended time blocks so you never feel rushed—every question gets answered</p>
+                    <h3 className="font-semibold text-[var(--navy)]">Natural-Looking Results</h3>
+                    <p className="text-gray-600 text-sm">Restorations custom-matched to your natural teeth for seamless aesthetics</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -152,8 +146,8 @@ export default function GeneralDentistry() {
                     <Sparkles className="h-5 w-5 text-[var(--gold)]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[var(--navy)]">AI-Enhanced Diagnostics</h3>
-                    <p className="text-gray-600 text-sm">Advanced technology catches issues early for better outcomes</p>
+                    <h3 className="font-semibold text-[var(--navy)]">Advanced Technology</h3>
+                    <p className="text-gray-600 text-sm">CBCT imaging, digital scanning, and guided implant placement for precision</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -161,8 +155,8 @@ export default function GeneralDentistry() {
                     <Heart className="h-5 w-5 text-[var(--gold)]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Honest Education</h3>
-                    <p className="text-gray-600 text-sm">We teach and empower you to make informed decisions about your oral health</p>
+                    <h3 className="font-semibold text-[var(--navy)]">Comprehensive Solutions</h3>
+                    <p className="text-gray-600 text-sm">From single crowns to full-mouth rehabilitation under one roof</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -170,17 +164,17 @@ export default function GeneralDentistry() {
                     <Shield className="h-5 w-5 text-[var(--gold)]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Preventive Focus</h3>
-                    <p className="text-gray-600 text-sm">We aim to prevent problems before they start, saving you time and money</p>
+                    <h3 className="font-semibold text-[var(--navy)]">Long-Lasting Durability</h3>
+                    <p className="text-gray-600 text-sm">Premium materials and meticulous technique for restorations built to last</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Star className="h-5 w-5 text-[var(--gold)]" />
+                    <Clock className="h-5 w-5 text-[var(--gold)]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Calming Environment</h3>
-                    <p className="text-gray-600 text-sm">Our atrium with plants and natural light creates a relaxing dental experience</p>
+                    <h3 className="font-semibold text-[var(--navy)]">Unhurried Appointments</h3>
+                    <p className="text-gray-600 text-sm">Extended time blocks ensure every detail is addressed with care</p>
                   </div>
                 </li>
               </ul>
@@ -189,7 +183,6 @@ export default function GeneralDentistry() {
         </div>
       </section>
 
-      {/* Geometric Divider */}
       <div className="relative h-24 -mt-1">
         <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
@@ -197,15 +190,15 @@ export default function GeneralDentistry() {
         </svg>
       </div>
 
-      {/* PREVENTIVE SERVICES */}
+      {/* RESTORATIVE SERVICES */}
       <section className="py-24 bg-[#f5f5f5] -mt-1">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">Our Preventive Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Building healthy foundations for smiles that last a lifetime</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">Our Restorative Services</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Rebuild, repair, and renew your smile with proven solutions</p>
           </div>
           <div className="space-y-16">
-            {preventiveServices.map((service, index) => (
+            {restorativeServices.map((service, index) => (
               <div key={service.title} className="bg-white shadow-sm overflow-hidden">
                 <div className={`grid lg:grid-cols-2 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                   <div className={`relative h-72 lg:h-auto ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
@@ -236,27 +229,22 @@ export default function GeneralDentistry() {
         </div>
       </section>
 
-      {/* YOUR VISIT */}
+      {/* TREATMENT PROCESS */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/Individual service page/What your general dentistry visit feels like.jpg"
-                alt="Your dental visit experience"
-                fill
-                className="object-cover"
-              />
+              <Image src="/Main service page/orthodontist-with-latex-glove-handling-dental-equipment.jpg" alt="Restorative treatment process" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 text-white">
-                <p className="text-2xl font-bold">Atrium calm + concierge-level time</p>
+                <p className="text-2xl font-bold">Precision crafted for lasting results</p>
               </div>
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">What Your Visit Feels Like</h2>
-              <p className="text-gray-600">Here&apos;s what to expect during your general dentistry visit:</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">Your Restorative Treatment Journey</h2>
+              <p className="text-gray-600">What to expect when you visit us for restorative care:</p>
               <div className="space-y-4">
-                {visitTimeline.map((step, index) => (
+                {treatmentProcess.map((step, index) => (
                   <div key={step.title} className="flex gap-4">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)] text-sm font-bold text-white flex-shrink-0">{index + 1}</span>
                     <div>
@@ -271,7 +259,6 @@ export default function GeneralDentistry() {
         </div>
       </section>
 
-      {/* Two-Tone Divider */}
       <div className="relative h-24">
         <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="0,96 0,20 1440,96" fill="var(--navy)" />
@@ -299,42 +286,6 @@ export default function GeneralDentistry() {
         </div>
       </section>
 
-      {/* MEMBERSHIP */}
-      <section className="py-24 bg-[var(--navy)]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Cherry Creek South Dental Membership</h2>
-          <p className="text-white/80 text-lg mb-8">Keep cleanings on track and unlock cosmetic + tech perks</p>
-          <ul className="mx-auto max-w-2xl space-y-3 text-left text-white/80">
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-              <span>Free whitening touch-ups when you keep preventive visits on track</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-              <span>Savings on periodontal therapy, nightguards, and Invisalign maintenance trays</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-              <span>Annual credit toward facial aesthetics or cosmetic upgrades</span>
-            </li>
-          </ul>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              Call (303) 377-7744
-            </a>
-            <a
-              href="sms:7208641333"
-              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20"
-            >
-              Text (720) 864-1333
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* OTHER TREATMENTS */}
       <section className="py-24 bg-[#f8f6f3]">
         <div className="mx-auto max-w-6xl px-6">
@@ -343,17 +294,17 @@ export default function GeneralDentistry() {
             <Link href="/services/cosmetic-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Sparkles className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
               <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Cosmetic Dentistry</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Transform your smile with whitening, veneers, and more.</p>
+              <p className="text-gray-600 leading-relaxed text-sm">Enhance your restored smile with whitening, veneers, or a full makeover.</p>
             </Link>
             <Link href="/services/invisalign" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Heart className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Smile className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
               <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Invisalign®</h3>
               <p className="text-gray-600 leading-relaxed text-sm">Straighten your teeth discreetly with custom clear aligners.</p>
             </Link>
-            <Link href="/services/restorative-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Shield className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Dental Implants</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Replace missing teeth with long-lasting, natural-looking solutions.</p>
+            <Link href="/services/general-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Heart className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">General Dentistry</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">Maintain your restorations with regular preventive care and cleanings.</p>
             </Link>
           </div>
         </div>
@@ -365,7 +316,7 @@ export default function GeneralDentistry() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl sm:text-4xl font-light text-[var(--gold)] mb-4 uppercase tracking-wide">Book Your<br />Appointment</h2>
-              <p className="text-gray-600 mb-8">Ready to take the next step towards a healthier smile? Contact us to schedule your preventive visit.</p>
+              <p className="text-gray-600 mb-8">Ready to restore your smile? Contact us to schedule a consultation with Dr. Bright.</p>
               <form className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <input type="text" placeholder="First Name" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition" />

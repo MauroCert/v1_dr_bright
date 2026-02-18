@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Phone, MessageCircle, Menu, X, Clock, MapPin } from 'lucide-react';
 
@@ -14,10 +15,11 @@ export default function Header() {
     { name: 'Info for Patients', href: '/patient-info' },
     { name: 'Blogs', href: '/blog' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Forms', href: '/' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50">
       {/* Top bar - elegant dark green */}
       <div className="bg-[var(--navy)] text-white">
         <div className="mx-auto max-w-6xl px-6 py-2">
@@ -61,34 +63,50 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main navigation - centered */}
-      <div className="relative mx-auto flex max-w-6xl items-center justify-center px-6 py-4">
-        <nav className="hidden items-center gap-1 lg:flex">
-          {navigation.map((item) => (
-            <Link 
-              key={item.name} 
-              href={item.href} 
-              className="relative px-4 py-2 text-sm font-medium text-[var(--stone)] transition-colors hover:text-[var(--navy)] after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-[var(--gold)] after:-translate-x-1/2 after:transition-all hover:after:w-3/4"
+      {/* Main navigation - transparent with logo on left corner, menu on right corner */}
+      <div className="bg-transparent absolute left-0 right-0">
+        <div className="flex items-center justify-between px-8 lg:px-12 py-4">
+          {/* Logo on the far left */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logo.avif"
+              alt="Cherry Creek South Dental"
+              width={160}
+              height={45}
+              className="h-12 w-auto"
+            />
+          </Link>
+
+          {/* Navigation on the far right */}
+          <nav className="hidden items-center gap-2 lg:flex" style={{ fontFamily: 'Lato, sans-serif' }}>
+            {navigation.map((item) => (
+              <Link 
+                key={item.name} 
+                href={item.href} 
+                className="relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors hover:text-[var(--gold)] after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-[var(--gold)] after:-translate-x-1/2 after:transition-all hover:after:w-3/4"
+                style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <a
+              href="tel:3033777744"
+              className="ml-6 bg-[var(--gold)] px-6 py-2.5 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-[var(--navy)] hover:shadow-md"
+              style={{ fontFamily: 'Lato, sans-serif' }}
             >
-              {item.name}
-            </Link>
-          ))}
-          <a
-            href="tel:3033777744"
-            className="ml-4 bg-[var(--gold)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--navy)] hover:shadow-md"
+              Schedule Appointment
+            </a>
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 text-white hover:text-[var(--gold)] transition-colors lg:hidden"
+            aria-label="Toggle menu"
           >
-            Schedule Appointment
-          </a>
-        </nav>
-        
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="absolute right-6 p-2 text-[var(--navy)] hover:bg-[var(--mint)] transition-colors lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

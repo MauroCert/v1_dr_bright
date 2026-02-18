@@ -36,7 +36,7 @@ const signatureStacks = [
       'Discreet aligner plans with digital scans, remote check-ins, and Dr. Bright\'s direct oversight.',
     href: '/services/invisalign',
     badge: 'Aligners',
-    image: '/Main%20service%20page/Copy%20of%20Invisalign%C2%AE%20Clear%20Aligners.jpg',
+    image: '/images/f0e477_39aba48e92444e238d089a57789598f7~mv2.avif',
     checklist: ['Digital impressions', 'Tray coaching', 'Retention planning'],
   },
   {

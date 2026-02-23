@@ -14,6 +14,7 @@ type NavChild = {
 type NavItem = {
   name: string;
   href?: string;
+  external?: boolean;
   children?: NavChild[];
 };
 
@@ -43,9 +44,9 @@ const navigation: NavItem[] = [
     children: [
       { name: 'Membership Plan', href: '/patient-info/membership-plan' },
       { name: 'Insurances', href: '/patient-info/insurances' },
-      { name: 'Patient Forms', href: 'https://cherrycreeksouthdental.com/forms', external: true },
     ],
   },
+  { name: 'Forms', href: 'https://cherrycreeksouthdental.com/forms', external: true },
   { name: 'Blogs', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -212,9 +213,9 @@ export default function Header() {
             <Image
               src="/logo.avif"
               alt="Cherry Creek South Dental"
-              width={160}
-              height={45}
-              className="h-12 w-auto"
+              width={320}
+              height={90}
+              className="h-24 w-auto"
             />
           </Link>
 
@@ -223,6 +224,17 @@ export default function Header() {
             {navigation.map((item) =>
               item.children ? (
                 <DesktopDropdown key={item.name} item={item} />
+              ) : item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors hover:text-[var(--gold)] after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-[var(--gold)] after:-translate-x-1/2 after:transition-all hover:after:w-3/4"
+                  style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+                >
+                  {item.name}
+                </a>
               ) : (
                 <Link
                   key={item.name}
@@ -269,6 +281,17 @@ export default function Header() {
                   item={item}
                   onNavigate={() => setIsMenuOpen(false)}
                 />
+              ) : item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
               ) : (
                 <Link
                   key={item.name}

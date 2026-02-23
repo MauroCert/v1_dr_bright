@@ -2,17 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Heart, Star, Shield, Sparkles, Phone, MapPin } from 'lucide-react';
 
-const teamMembers = [
-  {
-    name: 'Dr. Bright, DDS, FAGD',
-    role: 'Lead Dentist & Owner',
-    image: '/images/Digital Assets/Dr. Bright and family.png',
-    bio: 'Dr. Bright is a Fellow of the Academy of General Dentistry and an Associate Fellow of the American Academy of Implant Dentistry. With 500+ hours of continuing education, he brings advanced expertise in general, cosmetic, restorative, and implant dentistry. His patient-first philosophy and calm bedside manner make every visit a positive experience.',
-    href: '/about/dr-bright',
-    isRound: true,
-  },
-];
-
 const teamValues = [
   {
     icon: Heart,
@@ -68,69 +57,37 @@ export default function MeetTheTeam() {
         </div>
       </section>
 
-      {/* DR. BRIGHT - Featured */}
+      {/* OUR TEAM */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center">
-              <Image
-                src="/images/Digital Assets/Dr. Bright and family.png"
-                alt="Dr. Bright and family"
-                width={400}
-                height={400}
-                className="w-[400px] h-[400px] object-cover rounded-full shadow-lg"
-              />
-            </div>
-            <div className="space-y-6">
-              <div>
-                <p className="text-[var(--gold)] font-semibold uppercase tracking-wider text-sm mb-2">Lead Dentist & Owner</p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">Dr. Bright, DDS, FAGD</h2>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Dr. Bright and his family made Colorado their home in 2019, quickly falling in love with the mountains and community. He is a proud father to three young children and an avid outdoorsman who enjoys hiking and fishing in the Rockies.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                In May 2024, he earned the prestigious title of Fellow of the Academy of General Dentistry (FAGD)—a distinction held by only about 6% of dentists in North America. As an Associate Fellow of the American Academy of Implant Dentistry, Dr. Bright possesses advanced skills in surgical procedures and tooth replacement.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-3 text-gray-600 text-sm">
-                  <Star className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-                  Fellow, Academy of General Dentistry (FAGD)
-                </li>
-                <li className="flex items-center gap-3 text-gray-600 text-sm">
-                  <Star className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-                  Associate Fellow, American Academy of Implant Dentistry
-                </li>
-                <li className="flex items-center gap-3 text-gray-600 text-sm">
-                  <Star className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-                  500+ Hours of Continuing Education
-                </li>
-              </ul>
-              <Link
-                href="/about/dr-bright"
-                className="inline-flex items-center text-[var(--gold)] font-semibold hover:underline"
-              >
-                Read Full Bio
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">Our Dental Team</h2>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Behind every great dental practice is a team of caring, skilled professionals. Every member is handpicked for their clinical skills, warmth, and genuine commitment to patient comfort.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* OUR TEAM INTRO */}
-      <section className="py-24 bg-[#f5f5f5]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">Our Dental Team</h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Behind every great dental practice is a team of caring, skilled professionals who make it all happen. At Cherry Creek South Dental, our hygienists, dental assistants, and front desk staff are the heart of our practice.
-          </p>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Every member of our team is handpicked not just for their clinical skills, but for their warmth, patience, and genuine commitment to patient comfort. We believe you should look forward to your dental visits—and our team works hard to make that a reality.
-          </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            From the moment you check in at our calming atrium to the personalized follow-up after your visit, our team is with you every step of the way.
-          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+            {[
+              { name: 'Dr. Derick Bright', role: 'Dentist', image: '/images/team/dr-bright.jpg' },
+              { name: 'Laurie Mason', role: 'Hygienist', image: '/images/team/laurie-mason.jpg' },
+              { name: 'Yasmine Chavez', role: 'Assistant', image: '/images/team/yasmine-chavez.jpg' },
+              { name: 'Kirstie Hendrix', role: 'Front Office', image: '/images/team/kirstie-hendrix.jpg' },
+            ].map((member) => (
+              <div key={member.name} className="text-center">
+                <div className="relative w-48 h-48 mx-auto mb-6">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover rounded-full"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-[var(--navy)]">{member.name}</h3>
+                <p className="text-[var(--gold)] font-medium text-sm">{member.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

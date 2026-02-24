@@ -29,6 +29,7 @@ const navigation: NavItem[] = [
   },
   {
     name: 'Services',
+    href: '/services',
     children: [
       { name: 'General Dentistry', href: '/services/general-dentistry' },
       { name: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry' },
@@ -76,14 +77,33 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <button
-        className="relative flex items-center gap-1 px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors hover:text-[var(--gold)] after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-[var(--gold)] after:-translate-x-1/2 after:transition-all hover:after:w-3/4"
-        style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
-        onClick={() => setOpen(!open)}
-      >
-        {item.name}
-        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
-      </button>
+      <div className="relative flex items-center">
+        {item.href ? (
+          <Link
+            href={item.href}
+            className="px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors hover:text-[var(--gold)]"
+            style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+          >
+            {item.name}
+          </Link>
+        ) : (
+          <button
+            className="px-4 py-2 text-sm font-medium uppercase tracking-wider transition-colors hover:text-[var(--gold)]"
+            style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+            onClick={() => setOpen(!open)}
+          >
+            {item.name}
+          </button>
+        )}
+        <button
+          className="py-2 pr-1 transition-colors hover:text-[var(--gold)]"
+          style={{ color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+          onClick={() => setOpen(!open)}
+          aria-label={`Toggle ${item.name} submenu`}
+        >
+          <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
 
       <div
         className={`absolute left-0 top-full pt-2 transition-all duration-200 ${
@@ -126,13 +146,31 @@ function MobileAccordion({ item, onNavigate }: { item: NavItem; onNavigate: () =
 
   return (
     <div>
-      <button
-        className="flex w-full items-center justify-between px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
-        onClick={() => setOpen(!open)}
-      >
-        {item.name}
-        <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
-      </button>
+      <div className="flex items-center justify-between">
+        {item.href ? (
+          <Link
+            href={item.href}
+            className="flex-1 px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
+            onClick={onNavigate}
+          >
+            {item.name}
+          </Link>
+        ) : (
+          <button
+            className="flex-1 text-left px-4 py-3 text-[var(--stone)] font-medium hover:bg-[var(--mint)] hover:text-[var(--navy)] transition-colors"
+            onClick={() => setOpen(!open)}
+          >
+            {item.name}
+          </button>
+        )}
+        <button
+          className="px-4 py-3 text-[var(--stone)] hover:text-[var(--navy)] transition-colors"
+          onClick={() => setOpen(!open)}
+          aria-label={`Toggle ${item.name} submenu`}
+        >
+          <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
       <div className={`overflow-hidden transition-all duration-200 ${open ? 'max-h-96' : 'max-h-0'}`}>
         {item.children!.map((child) =>
           child.external ? (

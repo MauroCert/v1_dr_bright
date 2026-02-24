@@ -114,7 +114,7 @@ export default function DrBright() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[450px] overflow-hidden shadow-lg">
               <Image
-                src="/images/Digital Assets/Dr. Bright and family.png"
+                src="/54307432591_576cf64694_o.jpg"
                 alt="Dr. Bright and family"
                 fill
                 className="object-cover"

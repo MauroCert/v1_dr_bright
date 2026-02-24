@@ -2,12 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Star, Heart, Shield, Sparkles, GraduationCap, Award, Phone, MapPin } from 'lucide-react';
 
-const credentials = [
-  { title: 'Fellow, Academy of General Dentistry (FAGD)', detail: 'A distinction held by only ~6% of dentists in North America' },
-  { title: 'Associate Fellow, American Academy of Implant Dentistry', detail: 'Advanced skills in surgical procedures and tooth replacement' },
-  { title: '500+ Hours of Continuing Education', detail: 'Staying at the forefront of dental science and technique' },
-];
-
 export default function DrBright() {
   return (
     <div className="bg-white">
@@ -25,10 +19,10 @@ export default function DrBright() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-            Meet <span className="text-[var(--gold)]">Dr. Bright</span>, DDS
+            Meet <span className="text-[var(--gold)]">Dr. Bright</span>
           </h1>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            A dedicated dentist committed to exceptional care with a focus on patient comfort, advanced technology, and building lasting relationships.
+            Your Trusted Dentist in Denver, CO
           </p>
           <a
             href="tel:3033777744"
@@ -40,29 +34,26 @@ export default function DrBright() {
         </div>
       </section>
 
-      {/* ABOUT DR. BRIGHT */}
+      {/* INTRO */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
               <Image
-                src="/images/Digital Assets/Dr. Bright and family.png"
-                alt="Dr. Bright and family"
+                src="/images/team/dr-bright.jpg"
+                alt="Dr. Bright"
                 width={450}
                 height={450}
                 className="w-[450px] h-[450px] object-cover rounded-full"
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">About Dr. Bright</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">Your Trusted Dentist in Denver, CO</h2>
               <p className="text-gray-600 leading-relaxed">
-                Dr. Bright and his family made Colorado their home in 2019, quickly falling in love with the mountains and community. He is a proud father to three young children: a spirited 6-year-old daughter, an adventurous 4-year-old son, and a sweet 7-month-old baby boy.
+                At Cherry Creek South Dental, Dr. Bright is more than just your dentist—he&apos;s a caring professional who prioritizes your health and well-being while also keeping up with the latest advancements in dental science. As a dedicated family man and outdoor enthusiast, Dr. Bright&apos;s passion for life and commitment to excellence shine through in everything he does.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                An avid outdoorsman, Dr. Bright enjoys spending weekends with his family hiking scenic trails or fishing in the tranquil waters of the Rockies. When they&apos;re not exploring the great outdoors, you can often find them cheering on the Denver Nuggets!
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Dr. Bright believes that providing the best care means mastering the latest advancements in oral healthcare. In May 2024, he earned the prestigious title of Fellow of the Academy of General Dentistry (FAGD), a distinction held by only about 6% of dentists in North America.
+                Whether you&apos;re visiting for a routine cleaning, Invisalign, Botox, or dental implants, you can trust Dr. Bright to provide you with the best care possible.
               </p>
             </div>
           </div>
@@ -77,147 +68,127 @@ export default function DrBright() {
         </svg>
       </div>
 
-      {/* CREDENTIALS */}
+      {/* A DENTIST WHO'S ALWAYS ADVANCING */}
       <section className="py-24 bg-[#f8f6f3]">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl sm:text-4xl font-light tracking-wide text-[var(--navy)] text-center mb-16 uppercase">
-            Credentials & Expertise
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
-                <GraduationCap className="w-8 h-8 text-white" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Education</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Doctor of Dental Surgery degree with extensive post-graduate training in advanced techniques.</p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">A Dentist Who&apos;s Always Advancing</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Dr. Bright believes that providing the best care means staying on top of the latest advancements in oral healthcare. In May 2024, he earned the prestigious title of Fellow of the Academy of General Dentistry (FAGD), a distinction held by only about 6% of dentists in North America. This achievement represents over 500 hours of continuing education and the completion of a rigorous comprehensive exam, ensuring that Dr. Bright remains at the forefront of dental science.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Dr. Bright is also an Associate Fellow of the American Academy of Implant Dentistry, showcasing his advanced skills in surgical procedures and tooth replacement. Whether you are here for cosmetic services like Invisalign or Botox, or more complex procedures such as implants, you can rest assured knowing Dr. Bright uses the latest, most effective techniques to safeguard your health and enhance your smile.
+              </p>
             </div>
-            <div className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
-                <Award className="w-8 h-8 text-white" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Certifications</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Advanced training in cosmetic, restorative, and implant dentistry with top professional organizations.</p>
-            </div>
-            <div className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
-                <Sparkles className="w-8 h-8 text-white" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Technology</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Certified in advanced dental technology, AI diagnostics, and digital treatment planning.</p>
-            </div>
-          </div>
-
-          <div className="mt-16 bg-white p-8 shadow-sm border-l-4 border-[var(--gold)]">
-            <h3 className="text-2xl font-bold text-[var(--navy)] mb-6">Professional Achievements</h3>
-            <div className="space-y-4">
-              {credentials.map((cred) => (
-                <div key={cred.title} className="flex items-start gap-4">
-                  <Star className="h-5 w-5 text-[var(--gold)] flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-[var(--navy)]">{cred.title}</h4>
-                    <p className="text-gray-600 text-sm">{cred.detail}</p>
-                  </div>
+            <div className="space-y-6">
+              <div className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                  <GraduationCap className="w-8 h-8 text-white" strokeWidth={1.5} />
                 </div>
-              ))}
+                <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">FAGD</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">Fellow of the Academy of General Dentistry — held by only ~6% of dentists in North America</p>
+              </div>
+              <div className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                  <Award className="w-8 h-8 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">Implant Dentistry</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">Associate Fellow of the American Academy of Implant Dentistry</p>
+              </div>
+              <div className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
+                  <Sparkles className="w-8 h-8 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-bold text-[var(--navy)] mb-2 uppercase tracking-wide">500+ Hours CE</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">Continuing education ensuring the latest techniques and technology</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PHILOSOPHY */}
+      {/* PASSION FOR OUTDOORS AND FAMILY */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[450px] overflow-hidden shadow-lg">
               <Image
-                src="/54307432591_576cf64694_o.jpg"
-                alt="Dr. Bright's philosophy"
+                src="/images/Digital Assets/Dr. Bright and family.png"
+                alt="Dr. Bright and family"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
-                Dr. Bright&apos;s Philosophy
-              </h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">A Passion for Outdoors and Family</h2>
               <p className="text-gray-600 leading-relaxed">
-                Dr. Bright&apos;s commitment to excellence extends beyond the dental chair. He believes in educating patients about their oral health and involving them in decisions about their treatment. This collaborative approach ensures that every patient feels heard, respected, and confident in their dental care choices.
+                Dr. Bright and his family made Colorado their home in 2019, quickly falling in love with the mountains and the vibrant community. A proud father to three young children—a spirited 6-year-old daughter, an adventurous 4-year-old son, and a sweet 7-month-old baby boy—Dr. Bright cherishes every moment spent with his family.
               </p>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Heart className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Patient-First Approach</h3>
-                    <p className="text-gray-600 text-sm">Every treatment plan is designed with your comfort and long-term health as top priority.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Shield className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Family-Centered Care</h3>
-                    <p className="text-gray-600 text-sm">Dental care should be a positive experience that brings families together.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Award className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Excellence in Dentistry</h3>
-                    <p className="text-gray-600 text-sm">Committed to staying at the forefront of dental technology and techniques.</p>
-                  </div>
-                </li>
-              </ul>
+              <p className="text-gray-600 leading-relaxed">
+                An avid outdoorsman, Dr. Bright enjoys spending his weekends hiking scenic trails or fishing in the tranquil waters of the Rockies. When they&apos;re not out exploring the great outdoors, you can often find the Bright family cheering on the Denver Nuggets, embracing the local culture and spirit.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE DR. BRIGHT */}
-      <section className="py-24 bg-[var(--navy)]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">Why Choose Dr. Bright?</h2>
-          <div className="grid sm:grid-cols-2 gap-6 text-left">
-            {[
-              { label: 'Family-Owned Practice', desc: 'Personal care in a corporate world' },
-              { label: 'Extended Appointment Times', desc: 'No rushing, thorough care' },
-              { label: 'Advanced Technology', desc: 'AI-powered diagnostics and modern equipment' },
-              { label: 'Patient Involvement', desc: 'Collaborative treatment planning' },
-              { label: 'Calming Environment', desc: 'Designed to reduce dental anxiety' },
-              { label: 'Continuing Education', desc: 'Always learning the latest techniques' },
-            ].map((item) => (
-              <div key={item.label} className="flex items-start gap-3 bg-white/10 p-4 border-l-4 border-[var(--gold)]">
-                <Star className="h-5 w-5 text-[var(--gold)] flex-shrink-0 mt-0.5" />
+      {/* Geometric Divider */}
+      <div className="relative h-24 -mt-1">
+        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
+          <polygon points="0,0 0,96 1440,0" fill="white" />
+        </svg>
+      </div>
+
+      {/* DR. BRIGHT'S APPROACH TO CARE */}
+      <section className="py-24 bg-[#f5f5f5] -mt-1">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">Dr. Bright&apos;s Approach to Care</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Dr. Bright&apos;s philosophy is simple: he believes that dental care should be comfortable, efficient, and tailored to each patient&apos;s individual needs. He takes the time to understand your goals and concerns and works with you to create a treatment plan that fits your lifestyle and budget.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                With his skill, experience, and dedication to excellence, Dr. Bright ensures that every patient receives the highest standard of care in a warm and compassionate environment.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Heart className="h-5 w-5 text-[var(--gold)]" />
+                </div>
                 <div>
-                  <p className="font-semibold text-white">{item.label}</p>
-                  <p className="text-white/70 text-sm">{item.desc}</p>
+                  <h3 className="font-semibold text-[var(--navy)]">Comfortable & Patient-Centered</h3>
+                  <p className="text-gray-600 text-sm">Every treatment plan is designed with your comfort and long-term health as top priority.</p>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              Call (303) 377-7744
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20"
-            >
-              Contact Us
-            </Link>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Shield className="h-5 w-5 text-[var(--gold)]" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[var(--navy)]">Tailored to Your Needs</h3>
+                  <p className="text-gray-600 text-sm">He works with you to create a plan that fits your lifestyle and budget.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Star className="h-5 w-5 text-[var(--gold)]" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[var(--navy)]">Warm & Compassionate</h3>
+                  <p className="text-gray-600 text-sm">The highest standard of care in a welcoming, anxiety-free environment.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* BOOK YOUR APPOINTMENT */}
-      <section className="py-24 bg-[#f5f5f5]">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
@@ -237,21 +208,21 @@ export default function DrBright() {
               </form>
             </div>
             <div className="space-y-6 lg:pt-20">
-              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Call Us</h3>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><Phone className="h-5 w-5 text-white" /></div>
                   <a href="tel:(303) 377-7744" className="text-gray-600 hover:text-[var(--gold)] transition">(303) 377-7744</a>
                 </div>
               </div>
-              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Our Address</h3>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><MapPin className="h-5 w-5 text-white" /></div>
                   <a href="https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[var(--gold)] transition">5055 E Kentucky Ave, Denver, CO 80246</a>
                 </div>
               </div>
-              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Get Connected</h3>
                 <div className="flex items-center gap-3">
                   <a href="https://g.page/r/CQVBXHNMdHxCEAE" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition"><svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>

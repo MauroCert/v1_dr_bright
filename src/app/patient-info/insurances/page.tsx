@@ -1,66 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Shield, CreditCard, Heart, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield, Phone, MapPin, MessageCircle } from 'lucide-react';
 
-const insurancePlans = [
+const insurers = [
   'Delta Dental',
-  'Cigna',
   'Aetna',
-  'MetLife',
-  'United Healthcare',
-  'Guardian',
+  'Cigna',
   'Humana',
-  'BlueCross BlueShield',
-  'Principal',
-  'Ameritas',
-  'Sun Life',
-  'And many more…',
+  'MetLife',
 ];
 
-const paymentOptions = [
-  {
-    title: 'CareCredit Financing',
-    description: 'Interest-free payment plans for 6, 12, or 18 months on qualifying treatments. Apply online or in-office—approval takes just minutes.',
-  },
-  {
-    title: 'Major Credit Cards',
-    description: 'We accept Visa, Mastercard, American Express, and Discover for your convenience.',
-  },
-  {
-    title: 'Cash & Debit',
-    description: 'Cash and debit card payments are always welcome at our office.',
-  },
-  {
-    title: 'In-House Payment Plans',
-    description: 'For larger treatments, we offer customized monthly payment plans to help spread the cost over time. No third-party financing required.',
-  },
-];
-
-const faqs = [
-  {
-    question: 'Do you accept my insurance?',
-    answer: 'We accept most major PPO dental insurance plans. The best way to verify is to call our office at (303) 377-7744 and our team will check your specific plan and benefits before your visit.',
-  },
-  {
-    question: 'Are you in-network or out-of-network?',
-    answer: 'We are in-network with several major insurance providers and out-of-network with others. Even if we are out-of-network with your plan, you may still have coverage. Our team will help you understand your out-of-network benefits and maximize your reimbursement.',
-  },
-  {
-    question: 'Will you file insurance claims for me?',
-    answer: 'Yes! Our team handles all insurance claim submissions on your behalf. We also follow up on claims to ensure you receive the maximum benefit you\'re entitled to.',
-  },
-  {
-    question: 'What if I don\'t have dental insurance?',
-    answer: 'No problem! We offer a comprehensive Membership Plan that provides preventive care coverage and significant discounts on all treatments. We also offer CareCredit financing and in-house payment plans.',
-  },
-  {
-    question: 'Do you offer payment plans for expensive treatments?',
-    answer: 'Absolutely. We believe cost should never be a barrier to great dental care. Between CareCredit financing, our in-house payment plans, and our membership discounts, we can find a solution that works for your budget.',
-  },
-  {
-    question: 'How do I maximize my insurance benefits?',
-    answer: 'Most dental plans reset annually, so unused benefits don\'t roll over. We recommend scheduling your preventive visits and any recommended treatments before your benefits expire. Our team will help you strategize to get the most from your plan.',
-  },
+const howItWorks = [
+  'Verify your benefits before your visit.',
+  'Explain your coverage so you know what to expect.',
+  'File claims on your behalf as a courtesy.',
+  'Answer questions about out-of-pocket costs and treatment estimates.',
 ];
 
 export default function Insurances() {
@@ -71,7 +25,7 @@ export default function Insurances() {
         <div className="absolute inset-0">
           <Image
             src="/IMG_5467 copy_edited.avif"
-            alt="Insurance & Payment - Cherry Creek South Dental"
+            alt="Insurance - Cherry Creek South Dental"
             fill
             className="object-cover"
             priority
@@ -80,10 +34,10 @@ export default function Insurances() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-            Insurance & <span className="text-[var(--gold)]">Payment</span>
+            <span className="text-[var(--gold)]">Insurances</span>
           </h1>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            We accept most major dental insurance plans and offer flexible payment options so cost is never a barrier to great care.
+            We&apos;ll Help You Make the Most of Your Dental Benefits
           </p>
           <a
             href="tel:3033777744"
@@ -95,142 +49,137 @@ export default function Insurances() {
         </div>
       </section>
 
-      {/* INSURANCE PLANS */}
+      {/* INTRO */}
       <section className="py-24 bg-white">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className="text-lg text-gray-600 leading-relaxed text-center mb-12">
+            At Cherry Creek South Dental, quality dental care shouldn&apos;t be complicated — and your insurance shouldn&apos;t be either. We&apos;re proud to partner with several major dental insurers so that excellent care is both accessible and affordable for patients of all ages.
+          </p>
+        </div>
+      </section>
+
+      {/* IN-NETWORK INSURERS */}
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">Insurance Plans We Accept</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">We&apos;re In-Network With Top Insurers</h2>
               <p className="text-gray-600 leading-relaxed">
-                We work with most major dental insurance providers to help you get the most out of your benefits. Our team handles all claims and paperwork so you can focus on your smile.
+                We accept and are in-network with several leading insurance providers, which helps you maximize your dental benefits and reduce your out-of-pocket costs. Our goal is to make your visit simple, straightforward, and stress-free.
               </p>
-              <div className="grid grid-cols-2 gap-3">
-                {insurancePlans.map((plan) => (
-                  <div key={plan} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-                    <span className="text-gray-600 text-sm">{plan}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-gray-500 italic border-l-4 border-[var(--gold)] pl-4 text-sm">
-                Don&apos;t see your plan listed? Call us at (303) 377-7744—we likely accept it or can help you understand your out-of-network benefits.
+              <p className="text-gray-600 leading-relaxed">
+                Although every plan is different, being in-network often means lower costs for you. If you don&apos;t see your insurance listed below, there&apos;s a good chance we still participate in your plan — just give us a call to verify your coverage. We&apos;re always happy to help!
               </p>
             </div>
-            <div className="space-y-6">
-              <div className="bg-[#f8f6f3] p-8 border-l-4 border-[var(--gold)]">
-                <h3 className="text-xl font-bold text-[var(--navy)] mb-4">How We Help With Insurance</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Verify your coverage before your first visit',
-                    'Submit all claims electronically on your behalf',
-                    'Follow up on pending claims to maximize reimbursement',
-                    'Explain your benefits clearly so there are no surprises',
-                    'Help you understand co-pays and out-of-pocket costs upfront',
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <Shield className="h-5 w-5 text-[var(--gold)] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600 text-sm">{item}</span>
+            <div>
+              <div className="bg-white p-8 shadow-sm border-l-4 border-[var(--gold)]">
+                <h3 className="text-xl font-bold text-[var(--navy)] mb-6">Some of the insurers we work with include:</h3>
+                <ul className="space-y-4">
+                  {insurers.map((insurer) => (
+                    <li key={insurer} className="flex items-center gap-3">
+                      <Shield className="h-5 w-5 text-[var(--gold)] flex-shrink-0" />
+                      <span className="text-gray-700 font-medium text-lg">{insurer}</span>
                     </li>
                   ))}
                 </ul>
+                <p className="text-gray-500 italic mt-6 text-sm">
+                  If your plan isn&apos;t listed, don&apos;t worry — call us to check!
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Geometric Divider */}
-      <div className="relative h-24 -mt-1">
-        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
-          <polygon points="0,0 0,96 1440,0" fill="white" />
-        </svg>
-      </div>
-
-      {/* PAYMENT OPTIONS */}
-      <section className="py-24 bg-[#f5f5f5] -mt-1">
+      {/* HOW IT WORKS */}
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">Payment Options</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Flexible ways to pay for the care you need</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {paymentOptions.map((option) => (
-              <div key={option.title} className="bg-white shadow-sm p-8 border-l-4 border-[var(--gold)]">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CreditCard className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[var(--navy)] text-lg mb-2">{option.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{option.description}</p>
-                  </div>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[400px] overflow-hidden shadow-lg">
+              <Image
+                src="/54307432591_576cf64694_o.jpg"
+                alt="Our team helping with insurance"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <p className="text-2xl font-bold">Focus on your care, not the paperwork</p>
               </div>
-            ))}
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">How It Works</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Insurance can be confusing — coverage, deductibles, co-pays, and annual maximums all vary by plan. That&apos;s why our knowledgeable team is here to help you every step of the way:
+              </p>
+              <div className="space-y-4">
+                {howItWorks.map((step, index) => (
+                  <div key={step} className="flex gap-4">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)] text-sm font-bold text-white flex-shrink-0">
+                      {index + 1}
+                    </span>
+                    <p className="text-gray-600 pt-1">{step}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-gray-600 leading-relaxed font-medium">
+                We walk you through your insurance benefits so you can focus on your care, not the paperwork.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* MEMBERSHIP CTA */}
+      {/* NO INSURANCE CTA */}
       <section className="py-16 bg-[var(--navy)]">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">No Insurance? Consider Our Membership Plan</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Don&apos;t Have Dental Insurance?</h2>
+          <p className="text-white/80 text-lg mb-4">No insurance? No problem!</p>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Our in-house membership plan covers preventive care and provides exclusive discounts on all treatments—with no deductibles, no maximums, and no waiting periods.
+            Our Cherry Creek South Dental Membership Plan provides an affordable alternative that includes preventive care and exclusive discounts on additional services — with no waiting periods, no annual maximums, and no insurance company hassles.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/patient-info/membership-plan"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              View Membership Plan
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+          <Link
+            href="/patient-info/membership-plan"
+            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
+          >
+            View Membership Plan
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </div>
+      </section>
+
+      {/* STILL HAVE QUESTIONS */}
+      <section className="py-24 bg-[#f8f6f3]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">Still Have Questions?</h2>
+          <p className="text-lg text-gray-600 leading-relaxed mb-10">
+            Our team is here to help you understand your options and confidently use your benefits. Call or text us anytime — we&apos;ll walk you through coverage, uninsured options, and your best path to a healthier smile.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20"
+              className="inline-flex items-center justify-center gap-3 bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
             >
-              Call (303) 377-7744
+              <Phone className="h-5 w-5" />
+              (303) 377-7744
+            </a>
+            <a
+              href="sms:7208641333"
+              className="inline-flex items-center justify-center gap-3 border-2 border-[var(--navy)] text-[var(--navy)] px-8 py-4 font-semibold transition hover:bg-[var(--navy)] hover:text-white"
+            >
+              <MessageCircle className="h-5 w-5" />
+              (720) 864-1333
             </a>
           </div>
         </div>
       </section>
 
-      {/* Two-Tone Divider */}
-      <div className="relative h-24">
-        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="0,96 0,20 1440,96" fill="var(--navy)" />
-          <polygon points="950,96 1440,40 1440,96" fill="var(--gold)" />
-        </svg>
-      </div>
-
-      {/* FAQ */}
-      <section className="py-24 bg-[#f5f5f5]">
-        <div className="mx-auto max-w-3xl px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">Frequently Asked Questions</h2>
-          </div>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group bg-white rounded-lg shadow-sm">
-                <summary className="flex cursor-pointer items-center justify-between p-6 font-semibold text-[var(--navy)]">
-                  {faq.question}
-                  <span className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)]/10 text-[var(--gold)] text-xl transition group-open:rotate-45">+</span>
-                </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">{faq.answer}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BOOK YOUR APPOINTMENT */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-light text-[var(--gold)] mb-4 uppercase tracking-wide">Have<br />Questions?</h2>
+              <h2 className="text-3xl sm:text-4xl font-light text-[var(--gold)] mb-4 uppercase tracking-wide">Book Your<br />Appointment</h2>
               <p className="text-gray-600 mb-8">Our team is happy to verify your insurance, explain your benefits, or discuss payment options. Reach out anytime.</p>
               <form className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
@@ -246,14 +195,14 @@ export default function Insurances() {
               </form>
             </div>
             <div className="space-y-6 lg:pt-20">
-              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Call Us</h3>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><Phone className="h-5 w-5 text-white" /></div>
                   <a href="tel:(303) 377-7744" className="text-gray-600 hover:text-[var(--gold)] transition">(303) 377-7744</a>
                 </div>
               </div>
-              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Our Address</h3>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><MapPin className="h-5 w-5 text-white" /></div>

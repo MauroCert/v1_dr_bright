@@ -3,63 +3,44 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Star, Shield, Heart, Sparkles, Phone, MapPin } from 'lucide-react';
 
 const membershipPerks = [
-  'Two professional cleanings per year',
-  'Comprehensive exams with digital X-rays',
-  'Oral cancer screenings',
-  'Free whitening touch-ups when you keep visits on track',
-  '15% discount on restorative treatments (crowns, fillings, bridges)',
-  '10% discount on cosmetic treatments (veneers, bonding)',
-  'Savings on periodontal therapy and nightguards',
-  'Savings on Invisalign maintenance trays',
-  'Annual credit toward facial aesthetics or cosmetic upgrades',
-  'Priority scheduling for appointments',
-  'No waiting periods—benefits start immediately',
-  'No deductibles, no maximums, no pre-authorizations',
+  'All dental exams',
+  'All radiographs (X-rays)',
+  'Two regular hygiene cleanings per year',
+  'All fluoride applications',
+  '$500 off Invisalign',
+  '15% off all other dental treatments',
 ];
 
-const whyMembership = [
-  {
-    icon: Shield,
-    title: 'No Insurance? No Problem.',
-    description: 'Our membership plan provides comprehensive coverage for patients without dental insurance at a fraction of the cost.',
-  },
-  {
-    icon: Heart,
-    title: 'Simple & Transparent',
-    description: 'One flat annual or monthly fee. No surprise bills, no hidden costs, no confusing claims to file.',
-  },
-  {
-    icon: Star,
-    title: 'Immediate Benefits',
-    description: 'Unlike insurance, there are no waiting periods. Your benefits start the day you enroll.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Exclusive Discounts',
-    description: 'Members enjoy significant savings on all additional treatments beyond preventive care.',
-  },
+const whyJoin = [
+  'Save money compared to standard dental insurance premiums.',
+  'No waiting periods, pre-approvals, or claim hassles.',
+  'Preventive care included — because the best dental care starts with prevention.',
+  'Exclusive savings on cosmetic, restorative, and specialty treatments.',
+];
+
+const planDetails = [
+  'Membership is $600 annually, payable in full, or you may choose the monthly equivalent.',
+  'The plan is valid for 12 months from the date of purchase.',
+  'Unused benefits do not carry over and have no cash value at expiration.',
+  'This plan is only valid at Cherry Creek South Dental.',
 ];
 
 const faqs = [
   {
-    question: 'How much does the membership cost?',
-    answer: 'Our membership plan is affordably priced with options for annual or monthly payment. Contact our office for current pricing—we\'re happy to walk you through the details.',
+    question: 'Do I have to be insured to enroll?',
+    answer: 'No — this plan is designed for patients without dental insurance or those seeking a more affordable alternative.',
   },
   {
-    question: 'Can I use the membership with insurance?',
-    answer: 'The membership plan is designed primarily for patients without dental insurance. If you have insurance, we\'re happy to help you maximize those benefits instead. However, some patients with limited insurance choose to supplement with our plan.',
+    question: 'Can I use my membership benefits right away?',
+    answer: 'Yes! Once you enroll, your benefits are active immediately and valid for 12 months.',
   },
   {
-    question: 'Are there family plans available?',
-    answer: 'Yes! We offer family membership packages at a discounted rate. Ask our front desk team about multi-member pricing.',
+    question: 'Can I use the discounts on any treatment?',
+    answer: 'Yes — you receive $500 off Invisalign and 15% off all other treatments offered at our practice.',
   },
   {
-    question: 'What\'s not included in the membership?',
-    answer: 'The membership covers preventive care (cleanings, exams, X-rays, screenings) and provides discounts on all other treatments. Restorative, cosmetic, and specialty treatments are available at the discounted member rate.',
-  },
-  {
-    question: 'Can I cancel at any time?',
-    answer: 'Annual memberships are non-refundable but can be cancelled at renewal. Monthly memberships require a 12-month commitment. We\'re confident you\'ll love the value.',
+    question: 'Do unused services carry over to the next year?',
+    answer: 'No — benefits expire at the end of your 12-month plan term and do not have a cash value.',
   },
 ];
 
@@ -80,10 +61,10 @@ export default function MembershipPlan() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-            Membership <span className="text-[var(--gold)]">Plan</span>
+            Cherry Creek South Dental <span className="text-[var(--gold)]">Membership Plan</span>
           </h1>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Quality dental care without the complexity of insurance. Simple pricing, immediate benefits, and exclusive savings.
+            Affordable Dental Care That Makes Sense
           </p>
           <a
             href="tel:3033777744"
@@ -95,31 +76,22 @@ export default function MembershipPlan() {
         </div>
       </section>
 
-      {/* WHY MEMBERSHIP */}
-      <section className="py-24 bg-[#f8f6f3]">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl sm:text-4xl font-light tracking-wide text-[var(--navy)] text-center mb-16 uppercase">
-            Why Choose Our Membership?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyMembership.map((item) => {
-              const IconComponent = item.icon;
-              return (
-                <div key={item.title} className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center">
-                    <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">{item.description}</p>
-                </div>
-              );
-            })}
+      {/* INTRO */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            At Cherry Creek South Dental, we believe everyone should have access to quality dental care without the stress of high monthly premiums or insurance hurdles. That&apos;s why we offer our Membership Plan, a simple, affordable alternative for patients who want excellent care with predictable pricing.
+          </p>
+          <div className="bg-[var(--navy)] text-white p-8 mt-8">
+            <p className="text-lg leading-relaxed">
+              Most dental insurance premiums cost over <span className="font-bold text-white/60 line-through">$50 per month</span>. Our membership plan is just <span className="text-[var(--gold)] font-bold text-2xl">$50 per month</span>, giving you access to essential dental services and exclusive savings, hassle-free, with better benefits and no waiting on hold.
+            </p>
           </div>
         </div>
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[500px] overflow-hidden shadow-lg">
@@ -131,13 +103,51 @@ export default function MembershipPlan() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">What&apos;s Included</h2>
-              <p className="text-gray-600">Your membership covers everything you need for a healthy smile—and more:</p>
-              <ul className="space-y-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">What&apos;s Included in Your Membership</h2>
+              <p className="text-gray-600">
+                When you enroll in the Cherry Creek South Dental Membership Plan, you receive the following benefits:
+              </p>
+              <ul className="space-y-4">
                 {membershipPerks.map((perk) => (
                   <li key={perk} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-6 w-6 text-[var(--gold)] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 font-medium">{perk}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-500 italic border-l-4 border-[var(--gold)] pl-4 text-sm">
+                These benefits are designed to make preventive care easy and affordable while giving you meaningful discounts on the additional care you might need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PLAN DETAILS & WHY JOIN */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Plan Details */}
+            <div className="bg-[#f8f6f3] p-8 border-l-4 border-[var(--gold)]">
+              <h3 className="text-2xl font-bold text-[var(--navy)] mb-6">Plan Details & Terms</h3>
+              <ul className="space-y-4">
+                {planDetails.map((detail) => (
+                  <li key={detail} className="flex items-start gap-3">
+                    <Star className="h-5 w-5 text-[var(--gold)] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600 text-sm">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Why Join */}
+            <div className="bg-[var(--navy)] text-white p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Why Join the Membership Plan?</h3>
+              <ul className="space-y-4">
+                {whyJoin.map((reason) => (
+                  <li key={reason} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[var(--gold)] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600 text-sm">{perk}</span>
+                    <span className="text-white/90 text-sm">{reason}</span>
                   </li>
                 ))}
               </ul>
@@ -146,29 +156,11 @@ export default function MembershipPlan() {
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="py-16 bg-[var(--navy)]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Join?</h2>
-          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Enrolling is easy—call us or stop by the office. Your benefits start immediately and you&apos;ll start saving from day one.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:3033777744" className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90">
-              Call (303) 377-7744
-            </a>
-            <Link href="/contact" className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Geometric Divider */}
       <div className="relative h-24 -mt-1">
         <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
-          <polygon points="0,0 0,96 1440,0" fill="var(--navy)" />
+          <polygon points="0,0 0,96 1440,0" fill="white" />
         </svg>
       </div>
 
@@ -192,8 +184,25 @@ export default function MembershipPlan() {
         </div>
       </section>
 
+      {/* READY TO GET STARTED */}
+      <section className="py-16 bg-[var(--navy)]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            Joining is simple — inquire at the front desk, call our office, or enroll online. With easy, affordable care and meaningful savings, the Cherry Creek South Dental Membership Plan is a smart way to keep your smile healthy and bright.
+          </p>
+          <a
+            href="tel:3033777744"
+            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
+          >
+            Sign Up for the Membership Plan Today!
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
+        </div>
+      </section>
+
       {/* BOOK YOUR APPOINTMENT */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
@@ -213,14 +222,14 @@ export default function MembershipPlan() {
               </form>
             </div>
             <div className="space-y-6 lg:pt-20">
-              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Call Us</h3>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><Phone className="h-5 w-5 text-white" /></div>
                   <a href="tel:(303) 377-7744" className="text-gray-600 hover:text-[var(--gold)] transition">(303) 377-7744</a>
                 </div>
               </div>
-              <div className="bg-[#f5f5f5] p-6 shadow-sm border-l-4 border-[var(--gold)]">
+              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
                 <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Our Address</h3>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><MapPin className="h-5 w-5 text-white" /></div>

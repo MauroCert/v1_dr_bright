@@ -2,82 +2,45 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Heart, Shield, Sparkles, Clock, Star, Phone, MapPin } from 'lucide-react';
 
-type PreventiveService = {
-  title: string;
-  description: string;
-  listTitle: string;
-  points: string[];
-  image: string;
-  note?: string;
-};
-
-const preventiveServices: PreventiveService[] = [
-  {
-    title: 'Comprehensive Exams & Cleanings',
-    description: 'We schedule generous time for cleanings, exams, and questions. Our hygiene visits go beyond the basics with thorough evaluations, AI-enhanced diagnostics, and personalized home-care coaching.',
-    listTitle: 'Each visit includes:',
-    points: ['Ultrasonic + hand scaling', 'Gum health charting', 'Oral cancer screening', 'Personalized home-care coaching'],
-    image: '/Main service page/Copy of Dental Exams & Cleanings.jpg',
-  },
-  {
-    title: 'Oral Cancer Screenings',
-    description: 'Every comprehensive visit includes an oral cancer screening and airway review for full-body wellness insights. Early detection is key, and we make it a standard part of your preventive care.',
-    listTitle: 'Screening includes:',
-    points: ['Head & neck exam', 'Airway + TMJ check', 'Soft tissue evaluation', 'Lifestyle risk review'],
-    image: '/Individual service page/Hero.jpg',
-  },
-  {
-    title: 'Periodontal Therapy',
-    description: 'For gums that need extra support, we stage therapy visits with a focus on comfort and lasting results. Our approach targets infection at the source while keeping you relaxed throughout.',
-    listTitle: 'Treatment includes:',
-    points: ['Localized irrigation', 'Comfort-focused anesthesia', 'Deep scaling & root planing', 'Ongoing maintenance plans'],
-    note: 'Keeping your gums healthy is the foundation for preserving your natural teeth for life.',
-    image: '/Main service page/european-mid-pleased-dentist-woman-face-mask-working-dental-clinic.jpg',
-  },
-  {
-    title: 'Preventive Home Care Partners',
-    description: 'We pair each patient with tailored product and technique recommendations so you can maintain optimal oral health between visits. Our team is your partner in prevention.',
-    listTitle: 'We provide:',
-    points: ['Electric brush guidance', 'Floss & water flosser demos', 'Follow-up check-ins by text', 'Custom product recommendations'],
-    image: '/Main service page/young-woman-is-dental-chair-drilling-her-tooth-by-specialist-modern-clinic.jpg',
-  },
+const whyChoose = [
+  'Early detection of dental issues like cavities, gum disease, or oral cancer',
+  'Thorough cleanings to remove plaque, tartar, and bacteria that can lead to problems',
+  'Digital X-rays for accurate and comfortable diagnostics',
+  'Customized advice on maintaining your oral health based on your specific needs',
+  'Friendly, welcoming atmosphere designed for your comfort',
 ];
 
-const visitTimeline = [
+const visitSteps = [
   {
-    title: 'Warm Welcome',
-    description: 'Atrium check-in, beverage station, and a judgment-free conversation about your goals.',
+    title: 'Personalized Consultation',
+    description: 'Dr. Bright takes the time to learn about your oral health history and discuss any concerns or symptoms you\'re experiencing.',
   },
   {
-    title: 'Digital Diagnostics',
-    description: 'AI-assisted X-rays, CBCT as needed, intraoral photos, and periodontal charting.',
+    title: 'Comprehensive Evaluation',
+    description: 'Advanced technology such as digital X-rays and intraoral cameras are used to thoroughly evaluate your teeth, gums, and bite.',
   },
   {
-    title: 'Co-Planning with Dr. Bright',
-    description: 'Dr. Bright reviews findings chairside and discusses options with you in a collaborative, educational approach.',
+    title: 'Thorough Cleaning',
+    description: 'A skilled hygienist will clean your teeth, removing plaque and tartar that can\'t be removed by brushing alone, leaving your mouth feeling fresh and healthy.',
   },
   {
-    title: 'Comfort Menu',
-    description: 'Laughing gas, weighted blankets, curated playlists, and breaks whenever you need them.',
+    title: 'Customized Recommendations',
+    description: 'After your cleaning, Dr. Bright will provide tailored recommendations for maintaining your smile, including suggestions on brushing, flossing, and any potential treatments.',
   },
 ];
 
 const faqs = [
   {
-    question: 'How often should I visit the dentist?',
-    answer: 'Most patients benefit from visits every 6 months for professional cleanings and exams. Depending on your oral health, Dr. Bright may recommend more frequent visits for optimal care.',
+    question: 'Does dental cleaning hurt?',
+    answer: 'Dental cleanings are generally painless. You may experience some sensitivity, especially if you have gum disease or tartar buildup. However, the procedure is usually quick and comfortable.',
   },
   {
-    question: 'What happens during a dental exam?',
-    answer: 'Your exam includes digital X-rays, a thorough evaluation of your teeth, gums, bite, and jaw joints, an oral cancer screening, and a discussion of findings and recommendations with Dr. Bright.',
+    question: 'How often should I get a dental cleaning?',
+    answer: 'We recommend getting a professional cleaning every six months to keep your teeth and gums healthy.',
   },
   {
-    question: 'Why are your appointments longer?',
-    answer: 'We believe quality care takes time. Longer appointments mean more thorough cleanings, unhurried conversations about your health, and no feeling of being rushed out the door.',
-  },
-  {
-    question: 'Do you accept dental insurance?',
-    answer: 'Yes, we accept most major dental insurance plans. Our team will help verify your benefits and maximize your coverage. We also offer a membership plan for uninsured patients.',
+    question: 'Is dental cleaning covered by insurance?',
+    answer: 'Most dental insurance plans cover routine exams and cleanings. Be sure to check with your provider for specifics.',
   },
 ];
 
@@ -87,176 +50,64 @@ export default function GeneralDentistry() {
       {/* HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
-          <Image
-            src="/Individual service page/Hero.jpg"
-            alt="General Dentistry at Cherry Creek South Dental"
-            fill
-            className="object-cover"
-            priority
-          />
+          <Image src="/Individual service page/Hero.jpg" alt="Dental Exams & Cleanings in Denver" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-            Preventive Care for a <span className="text-[var(--gold)]">Lifetime</span> of Wellness
+            Dental Exams & Cleanings in <span className="text-[var(--gold)]">Denver, CO</span>
           </h1>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Longer appointments, honest education, and personalized attention—delivered with Dr. Bright&apos;s calm, caring touch.
+            Protect Your Smile with Comprehensive Exams and Cleanings
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              Reserve a Preventive Visit
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-white text-[var(--navy)] px-8 py-4 text-base font-semibold transition hover:bg-white/90"
-            >
-              (303) 377-7744
-            </a>
-          </div>
+          <a href="tel:3033777744" className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90">
+            Schedule Your Visit <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
         </div>
       </section>
 
-      {/* WHY CHOOSE GENERAL DENTISTRY */}
+      {/* INTRO */}
       <section className="py-24 bg-white">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="text-lg text-gray-600 leading-relaxed">
+            At Dr. Bright Smiles, regular dental exams and cleanings are the foundation of your oral health. These routine visits help detect early signs of tooth decay, gum disease, and other dental issues. Our goal is to provide thorough care and education to keep your smile healthy for years to come. Whether you&apos;re due for a check-up or it&apos;s your first visit, Dr. Bright&apos;s team is here to ensure your comfort and well-being.
+          </p>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE */}
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[450px] overflow-hidden shadow-lg">
-              <Image
-                src="/Individual service page/What your general dentistry visit feels like.jpg"
-                alt="General dentistry visit"
-                fill
-                className="object-cover"
-              />
+              <Image src="/Individual service page/What your general dentistry visit feels like.jpg" alt="Dental exam" fill className="object-cover" />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
-                Why Choose General Dentistry With Dr. Bright?
-              </h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">Why Choose Dental Exams & Cleanings with Dr. Bright?</h2>
               <ul className="space-y-4">
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Clock className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Longer Appointments</h3>
-                    <p className="text-gray-600 text-sm">Extended time blocks so you never feel rushed—every question gets answered</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Sparkles className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">AI-Enhanced Diagnostics</h3>
-                    <p className="text-gray-600 text-sm">Advanced technology catches issues early for better outcomes</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Heart className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Honest Education</h3>
-                    <p className="text-gray-600 text-sm">We teach and empower you to make informed decisions about your oral health</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Shield className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Preventive Focus</h3>
-                    <p className="text-gray-600 text-sm">We aim to prevent problems before they start, saving you time and money</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Star className="h-5 w-5 text-[var(--gold)]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--navy)]">Calming Environment</h3>
-                    <p className="text-gray-600 text-sm">Our atrium with plants and natural light creates a relaxing dental experience</p>
-                  </div>
-                </li>
+                {whyChoose.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
               </ul>
+              <p className="text-gray-500 italic border-l-4 border-[var(--gold)] pl-4 text-sm">
+                Regular exams and cleanings not only keep your teeth looking good but also prevent more serious issues down the road, saving you time and money on treatment.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Geometric Divider */}
-      <div className="relative h-24 -mt-1">
-        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="0,96 1440,0 1440,96" fill="#f5f5f5" />
-          <polygon points="0,0 0,96 1440,0" fill="white" />
-        </svg>
-      </div>
-
-      {/* PREVENTIVE SERVICES */}
-      <section className="py-24 bg-[#f5f5f5] -mt-1">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-4">Our Preventive Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Building healthy foundations for smiles that last a lifetime</p>
-          </div>
-          <div className="space-y-16">
-            {preventiveServices.map((service, index) => (
-              <div key={service.title} className="bg-white shadow-sm overflow-hidden">
-                <div className={`grid lg:grid-cols-2 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className={`relative h-72 lg:h-auto ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <Image src={service.image} alt={service.title} fill className="object-cover" />
-                  </div>
-                  <div className={`p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
-                    <h3 className="text-2xl font-bold text-[var(--navy)] mb-4">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-                    <div>
-                      <p className="font-semibold text-[var(--navy)] mb-3">{service.listTitle}</p>
-                      <ul className="grid grid-cols-2 gap-2 text-sm text-gray-600">
-                        {service.points.map((point) => (
-                          <li key={point} className="flex items-center gap-2">
-                            <CheckCircle2 className="h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {service.note && (
-                      <p className="text-gray-500 italic border-l-4 border-[var(--gold)] pl-4 mt-6 text-sm">{service.note}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* YOUR VISIT */}
+      {/* WHAT TO EXPECT */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/Individual service page/What your general dentistry visit feels like.jpg"
-                alt="Your dental visit experience"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 text-white">
-                <p className="text-2xl font-bold">Atrium calm + concierge-level time</p>
-              </div>
-            </div>
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">What Your Visit Feels Like</h2>
-              <p className="text-gray-600">Here&apos;s what to expect during your general dentistry visit:</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">What to Expect During Your Exam and Cleaning</h2>
               <div className="space-y-4">
-                {visitTimeline.map((step, index) => (
+                {visitSteps.map((step, index) => (
                   <div key={step.title} className="flex gap-4">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--gold)] text-sm font-bold text-white flex-shrink-0">{index + 1}</span>
                     <div>
@@ -265,6 +116,13 @@ export default function GeneralDentistry() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <Image src="/Main service page/Copy of Dental Exams & Cleanings.jpg" alt="Dental cleaning" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <p className="text-2xl font-bold">Thorough care for lasting smiles</p>
               </div>
             </div>
           </div>
@@ -299,61 +157,25 @@ export default function GeneralDentistry() {
         </div>
       </section>
 
-      {/* MEMBERSHIP */}
-      <section className="py-24 bg-[var(--navy)]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Cherry Creek South Dental Membership</h2>
-          <p className="text-white/80 text-lg mb-8">Keep cleanings on track and unlock cosmetic + tech perks</p>
-          <ul className="mx-auto max-w-2xl space-y-3 text-left text-white/80">
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-              <span>Free whitening touch-ups when you keep preventive visits on track</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-              <span>Savings on periodontal therapy, nightguards, and Invisalign maintenance trays</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-1 h-4 w-4 text-[var(--gold)] flex-shrink-0" />
-              <span>Annual credit toward facial aesthetics or cosmetic upgrades</span>
-            </li>
-          </ul>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              Call (303) 377-7744
-            </a>
-            <a
-              href="sms:7208641333"
-              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20"
-            >
-              Text (720) 864-1333
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* OTHER TREATMENTS */}
       <section className="py-24 bg-[#f8f6f3]">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl sm:text-4xl font-light tracking-wide text-[var(--navy)] text-center mb-16 uppercase">Other Treatments to Consider</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Link href="/services/cosmetic-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Sparkles className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Cosmetic Dentistry</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Transform your smile with whitening, veneers, and more.</p>
-            </Link>
-            <Link href="/services/invisalign" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Heart className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Invisalign®</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Straighten your teeth discreetly with custom clear aligners.</p>
-            </Link>
-            <Link href="/services/restorative-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Shield className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
-              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Dental Implants</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">Replace missing teeth with long-lasting, natural-looking solutions.</p>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Dental Sealants</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">Protect your teeth from decay with this preventive treatment that covers grooves and fissures.</p>
+            </Link>
+            <Link href="/services/general-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Sparkles className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Fluoride Treatments</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">Strengthen your enamel and prevent cavities, especially in children and those at higher risk of decay.</p>
+            </Link>
+            <Link href="/services/general-dentistry" className="group border border-[var(--gold)]/40 bg-[#faf9f7] p-8 text-center hover:border-[var(--gold)] hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--navy)] flex items-center justify-center"><Heart className="w-8 h-8 text-white" strokeWidth={1.5} /></div>
+              <h3 className="text-lg font-bold text-[var(--navy)] mb-4 leading-snug uppercase tracking-wide">Periodontal Therapy</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">Treatment for gum disease that includes deep cleaning and ongoing care.</p>
             </Link>
           </div>
         </div>
@@ -365,7 +187,7 @@ export default function GeneralDentistry() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl sm:text-4xl font-light text-[var(--gold)] mb-4 uppercase tracking-wide">Book Your<br />Appointment</h2>
-              <p className="text-gray-600 mb-8">Ready to take the next step towards a healthier smile? Contact us to schedule your preventive visit.</p>
+              <p className="text-gray-600 mb-8">Ready to take the next step towards a healthier smile? Contact us to schedule your visit.</p>
               <form className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <input type="text" placeholder="First Name" className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-[var(--gold)] focus:outline-none transition" />
@@ -392,14 +214,6 @@ export default function GeneralDentistry() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center"><MapPin className="h-5 w-5 text-white" /></div>
                   <a href="https://maps.google.com/?q=5055+E+Kentucky+Ave,+Denver,+CO+80246" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[var(--gold)] transition">5055 E Kentucky Ave, Denver, CO 80246</a>
-                </div>
-              </div>
-              <div className="bg-white p-6 shadow-sm border-l-4 border-[var(--gold)]">
-                <h3 className="text-xl font-semibold text-[var(--navy)] mb-3">Get Connected</h3>
-                <div className="flex items-center gap-3">
-                  <a href="https://g.page/r/CQVBXHNMdHxCEAE" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition"><svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
-                  <a href="https://www.facebook.com/drbrightdds" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition"><svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                  <a href="https://www.instagram.com/drbrightdds" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--gold)] flex items-center justify-center hover:bg-[var(--navy)] transition"><svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
                 </div>
               </div>
             </div>

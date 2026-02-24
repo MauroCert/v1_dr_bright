@@ -42,10 +42,10 @@ export default function MeetTheTeam() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6">
-            Meet Our <span className="text-[var(--gold)]">Team</span>
+            Meet the Team at <span className="text-[var(--gold)]">Cherry Creek South Dental</span>
           </h1>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            The dedicated professionals behind Cherry Creek South Dental—committed to your comfort, health, and confidence.
+            Our Caring and Skilled Team Is Here to Serve You
           </p>
           <a
             href="tel:3033777744"
@@ -57,14 +57,20 @@ export default function MeetTheTeam() {
         </div>
       </section>
 
-      {/* OUR TEAM */}
+      {/* INTRO */}
       <section className="py-24 bg-white">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="text-lg text-gray-600 leading-relaxed">
+            At Cherry Creek South Dental, we are proud of our team, which is dedicated to providing top-tier care to each and every one of our patients. From the moment you walk through our doors, you&apos;ll be greeted by a team of professionals who truly care about your health and comfort. Let us introduce you to the friendly faces that make our office a welcoming and efficient place.
+          </p>
+        </div>
+      </section>
+
+      {/* TEAM MEMBERS */}
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">Our Dental Team</h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Behind every great dental practice is a team of caring, skilled professionals. Every member is handpicked for their clinical skills, warmth, and genuine commitment to patient comfort.
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">The CCSD Team</h2>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
@@ -122,27 +128,23 @@ export default function MeetTheTeam() {
         </div>
       </section>
 
-      {/* JOIN BANNER */}
-      <section className="py-16 bg-[var(--navy)]">
+      {/* JOIN OUR PATIENT FAMILY */}
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Join Our Dental Family</h2>
-          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Experience the Cherry Creek South Dental difference for yourself. Our team is ready to welcome you with open arms and provide the personalized, unhurried care you deserve.
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)] mb-6">Join Our Patient Family</h2>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            We are truly proud of the team at Cherry Creek South Dental, as they are committed to providing you with the best possible care. Each member of our team brings a unique set of skills, and together, we work to make your experience comfortable, personalized, and effective.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:3033777744"
-              className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 font-semibold transition hover:bg-[var(--gold)]/90"
-            >
-              Call (303) 377-7744
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white/10 text-white border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/20"
-            >
-              Contact Us
-            </Link>
-          </div>
+          <p className="text-lg text-gray-600 leading-relaxed mb-10">
+            We&apos;re here to help you feel at ease while providing the best dental care available. We look forward to meeting you and helping you achieve your healthiest, happiest smile!
+          </p>
+          <a
+            href="tel:3033777744"
+            className="inline-flex items-center justify-center bg-[var(--gold)] text-white px-8 py-4 text-base font-semibold transition hover:bg-[var(--gold)]/90"
+          >
+            Schedule Your Appointment Today
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
         </div>
       </section>
 

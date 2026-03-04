@@ -58,7 +58,7 @@ export default function Home() {
             src="/PenOzi_2026_Derick_BrightSmiles_043 (1).JPG"
             alt="Cherry Creek South Dental"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-black/40" />

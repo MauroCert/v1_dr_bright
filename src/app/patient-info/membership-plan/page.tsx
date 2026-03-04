@@ -96,7 +96,7 @@ export default function MembershipPlan() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[500px] overflow-hidden shadow-lg">
               <Image
-                src="/54307432591_576cf64694_o.jpg"
+                src="/PenOzi_2026_Derick_BrightSmiles_001 (1).JPG"
                 alt="Membership benefits"
                 fill
                 className="object-cover"

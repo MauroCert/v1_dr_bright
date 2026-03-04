@@ -128,7 +128,7 @@ export default function CosmeticDentistry() {
             {/* Image */}
             <div className="relative h-[450px] overflow-hidden shadow-lg">
               <Image
-                src="/54307432591_576cf64694_o.jpg"
+                src="/PenOzi_2026_Derick_BrightSmiles_049 (1).JPG"
                 alt="Cosmetic dentistry results"
                 fill
                 className="object-cover"

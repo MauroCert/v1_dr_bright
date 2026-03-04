@@ -97,7 +97,7 @@ export default function Insurances() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative h-[400px] overflow-hidden shadow-lg">
               <Image
-                src="/54307432591_576cf64694_o.jpg"
+                src="/PenOzi_2026_Derick_BrightSmiles_030 (1).JPG"
                 alt="Our team helping with insurance"
                 fill
                 className="object-cover"

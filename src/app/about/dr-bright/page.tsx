@@ -40,7 +40,7 @@ export default function DrBright() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
               <Image
-                src="/images/team/dr-bright.jpg"
+                src="/PenOzi_2026_Derick_BrightSmiles_042 (1).JPG"
                 alt="Dr. Bright"
                 width={450}
                 height={450}

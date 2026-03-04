@@ -55,7 +55,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Homepage/Why Patients Choose Cherry Creek South Dental.jpg"
+            src="/PenOzi_2026_Derick_BrightSmiles_043 (1).JPG"
             alt="Cherry Creek South Dental"
             fill
             className="object-cover object-top"
@@ -155,7 +155,7 @@ export default function Home() {
             {/* Left - Image */}
             <div className="order-2 lg:order-1 flex justify-center">
               <Image
-                src="/images/Digital Assets/Dr. Bright and family.png"
+                src="/PenOzi_2026_Derick_BrightSmiles_042 (1).JPG"
                 alt="Dr. Bright and family"
                 width={450}
                 height={450}

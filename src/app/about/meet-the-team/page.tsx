@@ -75,7 +75,7 @@ export default function MeetTheTeam() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
             {[
-              { name: 'Dr. Derick Bright', role: 'Dentist', image: '/images/team/dr-bright.jpg' },
+              { name: 'Dr. Derick Bright', role: 'Dentist', image: '/PenOzi_2026_Derick_BrightSmiles_042 (1).JPG' },
               { name: 'Laurie Mason', role: 'Hygienist', image: '/images/team/laurie-mason.jpg' },
               { name: 'Yasmine Chavez', role: 'Assistant', image: '/images/team/yasmine-chavez.jpg' },
               { name: 'Kirstie Hendrix', role: 'Front Office', image: '/images/team/kirstie-hendrix.jpg' },

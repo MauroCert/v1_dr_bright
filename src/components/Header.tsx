@@ -245,15 +245,7 @@ export default function Header() {
 
       {/* Main navigation */}
       <div className="bg-transparent absolute left-0 right-0">
-        <div className="flex items-center justify-between px-8 lg:px-12 py-4">
-          <Link
-            href="/"
-            className="flex-shrink-0 text-xl font-bold uppercase tracking-wider text-white transition-colors hover:text-[var(--gold)]"
-            style={{ fontFamily: 'Lato, sans-serif', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
-          >
-            Cherry Creek South Dental
-          </Link>
-
+        <div className="flex items-center justify-end px-8 lg:px-12 py-4">
           {/* Desktop nav */}
           <nav className="hidden items-center gap-2 lg:flex" style={{ fontFamily: 'Lato, sans-serif' }}>
             {navigation.map((item) =>

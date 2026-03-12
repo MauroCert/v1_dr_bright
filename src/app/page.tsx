@@ -55,10 +55,10 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/PenOzi_2026_Derick_BrightSmiles_043 (1).JPG"
+            src="/PenOzi_2026_Derick_BrightSmiles_042 (1).JPG"
             alt="Cherry Creek South Dental"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[center_40%]"
             priority
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -166,7 +166,7 @@ export default function Home() {
             {/* Right - Content */}
             <div className="space-y-6 order-1 lg:order-2">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--navy)]">
-                Meet Dr. Bright, DDS
+                Meet Dr. Bright, DDM
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 Dr. Bright and his family made Colorado their home in 2019, quickly falling in love with the mountains and community. He is a proud father to three young children: a spirited 6-year-old daughter, an adventurous 4-year-old son, and a sweet 7-month-old baby boy. An avid outdoorsman, Dr. Bright enjoys spending weekends with his family hiking scenic trails or fishing in the tranquil waters of the Rockies. When they&apos;re not exploring the great outdoors, you can often find them cheering on the Denver Nuggets!
